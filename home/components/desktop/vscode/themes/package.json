@@ -1,0 +1,21 @@
+{
+  "name": "nix-colors",
+  "displayName": "Nix Colors",
+  "description": "Dynamic color theme using nix-colors",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "nix-colors",
+        "uiTheme": "vs-dark",
+        "path": "./themes/nix-colors.json"
+      }
+    ]
+  }
+}

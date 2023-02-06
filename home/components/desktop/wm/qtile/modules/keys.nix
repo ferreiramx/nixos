@@ -54,7 +54,7 @@ keys = [
     Key(
         [mod],
         "escape",
-        lazy.spawn(f"{home}/.config/rofi/power/powermenu.sh"),
+        lazy.spawn(f"{home}/.config/rofi/powermenu/powermenu.sh"),
         desc="Show menu",
     ),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),

@@ -1,4 +1,4 @@
-{input}: ''
+{lib}: ''
 * {
     background: #151515;
     foreground: #c0c0bc;
