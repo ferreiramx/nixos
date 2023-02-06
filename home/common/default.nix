@@ -20,19 +20,6 @@
     userEmail = "angel@ferreira.mx";
   };
 
-  # GTK Theme
-  gtk = {
-    enable = true;
-    cursorTheme = {
-      package = pkgs.nordzy-cursor-theme;
-      name = "Nordzy-cursors";
-    };
-    iconTheme = {
-      package = pkgs.nordzy-icon-theme;
-      name = "Nordzy-dark";
-    };
-  };
-
   # Dunst
   services.dunst = {
     enable = true;
