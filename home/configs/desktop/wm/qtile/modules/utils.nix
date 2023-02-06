@@ -1,3 +1,4 @@
+{}: ''
 import subprocess
 
 
@@ -13,3 +14,4 @@ def get_mute():
         ["pamixer", "--get-mute"], stdout=subprocess.PIPE, universal_newlines=True
     )
     return p.stdout.replace("\n", "")
+''

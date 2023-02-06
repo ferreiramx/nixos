@@ -1,3 +1,4 @@
+{}: ''
 import os
 import subprocess
 from libqtile import hook
@@ -13,3 +14,4 @@ home = os.path.expanduser("~")
 @hook.subscribe.startup_once
 def autostart():
     subprocess.run(f"{home}/.config/qtile/scripts/autostart.sh")
+''

@@ -1,3 +1,4 @@
+{}: ''
 theme = {
     "screen": {
         "width": 3840,
@@ -74,3 +75,4 @@ theme = {
     },
     "transparency": {"alpha": 1, "blur": 10},
 }
+''

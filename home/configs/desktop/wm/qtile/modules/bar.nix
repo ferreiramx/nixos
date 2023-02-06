@@ -1,3 +1,4 @@
+{}: ''
 import os
 import psutil
 import subprocess
@@ -267,3 +268,4 @@ bar = bar.Bar(
         theme["windows"]["margin"]["x"],
     ],
 )
+''

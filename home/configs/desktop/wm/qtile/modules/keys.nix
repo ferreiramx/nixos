@@ -1,3 +1,4 @@
+{}: ''
 import os
 from libqtile.lazy import lazy
 from libqtile.config import Key, Click, Drag
@@ -88,3 +89,4 @@ mouse = [
     Click([mod], "Button9", lazy.spawn(f"{home}/.config/qtile/eww_vol.sh up")),
     Click([mod], "Button8", lazy.spawn(f"{home}/.config/qtile/eww_vol.sh down")),
 ]
+''

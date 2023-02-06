@@ -1,3 +1,5 @@
+{}: ''
+
 # Copyright (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
@@ -60,3 +62,4 @@ focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
 wmname = "LG3D"
+''

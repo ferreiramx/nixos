@@ -1,3 +1,4 @@
+{}: ''
 from libqtile import layout
 from libqtile.config import Match
 from modules.theme import theme
@@ -78,3 +79,4 @@ floating_layout = layout.Floating(
     border_focus=theme["colors"]["bg4"],
     border_normal=theme["colors"]["bg3"],
 )
+''

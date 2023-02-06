@@ -1,3 +1,4 @@
+{}: ''
 from libqtile.config import Screen
 from modules.bar import bar
 from modules.theme import theme
@@ -9,3 +10,4 @@ screens = [
         wallpaper_mode=theme["screen"]["wallpaper"]["mode"],
     )
 ]
+''
