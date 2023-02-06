@@ -72,7 +72,7 @@
           pkgs = legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs; };
           modules = (builtins.attrValues homeManagerModules) ++ [
-            ./home-manager/home.nix
+            ./home/kiryu.nix
           ];
         };
       };
