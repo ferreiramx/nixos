@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [
-    ./global
+    ./common
     ./desktop/wm/qtile
   ];
 }
