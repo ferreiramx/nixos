@@ -99,7 +99,6 @@ in
     nixpkgs-fmt
     gotop
     rsync
-    neofetch
     bitwarden-cli
     appimage-run
     binutils

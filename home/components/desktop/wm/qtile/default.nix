@@ -4,6 +4,7 @@
     ../../rofi
     ../../picom
     ../../gtk
+    ../../dunst
   ];
   xdg.configFile = {
     "qtile/config.py".text = (import ./config.nix {inherit lib;});
