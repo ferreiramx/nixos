@@ -1,4 +1,4 @@
-{}: ''
+{lib}: ''
 from libqtile import layout
 from libqtile.config import Match
 from modules.theme import theme

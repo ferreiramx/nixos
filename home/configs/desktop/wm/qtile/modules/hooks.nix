@@ -1,4 +1,4 @@
-{}: ''
+{lib}: ''
 import os
 import subprocess
 from libqtile import hook

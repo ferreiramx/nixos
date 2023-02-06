@@ -1,4 +1,4 @@
-{}: ''
+{lib}: ''
 from libqtile.config import Group, Key
 from modules.keys import keys, mod
 from libqtile.lazy import lazy

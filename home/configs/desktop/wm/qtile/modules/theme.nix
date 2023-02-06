@@ -1,4 +1,4 @@
-{}: ''
+{lib}: ''
 theme = {
     "screen": {
         "width": 3840,

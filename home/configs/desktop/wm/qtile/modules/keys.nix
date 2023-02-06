@@ -1,4 +1,4 @@
-{}: ''
+{lib}: ''
 import os
 from libqtile.lazy import lazy
 from libqtile.config import Key, Click, Drag

@@ -90,11 +90,11 @@
   };
 
   # Rofi
-  programs.rofi.enable = true;
-  xdg.configFile."rofi" = {
-    source = dotfiles/rofi;
-    recursive = true;
-  };
+#   programs.rofi.enable = true;
+#   xdg.configFile."rofi" = {
+#     source = dotfiles/rofi;
+#     recursive = true;
+#   };
   xdg.configFile."rofi/power/powermenu.sh" = {
     text = ''
       #!/bin/sh
@@ -192,10 +192,10 @@
         ];
   };
   # Custom theme
-  xdg.configFile."VSCodium" = {
-    source = dotfiles/VSCodium;
-    recursive = true;
-  };
+#   xdg.configFile."VSCodium" = {
+#     source = dotfiles/VSCodium;
+#     recursive = true;
+#   };
 
   # Spotify custom theme
   xdg.configFile."spicetify/Themes/nix-colors/color.ini" = {
