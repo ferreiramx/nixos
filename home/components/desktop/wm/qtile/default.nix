@@ -1,6 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
     ./scripts.nix
+    ../../rofi
   ];
   xdg.configFile = {
     "qtile/config.py".text = (import ./config.nix {inherit lib;});
