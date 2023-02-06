@@ -1,6 +1,6 @@
 {inputs, lib, config, pkgs, ... }: {
-  xdg.configFile."qtile/scripts" = {
-    "autostart.sh" = {
+  xdg.configFile = {
+    "qtile/scripts/autostart.sh" = {
       text = ''
 #!/bin/sh
 picom --experimental-backends &
@@ -10,7 +10,7 @@ nm-applet &
       '';
       executable = true;
     };
-    "pamixer.sh" = {
+    "qtile/scripts/pamixer.sh" = {
       text = ''
 #!/bin/bash
 # Temp script to output pamixer volume in [ddd%] format while the qtile volume widget is fixed
@@ -32,7 +32,7 @@ esac
 '';
     executable = true;
     };
-    "playerctl.sh" = {
+    "qtile/scripts/playerctl.sh" = {
       text = ''
 #!/bin/bash
 if [ "$(playerctl -p spotify status 2>/dev/null)" != "" ]; then 
@@ -43,7 +43,7 @@ fi
       '';
       executable = true;
     };
-    "nixos-rebuild.sh" = {
+    "qtile/scripts/nixos-rebuild.sh" = {
     text = ''
       #!/bin/sh
       rm -rf ~/.config/qtile/modules/__pycache__
