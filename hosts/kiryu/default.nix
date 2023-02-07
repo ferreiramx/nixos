@@ -2,80 +2,26 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, lib, config, pkgs, ... }:
-let
-  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
-    export __NV_PRIME_RENDER_OFFLOAD=1
-    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export __VK_LAYER_NV_optimus=NVIDIA_only
-    exec "$@"
-  '';
-in
-{
+{ inputs, lib, config, pkgs, ... }: {
   imports =
     [
       ./hardware-configuration.nix
+
+      ../common/optional/bluetooth.nix
+      ../common/optional/graphics/nvidia
+      ../common/optional/hardware/touchpad
+      ../common/optional/desktop/dm/gdm
+      ../common/optional/desktop/wm/qtile
+
+      ../common/global
     ];
 
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  # Security
-  security.polkit.enable = true;
-  security.sudo.wheelNeedsPassword = false;
-  security.polkit.extraConfig = ''
-    /* Allow members of the wheel group to execute any actions
-    * without password authentication, similar to "sudo NOPASSWD:"
-    */
-    polkit.addRule(function(action, subject) {
-        if (subject.isInGroup("wheel")) {
-            return polkit.Result.YES;
-        }
-    });
-  '';
-  virtualisation.virtualbox.host.enable = true;
-   users.extraGroups.vboxusers.members = [ "aferreira" ];
-   virtualisation.virtualbox.host.enableExtensionPack = true;
-
-  # Networking
-  networking.hostName = "kiryu"; # Define your hostname.
-  networking.networkmanager.enable = true;
-  programs.nm-applet.enable = true;
-  
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-
-  # Graphics
-  hardware.opengl.enable = true;
-  hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
-    modesetting.enable = true;
-    prime = {
-      offload.enable = true;
-      nvidiaBusId = "PCI:1:0:0";
-      amdgpuBusId = "PCI:4:0:0";
-    };
-  };
+  networking.hostName = "kiryu";
   time.timeZone = "America/Mexico_City";
   i18n.defaultLocale = "en_US.utf8";
 
-  # X11
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    xkbVariant = "";
-    libinput = {
-      enable = true;
-      touchpad = {
-        accelProfile = "adaptive";
-      };
-    };
-    windowManager.qtile.enable = true;
-    displayManager.gdm.enable = true;
-    videoDrivers = [ "nvidia" ];
-  };
+  services.xserver.layout = "us";
+  services.xserver.xkbVariant = "";
 
   # Users
   users.users.aferreira = {
@@ -140,7 +86,6 @@ in
     vlc
 
     # System
-    nvidia-offload
     lm_sensors
     hddtemp
     hdparm
@@ -238,23 +183,6 @@ in
       }
     )
   ];
-
-  nix = {
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Deduplicate and optimize nix store
-      auto-optimise-store = true;
-    };
-
-    # This will add each flake input as a registry
-    # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
-
-    # This will additionally add your inputs to the system's legacy channels
-    # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
