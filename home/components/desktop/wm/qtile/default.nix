@@ -3,7 +3,6 @@
     ./scripts.nix
     ../../rofi
     ../../picom
-    ../../gtk
     ../../dunst
   ];
   xdg.configFile = {

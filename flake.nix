@@ -17,8 +17,9 @@
   };
 
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, nix-colors, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, nix-colors, ... }@inputs:
     let
+      inherit (self) outputs;
       forAllSystems = nixpkgs.lib.genAttrs [
         #"aarch64-linux"
         #"i686-linux"
@@ -57,20 +58,22 @@
       );
 
       nixosConfigurations = {
+        # Work Laptop
         kiryu = nixpkgs.lib.nixosSystem {
           pkgs = legacyPackages.x86_64-linux;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs outputs; };
           modules = (builtins.attrValues nixosModules) ++ [
-            ./nixos/configuration.nix
+            ./hosts/kiryu
             nixos-hardware.nixosModules.asus-zephyrus-ga401
           ];
         };
       };
 
       homeConfigurations = {
+        # Work Laptop
         "aferreira@kiryu" = home-manager.lib.homeManagerConfiguration {
           pkgs = legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = (builtins.attrValues homeManagerModules) ++ [
             ./home/kiryu.nix
           ];
