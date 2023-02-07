@@ -41,6 +41,7 @@
   ];
   environment.systemPackages = with pkgs; [
     # CLI Tools
+    # nvidia-offload
     wget
     nixpkgs-fmt
     gotop
