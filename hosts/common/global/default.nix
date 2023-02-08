@@ -3,13 +3,18 @@
     ./bootloader.nix
     ./system.nix
     ./networkmanager.nix
+    ./openssh.nix
   ];
-  
+  programs.vim.defaultEditor = true;
+  environment.systemPackages = with pkgs; [
+    rsync
+    nixpkgs-fmt
+    bitwarden-cli
+  ];
+
   nix = {
     settings = {
-      # Enable flakes and new 'nix' command
       experimental-features = "nix-command flakes";
-      # Deduplicate and optimize nix store
       auto-optimise-store = true;
     };
 
