@@ -14,69 +14,41 @@
 
     # Nix-colors
     nix-colors.url = "github:misterio77/nix-colors";
+
+    # Secrets management
+    sops-nix.url = "github:mic92/sops-nix";
+
   };
 
-
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, nix-colors, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
-      forAllSystems = nixpkgs.lib.genAttrs [
-        #"aarch64-linux"
-        #"i686-linux"
-        "x86_64-linux"
-      ];
+      forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
+      forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
     in
-    rec {
-      # Your custom packages and modifications
-      overlays = {
-        default = import ./overlay { inherit inputs; };
-      };
-
-      # Reusable nixos modules you might want to export
-      # These are usually stuff you would upstream into nixpkgs
+    {
       nixosModules = import ./modules/nixos;
-      # Reusable home-manager modules you might want to export
-      # These are usually stuff you would upstream into home-manager
       homeManagerModules = import ./modules/home-manager;
+      
+      overlays = import ./overlays { inherit inputs outputs; };
 
-      # Devshell for bootstrapping
-      # Acessible through 'nix develop' or 'nix-shell' (legacy)
-      devShells = forAllSystems (system: {
-        default = legacyPackages.${system}.callPackage ./shell.nix { };
-      });
-
-      # This instantiates nixpkgs for each system listed above
-      # Allowing you to add overlays and configure it (e.g. allowUnfree)
-      # Our configurations will use these instances
-      # Your flake will also let you access your package set through nix build, shell, run, etc.
-      legacyPackages = forAllSystems (system:
-        import inputs.nixpkgs {
-          inherit system;
-          overlays = builtins.attrValues overlays;
-          config.allowUnfree = true;
-        }
-      );
+      packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
+      devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
       nixosConfigurations = {
         # Work Laptop
         kiryu = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs outputs; };
-          modules = (builtins.attrValues nixosModules) ++ [
-            ./hosts/kiryu
-            nixos-hardware.nixosModules.asus-zephyrus-ga401
-          ];
+          modules = [ ./hosts/kiryu ];
         };
       };
 
       homeConfigurations = {
         # Work Laptop
         "aferreira@kiryu" = home-manager.lib.homeManagerConfiguration {
-          pkgs = legacyPackages.x86_64-linux;
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = (builtins.attrValues homeManagerModules) ++ [
-            ./home/kiryu.nix
-          ];
+          modules = [ ./home/kiryu.nix ];
         };
       };
     };

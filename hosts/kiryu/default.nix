@@ -2,9 +2,10 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   imports =
     [
+      inputs.nixos-hardware.nixosModules.asus-zephyrus-ga401
       ./hardware-configuration.nix
 
       ../common/global
@@ -23,10 +24,12 @@
       ../common/optional/hardware/logitech
       ../common/optional/hardware/monitoring
       ../common/optional/hardware/touchpad
-      
+
       # ../common/optional/network
       ../common/optional/virt
       ../common/optional/work
+
+      ../common/users/aferreira
 
     ];
 
@@ -38,13 +41,6 @@
   services.xserver.xkbVariant = "";
   services.tlp.enable = false;
 
-
-  # Users
-  users.users.aferreira = {
-    isNormalUser = true;
-    description = "Angel Ferreira";
-    extraGroups = [ "wheel" "networkmanager" ];
-  };
   services.getty.autologinUser = "aferreira";
 
   # This value determines the NixOS release from which the default

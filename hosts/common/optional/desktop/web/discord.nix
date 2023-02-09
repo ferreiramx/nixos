@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ lib, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     discord
     betterdiscord-installer

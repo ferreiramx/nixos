@@ -1,10 +1,14 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, pkgs, outputs, ... }: {
   imports = [
     ./bootloader.nix
     ./system.nix
     ./networkmanager.nix
     ./openssh.nix
-  ];
+    ./locale.nix
+    ./nix.nix
+    inputs.home-manager.nixosModules.home-manager
+  ] ++ (builtins.attrValues outputs.nixosModules);
+
   programs.vim.defaultEditor = true;
   environment.systemPackages = with pkgs; [
     rsync
@@ -12,18 +16,15 @@
     bitwarden-cli
   ];
 
-  nix = {
-    settings = {
-      experimental-features = "nix-command flakes";
-      auto-optimise-store = true;
+  home-manager = {
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+  };
+
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
+    config = {
+      allowUnfree = true;
     };
-
-    # This will add each flake input as a registry
-    # To make nix3 commands consistent with your flake
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
-
-    # This will additionally add your inputs to the system's legacy channels
-    # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
   };
 }
