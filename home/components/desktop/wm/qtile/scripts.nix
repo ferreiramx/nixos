@@ -1,4 +1,4 @@
-{inputs, lib, config, pkgs, ... }: {
+{
   xdg.configFile = {
     "qtile/scripts/autostart.sh" = {
       text = ''

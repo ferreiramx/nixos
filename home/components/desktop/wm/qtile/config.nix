@@ -1,4 +1,4 @@
-{lib}: ''
+''
 
 # Copyright (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis

@@ -1,4 +1,4 @@
-{lib}: ''
+''
 from libqtile.config import Screen
 from modules.bar import bar
 from modules.theme import theme
