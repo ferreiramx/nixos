@@ -12,9 +12,6 @@
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
 
-  # Shell
-  programs.bash.enable = true;
-
   # Git
   programs.git = {
     enable = true;

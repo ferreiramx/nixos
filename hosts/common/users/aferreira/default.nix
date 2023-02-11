@@ -9,10 +9,11 @@ in
     shell = pkgs.fish;
     extraGroups = [
       "wheel"
+      "networkmanager"
       "video"
       "audio"
-      "networkmanager"
-    ] ++ ifTheyExist [
+    ]
+    ++ ifTheyExist [
       "network"
       "docker"
       "git"
@@ -21,5 +22,5 @@ in
     packages = [ pkgs.home-manager ];
   };
 
-  # home-manager.users.aferreira = import ../../../../home/${config.networking.hostName}.nix;
+  home-manager.users.aferreira = import ../../../../home/${config.networking.hostName}.nix;
 }
