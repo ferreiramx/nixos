@@ -10,10 +10,10 @@
  @import "~/.config/rofi/theme.rasi"
 
 configuration {
-	font:							"Source Sans Pro Semibold 12";
+	font:							"Source Sans Pro Semibold 18";
     show-icons:                     true;
 	icon-theme: 					"oomox-mugendramon";
-    display-drun: 					"";
+    display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
 	sidebar-mode: 					false;
@@ -26,7 +26,7 @@ window {
 	border:							0px;
 	border-color:					@border-color;
     border-radius:                  12px;
-	width:							8%;
+	width:							16%;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
