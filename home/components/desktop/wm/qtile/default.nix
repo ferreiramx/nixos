@@ -1,4 +1,4 @@
-{ lib, vars, ... }: {
+{ vars, ... }: {
   imports = [
     ./scripts.nix
     ../../rofi
