@@ -1,4 +1,4 @@
-{ lib, vars }:
+vars:
 ''
   import os
   import psutil

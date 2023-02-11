@@ -1,5 +1,5 @@
 # TODO: Get rid of this file and inject vars directly in the other files
-{lib, vars}: ''
+vars: ''
 theme = {
     "screen": {
         "width": ${toString vars.screen.width},
