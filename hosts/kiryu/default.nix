@@ -53,6 +53,7 @@
         refresh = 120;
       };
       fonts = {
+        dunst = 14;
         sans = 18;
         mono = 18;
         small-icon = 20;

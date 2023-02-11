@@ -1,12 +1,12 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, lib, config, pkgs, vars, ... }: {
    services.dunst = {
     enable = true;
     settings = {
       global = {
         monitor = 0;
         follow = "keyboard";
-        width = 288;
-        height = 151;
+        width = builtins.ceil (vars.screen.width * 0.16);
+        height = builtins.ceil (vars.screen.height * 0.2);
         notification_limit = 3;
         origin = "top-center";
         indicate_hidden = "yes";
@@ -20,7 +20,7 @@
         separator_color = "frame";
         sort = "yes";
         idle_threshold = 45;
-        font = "Source Sans Pro Semibold 10";
+        font = "Source Sans Pro Semibold ${toString vars.fonts.dunst}";
         line_height = 0;
         markup = "full";
         format = "<b>%s</b>\n%b";
