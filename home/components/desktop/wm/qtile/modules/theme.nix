@@ -1,10 +1,11 @@
-''
+# TODO: Get rid of this file and inject vars directly in the other files
+{lib, vars}: ''
 theme = {
     "screen": {
-        "width": 3840,
-        "height": 1080,
+        "width": ${toString vars.screen.width},
+        "height": ${toString vars.screen.height},
         "wallpaper": {
-            "file": "/home/aferreira/.config/wallpapers/wp_3840x1080.png",
+            "file": "/home/aferreira/.config/wallpapers/wp_${toString vars.screen.width}x${toString vars.screen.height}.png",
             "mode": "stretch",
         },
     },
@@ -40,27 +41,32 @@ theme = {
         "sans": {
             "font": "Source Sans Pro",
             "style": "Semibold",
-            "size": 13,
+            "size": ${toString vars.fonts.sans},
         },
         "mono": {
-            "font": "Source Code Pro",
+            "font": "SauceCodePro Nerd Font Mono",
             "style": "Bold",
-            "size": 13,
+            "size": ${toString vars.fonts.mono},
         },
         "icons": {
             "font": "Material Design Icons",
             "style": "",
-            "size": 20,
+            "size": ${toString vars.fonts.large-icon},
         },
         "icons2": {
             "font": "Font Awesome 6 Free",
             "style": "Solid",
-            "size": 15,
+            "size": ${toString vars.fonts.small-icon},
         },
         "icons3": {
             "font": "Font Awesome 6 Brands",
             "style": "Solid",
-            "size": 15,
+            "size": ${toString vars.fonts.small-icon},
+        },
+        "osicon": {
+            "font": "SauceCodePro Nerd Font",
+            "style": "",
+            "size": ${toString vars.fonts.os-icon},
         },
     },
     "sensors": {

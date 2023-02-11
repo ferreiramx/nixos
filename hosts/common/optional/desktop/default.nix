@@ -14,6 +14,7 @@
     ];
   };
 
+  fonts.fontDir.enable = true;
   fonts.fonts = with pkgs;[
     source-code-pro
     source-sans-pro

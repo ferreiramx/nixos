@@ -43,6 +43,25 @@
 
   services.getty.autologinUser = "aferreira";
 
+  home-manager.extraSpecialArgs = {
+    vars = {
+      class = "laptop";
+      screen = {
+        name = "eDP";
+        width = 2560;
+        height = 1440;
+        refresh = 120;
+      };
+      fonts = {
+        sans = 18;
+        mono = 18;
+        small-icon = 20;
+        large-icon = 29;
+        os-icon = 25;
+      };
+    };
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

@@ -1,4 +1,8 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
+  imports = [
+    ./pipewire.nix
+  ];
+
   environment.systemPackages = with pkgs; [
     pamixer
     pavucontrol
