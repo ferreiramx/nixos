@@ -13,6 +13,7 @@
   programs.vim.defaultEditor = true;
   
   environment.systemPackages = with pkgs; [
+    any-nix-shell
     rsync
     nixpkgs-fmt
     bitwarden-cli

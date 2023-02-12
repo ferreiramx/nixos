@@ -6,10 +6,15 @@
       nxb = "sudo nixos-rebuild build --flake ~/.nixos/";
       nxu = "nix flake lock ~/.nixos/ --update-input";
     };
-    functions = {
-      fish_greeting = "";
-    };
+    shellInit = ''
+        set -U fish_greeting
+      '';
+      
+    interactiveShellInit = ''
+        any-nix-shell fish | source
+      '';
   };
+
   xdg.configFile."fish/conf.d/kitty.fish".text =
     ''
       set --global KITTY_INSTALLATION_DIR "${pkgs.kitty}/lib/kitty"
