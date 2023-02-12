@@ -5,7 +5,7 @@ theme = {
         "width": ${toString vars.screen.width},
         "height": ${toString vars.screen.height},
         "wallpaper": {
-            "file": "/home/aferreira/.config/wallpapers/wp_${toString vars.screen.width}x${toString vars.screen.height}.png",
+            "file": "/home/aferreira/.nixos/home/common/assets/wp/black.png",
             "mode": "stretch",
         },
     },

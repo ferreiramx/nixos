@@ -70,7 +70,7 @@
       battery_display="off"
       disk_display="off"
       image_backend="kitty"
-      image_source="/home/aferreira/.config/nixos/home-manager/assets/mugen_pixel_recolor1.png"
+      image_source="/home/aferreira/.nixos/home/common/assets/img/mugen_pixel_recolor1.png"
       ascii_distro="auto"
       ascii_colors=(5 4 3 4 5 6)
       ascii_bold="on"
