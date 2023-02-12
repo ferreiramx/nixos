@@ -8,6 +8,7 @@
     };
   };
   environment.systemPackages = with pkgs.fishPlugins; [
+    bass
     tide
     sponge
     colored-man-pages
