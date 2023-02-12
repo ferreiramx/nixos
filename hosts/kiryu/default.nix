@@ -16,7 +16,8 @@
       ../common/optional/desktop/office
       ../common/optional/desktop/media
       ../common/optional/desktop/web
-      ../common/optional/desktop/dm/gdm
+      # ../common/optional/desktop/dm/gdm
+      ../common/optional/desktop/dm/lightdm
       ../common/optional/desktop/wm/qtile
       ../common/optional/filesystem
       ../common/optional/games/runelite.nix
@@ -37,8 +38,12 @@
   time.timeZone = "America/Mexico_City";
   i18n.defaultLocale = "en_US.utf8";
 
-  services.xserver.layout = "us";
-  services.xserver.xkbVariant = "";
+  services.xserver = {
+    layout = "us";
+    xkbVariant = "";
+    displayManager.defaultSession = "none+qtile";
+  };
+
   services.tlp.enable = false;
 
   services.getty.autologinUser = "aferreira";

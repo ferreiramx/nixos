@@ -2,10 +2,10 @@
 let ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in
 {
-  # users.mutableUsers = false;
   users.users.aferreira = {
     isNormalUser = true;
     description = "Angel Ferreira";
+    homeMode = "755";
     shell = pkgs.fish;
     extraGroups = [
       "wheel"
