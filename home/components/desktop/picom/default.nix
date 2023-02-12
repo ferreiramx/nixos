@@ -4,7 +4,6 @@
     enable = true;
     activeOpacity = 1.0;
     backend = "glx";
-    experimentalBackends = true;
     fade = true;
     fadeDelta = 8;
     fadeExclude = [ ];

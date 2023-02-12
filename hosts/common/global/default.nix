@@ -6,10 +6,12 @@
     ./openssh.nix
     ./locale.nix
     ./nix.nix
+    ./fish.nix
     inputs.home-manager.nixosModules.home-manager
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   programs.vim.defaultEditor = true;
+  
   environment.systemPackages = with pkgs; [
     rsync
     nixpkgs-fmt
