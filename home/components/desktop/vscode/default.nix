@@ -4,10 +4,16 @@
     enable = true;
     package = pkgs.vscode;
     userSettings = {
-      "editor.fontSize" = 18;
-      "workbench.colorTheme" = "Nord";
-      "terminal.integrated.fontSize" = 18;
       "window.zoomLevel" = 1;
+      "editor.fontSize" = 18;
+      "editor.fontFamily" = "SauceCodePro Nerd Font";
+      "editor.fontWeight" = "Semibold";
+      "workbench.colorTheme" = "Default Dark+ Experimental";
+      "workbench.fontSize" = 18;
+      "workbench.fontFamily" = "Source Sans Pro";
+      "terminal.integrated.fontSize" = 18;
+      "terminal.integrated.fontFamily" = "SauceCodePro Nerd Font";
+      "terminal.integrated.fontWeight" = "Semibold";
     };
     extensions = with pkgs.vscode-extensions;
       [

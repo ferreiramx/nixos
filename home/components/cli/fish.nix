@@ -5,6 +5,12 @@
       nxs = "sudo nixos-rebuild switch --flake ~/.nixos/";
       nxb = "sudo nixos-rebuild build --flake ~/.nixos/";
       nxu = "nix flake lock ~/.nixos/ --update-input";
+
+      ga = "git add";
+      gc = "git commit -m";
+      gb = "git branch -m";
+      gp = "git push";
+      gu = "git pull";
     };
     shellInit = ''
       set -U fish_greeting
