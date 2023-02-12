@@ -10,5 +10,7 @@
   environment.systemPackages = with pkgs.fishPlugins; [
     tide
     sponge
+    colored-man-pages
+    autopair-fish
   ];
 }
