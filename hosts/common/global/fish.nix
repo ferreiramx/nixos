@@ -7,8 +7,8 @@
       functions.enable = true;
     };
   };
-  environment.systemPackages = with pkgs; [
-    #fishPlugins.tide
-    #fishPlugins.sponge
+  environment.systemPackages = with pkgs.fishPlugins; [
+    tide
+    sponge
   ];
 }
