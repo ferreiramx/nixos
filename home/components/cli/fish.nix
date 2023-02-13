@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }: 
+let
+  colors = config.colorScheme.colors;
+in
+{
   programs.fish = {
     enable = true;
     shellAbbrs = {
@@ -76,7 +80,7 @@
       set -U tide_aws_bg_color yellow
       set -U tide_aws_color brblack
       set -U tide_aws_icon \uf270
-      set -U tide_character_color 4c5758
+      set -U tide_character_color ${colors.base0D}
       set -U tide_character_color_failure brred
       set -U tide_character_icon \uf054
       set -U tide_character_vi_icon_default \u276e
@@ -91,9 +95,9 @@
       set -U tide_cmd_duration_icon \uf252
       set -U tide_cmd_duration_threshold 3000
       set -U tide_context_always_display true
-      set -U tide_context_bg_color "333333"
-      set -U tide_context_color_default c0c0bc
-      set -U tide_context_color_root yellow
+      set -U tide_context_bg_color "${colors.base03}"
+      set -U tide_context_color_default "${colors.base05}"
+      set -U tide_context_color_root red
       set -U tide_context_color_ssh yellow
       set -U tide_context_hostname_parts 1
       set -U tide_crystal_bg_color brwhite
@@ -103,8 +107,8 @@
       set -U tide_docker_color black
       set -U tide_docker_default_contexts default\x1ecolima
       set -U tide_docker_icon \uf308
-      set -U tide_git_bg_color "458260"
-      set -U tide_git_bg_color_unstable 9f792c
+      set -U tide_git_bg_color "${colors.base08}"
+      set -U tide_git_bg_color_unstable "${colors.base0F}"
       set -U tide_git_bg_color_urgent 6d3636
       set -U tide_git_color_branch black
       set -U tide_git_color_conflicted black
@@ -135,20 +139,20 @@
       set -U tide_left_prompt_separator_diff_color \ue0b0
       set -U tide_left_prompt_separator_same_color \ue0b1
       set -U tide_left_prompt_suffix \ue0b0
-      set -U tide_nix_shell_bg_color 7EBAE4
-      set -U tide_nix_shell_color black
+      set -U tide_nix_shell_bg_color "${colors.base0B}"
+      set -U tide_nix_shell_color "${colors.base05}"
       set -U tide_nix_shell_icon \uf313
       set -U tide_node_bg_color green
       set -U tide_node_color black
       set -U tide_node_icon \u2b22
-      set -U tide_os_bg_color 6d3636
-      set -U tide_os_color "202020"
+      set -U tide_os_bg_color "${colors.base0A}"
+      set -U tide_os_color "${colors.base05}"
       set -U tide_os_icon \uf313
       set -U tide_php_bg_color blue
       set -U tide_php_color black
       set -U tide_php_icon \ue608
-      set -U tide_private_mode_bg_color "202020"
-      set -U tide_private_mode_color c0c0bc
+      set -U tide_private_mode_bg_color "${colors.base02}"
+      set -U tide_private_mode_color "${colors.base05}"
       set -U tide_private_mode_icon \ufaf8
       set -U tide_prompt_add_newline_before true
       set -U tide_prompt_color_frame_and_connection brblack
@@ -156,10 +160,10 @@
       set -U tide_prompt_icon_connection \x20
       set -U tide_prompt_min_cols 34
       set -U tide_prompt_pad_items true
-      set -U tide_pwd_bg_color 5a446e
-      set -U tide_pwd_color_anchors c0c0bc
-      set -U tide_pwd_color_dirs c0c0bc
-      set -U tide_pwd_color_truncated_dirs c0c0bc
+      set -U tide_pwd_bg_color "${colors.base08}"
+      set -U tide_pwd_color_anchors "${colors.base05}"
+      set -U tide_pwd_color_dirs "${colors.base05}"
+      set -U tide_pwd_color_truncated_dirs "${colors.base05}"
       set -U tide_pwd_icon \uf07c
       set -U tide_pwd_icon_home \uf015
       set -U tide_pwd_icon_unwritable \uf023
@@ -204,8 +208,8 @@
       set -U tide_vi_mode_icon_insert I
       set -U tide_vi_mode_icon_replace R
       set -U tide_vi_mode_icon_visual V
-      set -U tide_virtual_env_bg_color brblack
-      set -U tide_virtual_env_color cyan
+      set -U tide_virtual_env_bg_color "${colors.base0A}"
+      set -U tide_virtual_env_color "${colors.base01}"
       set -U tide_virtual_env_icon \ue73c
     '';
 }

@@ -6,7 +6,7 @@
 
 {
   imports = [
-
+    inputs.nix-colors.homeManagerModule
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   programs.home-manager.enable = true;

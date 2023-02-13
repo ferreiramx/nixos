@@ -289,7 +289,7 @@ else
           widget.Spacer(length=theme["widgets"]["margin"]["x"]),
       ],
       size=int(theme["screen"]["height"] * 0.03),
-      background=theme["colors"]["bg1"],
+      background=theme["colors"]["bg2"],
       margin=[
           5,
           theme["windows"]["margin"]["x"],

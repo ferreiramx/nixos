@@ -1,11 +1,9 @@
 # TODO: Get rid of this file and inject vars directly in the other files
-# background_light='#FFFFFF'
-# background_dark='#0F0F0F'
-# background_darker='#121212'
-# background_alt='#212121'
-# titlebar_light='#F2F2F2'
-# titlebar_dark='#030303'
-vars: ''
+{ config, vars, ... }:
+let
+  colors = config.colorScheme.colors;
+in
+''
 theme = {
     "screen": {
         "width": ${toString vars.screen.width},
@@ -16,22 +14,22 @@ theme = {
         },
     },
     "colors": {
-        "bg1": "#151515",
-        "bg2": "#1c1c1c",
-        "bg3": "#202020",
-        "bg4": "#3c3c3c",
-        "fg1": "#c0c0bc",
-        "fg2": "#d0d0cc",
-        "fg3": "#e0e0dc",
-        "accent1": "#404049",
-        "accent2": "#4c5758",
-        "accent3": "#444d6e",
-        "accent4": "#3d646d",
-        "highlight1": "#6d3636",
-        "highlight2": "#773e26",
-        "highlight3": "#9f792c",
-        "highlight4": "#458260",
-        "highlight5": "#5a446e",
+        "bg1": "#${colors.base00}",
+        "bg2": "#${colors.base01}",
+        "bg3": "#${colors.base02}",
+        "bg4": "#${colors.base03}",
+        "fg1": "#${colors.base07}",
+        "fg2": "#${colors.base06}",
+        "fg3": "#${colors.base05}",
+        "accent1": "#${colors.base0C}",
+        "accent2": "#${colors.base0D}",
+        "accent3": "#${colors.base0E}",
+        "accent4": "#${colors.base0F}",
+        "highlight1": "#${colors.base08}",
+        "highlight2": "#${colors.base0B}",
+        "highlight3": "#${colors.base0A}",
+        "highlight4": "#${colors.base08}",
+        "highlight5": "#${colors.base0B}",
     },
     "windows": {
         "borders": {"width": 3, "radius": 12},
