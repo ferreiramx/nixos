@@ -1,13 +1,8 @@
 #!/bin/sh
 
-## Author : Aditya Shakya (adi1090x)
-## Mail : adi1090x@gmail.com
-## Github : @adi1090x
-## Reddit : @adi1090x
-
 rofi_command="rofi -theme ~/.config/rofi/powermenu/theme.rasi"
 
-uptime=$(uptime -p | sed -e 's/up //g')
+uptime=$(uptime | sed -e 's/up.*//g')
 
 # Options
 shutdown=""

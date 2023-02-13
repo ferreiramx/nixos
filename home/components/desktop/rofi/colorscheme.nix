@@ -1,4 +1,4 @@
-{lib}: ''
+''
 * {
     background: #151515;
     foreground: #c0c0bc;
@@ -6,8 +6,8 @@
     border-color: #202020;
     border: @border-color;
     border-alt: @border-color;
-    selected-foreground: #999999ff;
-    urgent: #ff0000ff;
+    selected-foreground: #404049;
+    urgent: #6d3636;
 
     active-background: #151515;
     active-foreground: @foreground;
@@ -23,13 +23,11 @@
     alternate-urgent-background: @urgent-background;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: #202020;
+    selected-active-background: #3c3c3c;
     selected-active-foreground: @foreground;
     selected-normal-background: #202020;
     selected-normal-foreground: @foreground;
     selected-urgent-background: #6d3636;
     selected-urgent-foreground: @foreground; 
-    
-    spacing: 2;
 }
 ''

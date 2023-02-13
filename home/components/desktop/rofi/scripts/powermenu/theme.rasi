@@ -1,30 +1,19 @@
-/*
- *
- * Author : Aditya Shakya (adi1090x)
- * Mail : adi1090x@gmail.com
- * Github : @adi1090x
- * Reddit : @adi1090x
- *
- */
-
-
 @import "~/.config/rofi/theme.rasi"
 
 configuration {
-    font:			"SourceSansPro Bold 26";
-    show-icons:                 false;
-    icon-theme: 		"Papirus";
-    drun-display-format:        "{name}";
-    disable-history:            false;
-    fullscreen:                 true;
-    hide-scrollbar:		true;
-    sidebar-mode:		false;
+    font:			                "SourceSansPro Bold 40";
+    show-icons:                     false;
+    drun-display-format:            "{name}";
+    disable-history:                false;
+    fullscreen:                     true;
+    hide-scrollbar:		            true;
+    sidebar-mode:		            false;
 }
 
 window {
     transparency:                   "real";
     background-color:               @background;
-    text-color:                     @selected-foreground;
+    text-color:                     @foreground;
     border-radius:                  0px;
     height:                         100%;
     width:                          100%;
@@ -35,120 +24,86 @@ window {
 
 prompt {
     enabled: 						true;
-	padding: 						4px 8px 4px 8px;
+	padding: 						0px 0px 0px 0px;
 	background-color: 				@background;
-	text-color: 					@selected-foreground;
+	text-color: 					@foreground;
 }
 
 textbox-prompt-colon {
 	expand: 						false;
-	str: 							"System |";
+	str: 							"System | ";
 	background-color: 				@background;
-	text-color: 					@selected-foreground;
-    padding:                        4px 0px 4px 8px;
+	text-color: 					@foreground;
+    padding:                        0px 0px 0px 0px;
+}
+
+textbox-dummy {
+	expand: 						true;
+	str: 							"";
+	background-color: 				@background;
+    padding:                        0px 0px 0px 0px;
 }
 
 inputbar {
-	children: 						[ textbox-prompt-colon, prompt ];
+	children: 						[ textbox-dummy, textbox-prompt-colon, prompt, textbox-dummy ];
     background-color:               @background;
     text-color:                     @selected-foreground;
     expand:                         false;
-    border:                  		1px;
-    border-radius:                  10px;
+    border:                  		0px;
     border-color:                  	@border;
-    margin:                         0px 0% 0px 37%;
-    padding:                        8px 8px 8px 8px;
+    margin:                         0% 0% 0% 0%;
+    padding:                        0px 0px 0px 0px;
     position:                       center;
-}
-
-
-entry {
-    background-color:               @background;
-    text-color:                     @foreground;
-    placeholder-color:              @foreground;
-    padding:                        4px 8px 4px 8px;
-    expand:                         true;
-    horizontal-align:               0;
-    placeholder:                    "Search";
-    blink:                          true;
-}
-
-case-indicator {
-    background-color:               @background;
-    text-color:                     @foreground;
-    spacing:                        0;
 }
 
 listview {
     background-color:               @background;
-    margin:                         0% 0% 0% 25%;
-    spacing:                        2.5%;
+    margin:                         0% 0% 0% 0%;
+    spacing:                        4%;
     cycle:                          false;
     dynamic:                        true;
     layout:                         horizontal;
+    expand:                         true;
+    border:                         0px;
 }
 
 mainbox {
     background-color:               @background;
-    spacing:                       	4%;
-    children:                       [ inputbar, listview ];
-    padding:                        30% 0% 0% 7%;
+    spacing:                       	5%;
+    children:                       [ textbox-dummy, inputbar, box-listview, textbox-dummy ];
+    margin:                         0% 0% 0% 0%;
+    expand:                         true;
+}
+
+box-listview {
+    background-color:               @background;
+    children:                       [ textbox-dummy, listview, textbox-dummy ];
+    margin:                         0% 0% 0% 0%;
+    orientation:                    horizontal;
+    expand:                         true;
 }
 
 element {
     background-color:               @background;
     text-color:                     @foreground;
     orientation:                    horizontal;
-    border-radius:                  10px;
-    padding:                        0px 0px 0px -5px;
-}
-
-element-icon {
-    size:                           65px;
-    border:                         0px;
+    padding:                        0px 0px 0px 0px;
 }
 
 element-text {
-    font:	   		    "Font Awesome 6 Free Regular 64";
+    font:	   		                "Font Awesome 6 Free Regular 67";
     expand:                         true;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    margin:                         60px 60px 60px 65px;
-    background-color: 		    @background;
-    text-color: 		    @foreground;
-}
-
-element normal.urgent,
-element alternate.urgent {
-    background-color:               @urgent;
-    text-color:                     @selected-foreground;
-    border-radius:                  10px;
-}
-
-element normal.active,
-element alternate.active {
-    background-color:               @background;
-    text-color:                     @selected-foreground;
+    background-color: 		        @background;
+    text-color: 		            @foreground;
 }
 
 element selected {
     background-color:               @background;
     text-color:                     @selected-foreground;
-    border:                  		1px;
-    border-radius:                  10px;
+    border:                  		0px;
     border-color:                  	@border;
 }
 
 element-text selected{
-	text-color: 		@selected-foreground;
-}
-
-element selected.urgent {
-    background-color:               @urgent;
-    text-color:                     @selected-foreground;
-}
-
-element selected.active {
-    background-color:               @background;
-    text-color:                          @selected-foreground;
+	text-color: 		            @selected-foreground;
 }

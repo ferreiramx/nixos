@@ -16,7 +16,6 @@
       ../common/optional/desktop/office
       ../common/optional/desktop/media
       ../common/optional/desktop/web
-      # ../common/optional/desktop/dm/gdm
       ../common/optional/desktop/dm/lightdm
       ../common/optional/desktop/wm/qtile
       ../common/optional/filesystem

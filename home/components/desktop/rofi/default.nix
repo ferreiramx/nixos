@@ -7,6 +7,6 @@
     executable = true;
   };
   xdg.configFile."rofi/theme.rasi" = {
-    text = (import ./colorscheme.nix {inherit lib;});
+    text = import ./colorscheme.nix;
   };
 }
