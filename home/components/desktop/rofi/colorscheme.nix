@@ -1,19 +1,23 @@
+{ config, ... }:
+let
+    colors = config.colorScheme.colors;
+in
 ''
 * {
-    background: #151515;
-    foreground: #c0c0bc;
+    background: #${colors.base01};
+    foreground: #${colors.base05};
     background-color: @background;
-    border-color: #202020;
+    border-color: #${colors.base02};
     border: @border-color;
     border-alt: @border-color;
-    selected-foreground: #404049;
-    urgent: #6d3636;
+    selected-foreground: #${colors.base03};
+    urgent: #${colors.base0A};
 
-    active-background: #151515;
+    active-background: #${colors.base02};
     active-foreground: @foreground;
-    normal-background: #1c1c1c;
+    normal-background: #${colors.base01};
     normal-foreground: @foreground;
-    urgent-background: #151515;
+    urgent-background: #${colors.base02};
     urgent-foreground: @foreground;
 
     alternate-active-background: @active-background;
@@ -23,11 +27,11 @@
     alternate-urgent-background: @urgent-background;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: #3c3c3c;
+    selected-active-background: #${colors.base03};
     selected-active-foreground: @foreground;
-    selected-normal-background: #202020;
+    selected-normal-background: #${colors.base02};
     selected-normal-foreground: @foreground;
-    selected-urgent-background: #6d3636;
+    selected-urgent-background: #${colors.base0A};
     selected-urgent-foreground: @foreground; 
 }
 ''
