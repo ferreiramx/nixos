@@ -68,8 +68,8 @@
       };
     };
     iconTheme = {
-      package = pkgs.nordzy-icon-theme;
-      name = "Nordzy-dark";
+      package = pkgs.tela-icon-theme;
+      name = "Tela-black-dark";
     };
   };
   }

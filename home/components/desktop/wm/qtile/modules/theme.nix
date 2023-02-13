@@ -1,4 +1,10 @@
 # TODO: Get rid of this file and inject vars directly in the other files
+# background_light='#FFFFFF'
+# background_dark='#0F0F0F'
+# background_darker='#121212'
+# background_alt='#212121'
+# titlebar_light='#F2F2F2'
+# titlebar_dark='#030303'
 vars: ''
 theme = {
     "screen": {
