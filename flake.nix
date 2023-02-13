@@ -18,6 +18,9 @@
     # Secrets management
     sops-nix.url = "github:mic92/sops-nix";
 
+    # Nixified Spicetify
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

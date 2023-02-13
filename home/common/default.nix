@@ -7,6 +7,7 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModule
+    inputs.spicetify-nix.homeManagerModule
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   programs.home-manager.enable = true;

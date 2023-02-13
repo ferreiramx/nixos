@@ -1,20 +1,23 @@
-{ lib }: ''
+{ config, ... }:
+let
+  colors = config.colorScheme.colors;
+in
+''
 [normal]
-text               = e0e0dc
-subtext            = e0e0dc
-sidebar-text       = e0e0dc
-main               = 151515
-sidebar            = 151515
-player             = 151515
-card               = 1c1c1c
-shadow             = c0c0bc
-selected-row       = 1c1c1c
-button             = 3c3c3c
-button-active      = 3c3c3c
-button-disabled    = 1c1c1c
-tab-active         = 202020
-notification       = 1c1c1c
-notification-error = 6d3636
-misc
-               = 404049
+text               = ${colors.base05}
+subtext            = ${colors.base05}
+sidebar-text       = ${colors.base05}
+main               = ${colors.base01}
+sidebar            = ${colors.base01}
+player             = ${colors.base01}
+card               = ${colors.base02}
+shadow             = ${colors.base0F}
+selected-row       = ${colors.base02}
+button             = ${colors.base03}
+button-active      = ${colors.base03}
+button-disabled    = ${colors.base02}
+tab-active         = ${colors.base02}
+notification       = ${colors.base02}
+notification-error = ${colors.base0A}
+misc               = ${colors.base08}
 ''
