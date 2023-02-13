@@ -1,5 +1,9 @@
-{ pkgs, vars, ... }: {
-   services.dunst = {
+{ config, pkgs, vars, ... }:
+let
+  colors = config.colorScheme.colors;
+in
+{
+  services.dunst = {
     enable = true;
     settings = {
       global = {
@@ -16,7 +20,7 @@
         padding = 10;
         horizontal_padding = 10;
         frame_width = 3;
-        frame_color = "#2c2c2c";
+        frame_color = "#${colors.base02}";
         separator_color = "frame";
         sort = "yes";
         idle_threshold = 45;
@@ -49,21 +53,21 @@
         per_monitor_dpi = false;
       };
       urgency_low = {
-        background = "#1c1c1c";
-        foreground = "#e0e0dc";
-        frame_color = "#202020";
+        background = "#${colors.base01}";
+        foreground = "#${colors.base05}";
+        frame_color = "#${colors.base02}";
         timeout = 10;
       };
       urgency_normal = {
-        background = "#1c1c1c";
-        foreground = "#e0e0dc";
-        frame_color = "#202020";
+        background = "#${colors.base01}";
+        foreground = "#${colors.base05}";
+        frame_color = "#${colors.base02}";
         timeout = 10;
       };
       urgency_critical = {
-        background = "#6d3636";
-        foreground = "#e0e0dc";
-        frame_color = "#202020";
+        background = "#${colors.base0A}";
+        foreground = "#${colors.base09}";
+        frame_color = "#${colors.base02}";
         timeout = 0;
       };
     };
@@ -72,4 +76,4 @@
       name = "Tela-black-dark";
     };
   };
-  }
+}
