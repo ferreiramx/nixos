@@ -51,6 +51,4 @@ in
         hidePodcasts
       ];
     };
-  # xdg.configFile."spicetify/Themes/nix-colors/color.ini".text = (import ./colorscheme.nix {inherit config;});
-  # xdg.configFile."spicetify/Themes/nix-colors/user.css".source = ./user.css;
 }
