@@ -34,27 +34,27 @@ in
     '';
   xdg.configFile."fish/conf.d/nix_theme.fish".text =
     ''
-      set -U fish_color_autosuggestion 9C9C9C
+      set -U fish_color_autosuggestion ${colors.base0E}
       set -U fish_color_cancel -r
-      set -U fish_color_command F4F4F4
-      set -U fish_color_comment B0B0B0
+      set -U fish_color_command ${colors.base0A}
+      set -U fish_color_comment ${colors.base09}
       set -U fish_color_cwd normal
       set -U fish_color_cwd_root red
-      set -U fish_color_end 969696
-      set -U fish_color_error FFA779
-      set -U fish_color_escape 00a6b2
+      set -U fish_color_end ${colors.base04}
+      set -U fish_color_error 974B46
+      set -U fish_color_escape ${colors.base0A}
       set -U fish_color_history_current --bold
       set -U fish_color_host normal
       set -U fish_color_host_remote
-      set -U fish_color_keyword F4F4F4
+      set -U fish_color_keyword ${colors.base0A}
       set -U fish_color_match --background=brblue
       set -U fish_color_normal normal
-      set -U fish_color_operator 00a6b2
-      set -U fish_color_option A0A0F0
-      set -U fish_color_param A0A0F0
-      set -U fish_color_quote 666A80
+      set -U fish_color_operator ${colors.base0A}
+      set -U fish_color_option ${colors.base08}
+      set -U fish_color_param ${colors.base08}
+      set -U fish_color_quote ${colors.base03}
       set -U fish_color_redirection FAFAFA
-      set -U fish_color_search_match 'bryellow'  '--background=brblack'
+      set -U fish_color_search_match '${colors.base08}'  '--background=brblack'
       set -U fish_color_selection 'white'  '--bold'  '--background=brblack'
       set -U fish_color_status red
       set -U fish_color_user normal
