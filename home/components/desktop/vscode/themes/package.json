@@ -1,8 +1,8 @@
 {
-  "name": "nix-colors",
-  "displayName": "Nix Colors",
+  "name": "vscode-nix-colors",
+  "displayName": "Nix Colors Theme",
   "description": "Dynamic color theme using nix-colors",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.70.0"
   },
