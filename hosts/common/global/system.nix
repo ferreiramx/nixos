@@ -2,6 +2,9 @@
   environment.systemPackages = with pkgs; [
     polkit_gnome
   ];
+  environment.variables = {
+    "PYTHONDONTWRITEBYTECODE" = "1";
+  }; 
   programs.dconf.enable = true;
   security.polkit.enable = true;
   security.sudo.wheelNeedsPassword = false;
