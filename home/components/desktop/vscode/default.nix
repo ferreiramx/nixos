@@ -66,9 +66,10 @@
         ];
   };
   # Custom theme
-  xdg.configFile."VSCode/themes/nix-colors" = {
-    source = ./themes;
-    recursive = true;
-  };
-  xdg.configFile."VSCode/themes/nix-colors/nix-colors.json".text = import ./nix-colors.nix {inherit config;}; 
+  home.packages = [ vscode-nix-colors ];
+  # xdg.configFile."VSCode/themes/nix-colors" = {
+  #   source = ./themes;
+  #   recursive = true;
+  # };
+  # xdg.configFile."VSCode/themes/nix-colors/nix-colors.json".text = import ./nix-colors.nix {inherit config;}; 
 }
