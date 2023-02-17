@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }: 
+let
+vscode-nix-colors = pkgs.callPackage ./vscode { inherit config; };
+in
+{
   # VSCode 
   programs.vscode = {
     enable = true;

@@ -1,3 +1,3 @@
 { pkgs }: {
-  vscode-nix-colors = pkgs.callPackage ./vscode { };
+  # vscode-nix-colors = pkgs.callPackage ./vscode { };
 }

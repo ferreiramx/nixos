@@ -1,12 +1,6 @@
-{ 
-  config,
-  pkgs,
-  lib, 
-  stdenv,
-  fetchFromGitHub
-}:
+{ config, pkgs, lib }:
 let
-  theme = import ./nix-colors.nix {inherit config;}; 
+  theme = import ./theme.nix {inherit config;}; 
 in
 with lib;
 # Define the package
