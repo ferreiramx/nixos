@@ -1,6 +1,6 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, ... }:
 let
-vscode-nix-colors = pkgs.callPackage ./vscode { inherit config; };
+  vscode-nix-colors = pkgs.callPackage ./vscode-nix-colors.nix { inherit config pkgs; };
 in
 {
   # VSCode 
@@ -67,13 +67,17 @@ in
             version = "1.3.0";
             sha256 = "FGKDEPKSbyYZ5wef5Iip7oOuQFhPD/kNMtuKNefuz+8=";
           }
-        ];
+        ]
+      ++ [
+        (pkgs.vscode-utils.buildVscodeExtension
+        {
+          name = vscode-nix-colors.name;
+          vscodeExtName = vscode-nix-colors.name;
+          src = "${vscode-nix-colors}/${vscode-nix-colors.name}.zip";
+          vscodeExtUniqueId = "aferreira.vscode-nix-colors";
+          vscodeExtPublisher = "aferreira";
+          version = "1.0.0";
+        }) 
+      ];
   };
-  # Custom theme
-  home.packages = [ vscode-nix-colors ];
-  # xdg.configFile."VSCode/themes/nix-colors" = {
-  #   source = ./themes;
-  #   recursive = true;
-  # };
-  # xdg.configFile."VSCode/themes/nix-colors/nix-colors.json".text = import ./nix-colors.nix {inherit config;}; 
 }

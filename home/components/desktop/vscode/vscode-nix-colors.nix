@@ -1,23 +1,22 @@
-{ config, pkgs, lib }:
+{ config, pkgs, lib, stdenv }:
 let
-  theme = import ./theme.nix {inherit config;}; 
+  theme = import ./theme.nix { inherit config; };
 in
 with lib;
-# Define the package
-pkgs.stdenv.mkDerivation {
+stdenv.mkDerivation {
   name = "vscode-nix-colors";
   version = "1.0.0";
   src = ./nix-colors;
 
-  buildInputs = with pkgs; [ vscode vscode.vsce nodePackages.npm ];
-  buildCommand = ''
-    mkdir -p $out
-    echo ${theme} > $out/nix-colors.json
-    cd $src
-    $buildInputs/vsce package --allow-missing-repository -o $out/vscode-nix-colors.vsix
-  '';
+  buildInputs = with pkgs; [ vscode vsce nodePackages.npm ];
 
   installPhase = ''
-    ${pkgs.vscode}/bin/code --install-extension $out/vscode-nix-colors.vsix
-  '';
+    export HOME=$(pwd)
+    install -Dm 0744 $src/LICENSE $out/LICENSE
+    install -Dm 0745 $src/install.sh $out/install.sh
+    install -Dm 0744 $src/package.json $out/package.json
+    echo '${theme}' > $out/nix-colors.json
+    cd $out
+    vsce package --allow-missing-repository -o $out/vscode-nix-colors.zip
+    '';
 }
