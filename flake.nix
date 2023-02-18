@@ -26,7 +26,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, devenv, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, devenv, sops-nix, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
@@ -39,14 +39,13 @@
       overlays = import ./overlays { inherit inputs outputs; };
 
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
-      # packages.x86_64-linux = [devenv.packages.x86_64-linux.devenv];
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
       nixosConfigurations = {
         # Work Laptop
         kiryu = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/kiryu ];
+          modules = [./hosts/kiryu ];
         };
       };
 

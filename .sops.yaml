@@ -1,0 +1,16 @@
+keys:
+  - &aferreira age1e5rwmtnqgn2w6pvjjjdplegcymsl94emxye66z93t9ddy56qmq0q6jdp5s
+  - &mugendramon age1pye4qp6eyymad5h43l4lxksexn040zd75s5mrtpuffu976z6zghq0a63cx
+  - &kiryu age1pye4qp6eyymad5h43l4lxksexn040zd75s5mrtpuffu976z6zghq0a63cx
+creation_rules:
+  - path_regex: hosts/kiryu/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *kiryu
+      - *aferreira
+  - path_regex: hosts/common/global/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *kiryu
+      - *mugendramon
+      - *aferreira

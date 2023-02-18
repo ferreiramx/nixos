@@ -20,7 +20,9 @@ in
       "libvirtd"
     ];
     packages = [ pkgs.home-manager ];
+    passwordFile = config.sops.secrets.aferreira.path;
   };
-
+  sops.secrets.aferreira.neededForUsers = true;
+  sops.secrets.github.owner = "aferreira";
   home-manager.users.aferreira = import ../../../../home/${config.networking.hostName}.nix;
 }

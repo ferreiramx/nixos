@@ -7,6 +7,7 @@
     ./locale.nix
     ./nix.nix
     ./fish.nix
+    ./sops.nix
     inputs.home-manager.nixosModules.home-manager
   ] ++ (builtins.attrValues outputs.nixosModules);
 
