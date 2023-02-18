@@ -21,9 +21,12 @@
     # Nixified Spicetify
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 
+    # Devenv
+    devenv.url = "github:cachix/devenv/latest";
+
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, devenv, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
@@ -36,6 +39,7 @@
       overlays = import ./overlays { inherit inputs outputs; };
 
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
+      # packages.x86_64-linux = [devenv.packages.x86_64-linux.devenv];
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });
 
       nixosConfigurations = {
