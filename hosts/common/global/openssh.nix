@@ -1,3 +1,3 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ config, ... }: {
   services.openssh.enable = true;
 }

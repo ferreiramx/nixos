@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { inputs, outputs, lib, config, pkgs, ... }:
 
 {
@@ -13,7 +9,6 @@
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
 
-  # Git
   programs.git = {
     enable = true;
     userName = "ferreiramx";

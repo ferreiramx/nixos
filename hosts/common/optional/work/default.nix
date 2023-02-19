@@ -1,5 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
-  imports = [ ];
+  imports = [
+    ./hosts.nix
+   ];
   environment.systemPackages = with pkgs; [
     insomnia
     slack
@@ -26,7 +28,6 @@
 
   services.openvpn.servers = {
     boletia = {
-      # config = '' config /root/nixos/openvpn/boletia.conf'';
       config = ''
                 cipher AES-256-CBC
                 client

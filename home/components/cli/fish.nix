@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ inputs, lib, config, pkgs, ... }: 
 let
   colors = config.colorScheme.colors;
 in
@@ -15,6 +15,11 @@ in
       gb = "git branch -m";
       gp = "git push";
       gu = "git pull";
+      ghr = "git remote set origin https://(cat /run/secrets/github)@github.com/";
+
+      sps = ''nix-shell -p sops --run "sops ~/.nixos/hosts/common/global/secrets.yml"'';
+
+      ec2 = "ssh -i /etc/ssh/data-engineering.pem ubuntu@";
     };
     shellInit = ''
       set -U fish_greeting
