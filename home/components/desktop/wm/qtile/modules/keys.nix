@@ -72,6 +72,31 @@ keys = [
         lazy.spawn(f"{home}/.config/rofi/launcher/launcher.sh"),
         desc="App Launcher",
     ),
+    # Volume Keys
+    Key(
+        [],
+        "XF86AudioLowerVolume",
+        lazy.spawn(f"{home}/.config/qtile/scripts/pamixer.sh down"),
+        desc="Lower Volume",
+    ),
+    Key(
+        [],
+        "XF86AudioRaiseVolume",
+        lazy.spawn(f"{home}/.config/qtile/scripts/pamixer.sh up"),
+        desc="Raise Volume",
+    ),
+    Key(
+        [],
+        "XF86AudioMute",
+        lazy.spawn(f"{home}/.config/qtile/scripts/pamixer.sh mute"),
+        desc="Toggle Mute",
+    ),
+    Key(
+        [],
+        "XF86AudioMicMute",
+        lazy.spawn(f"{home}/.config/qtile/scripts/pamixer.sh micmute"),
+        desc="Toggle Mute",
+    ),
 ]
 
 # Drag floating layouts.

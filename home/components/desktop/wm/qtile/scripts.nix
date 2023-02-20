@@ -28,6 +28,9 @@
             mute)
                 pamixer --toggle-mute
             ;;
+            micmute)
+                pamixer --source $(pamixer --list-sources | grep input | awk '{print $1}') --toggle-mute
+            ;;
         esac
       '';
       executable = true;

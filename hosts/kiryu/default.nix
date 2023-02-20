@@ -1,15 +1,16 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { inputs, pkgs, ... }: {
   imports =
     [
+      # Hardware
       inputs.nixos-hardware.nixosModules.asus-zephyrus-ga401
       ./hardware-configuration.nix
+      ./asus.nix
+      ./keybinds.nix
 
+      # Global Settings
       ../common/global
 
+      # Optional settings enabled on this machine
       ../common/optional/audio
       ../common/optional/bluetooth
       ../common/optional/desktop
@@ -24,11 +25,11 @@
       ../common/optional/hardware/logitech
       ../common/optional/hardware/monitoring
       ../common/optional/hardware/touchpad
-
       # ../common/optional/network
       ../common/optional/virt
       ../common/optional/work
 
+      # Users for this machine
       ../common/users/aferreira
 
     ];
