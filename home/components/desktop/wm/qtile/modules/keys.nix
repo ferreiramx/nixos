@@ -1,4 +1,4 @@
-''
+vars: ''
 import os
 from libqtile.lazy import lazy
 from libqtile.config import Key, Click, Drag
@@ -97,6 +97,49 @@ keys = [
         lazy.spawn(f"{home}/.config/qtile/scripts/pamixer.sh micmute"),
         desc="Toggle Mute",
     ),
+    # Screenshot
+    Key(
+        [mod, "shift"],
+        "s", 
+        lazy.spawn(
+            "sleep 1; scrot -s 'screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~/pictures ; viewnior ~/pictures/$f'",
+            shell=True,
+        ), 
+        desc="Take Screenshot"
+    ),
+''
++
+(
+    # Add ROG keybind if this is an Asus laptop
+    if (vars.hostName == "kiryu")
+    then ''
+    # ROG Key for GPU mode switching
+    Key(
+        [ ],
+        "XF86Launch1", 
+        lazy.spawn("switch-gfx-mode"), 
+        desc="Switch GPU Mode",
+    ),
+    ''
+    else ""
+)
++
+(
+    # Add touchpad toggle keybind if this is a laptop
+    if (vars.class == "laptop")
+    then ''
+    # Toggle touchpad
+    Key(
+        [ ],
+        "XF86TouchpadToggle", 
+        lazy.spawn("touchpad-toggle"), 
+        desc="Toggle Touchpad",
+    ),
+    ''
+    else ""
+)
++
+''
 ]
 
 # Drag floating layouts.

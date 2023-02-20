@@ -24,7 +24,7 @@
       ../common/optional/graphics/nvidia
       ../common/optional/hardware/logitech
       ../common/optional/hardware/monitoring
-      ../common/optional/hardware/touchpad
+      ../common/optional/hardware/laptop
       # ../common/optional/network
       ../common/optional/virt
       ../common/optional/work
@@ -50,6 +50,7 @@
 
   home-manager.extraSpecialArgs = {
     vars = {
+      hostName = "kiryu";
       class = "laptop";
       screen = {
         name = "eDP";

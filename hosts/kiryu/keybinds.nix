@@ -2,7 +2,7 @@
   services.actkbd = {
     enable = true;
     bindings = [
-      # Everything involving audio does not work with actkbd. Will let WM handle them.
+      # Everything involving audio does not work with actkbd. Will let WM handle it.
       # Volume Down
       # {
       #   keys = [ 114 ];
@@ -21,11 +21,12 @@
       #   events = [ ];
       #   command = "";
       # }
-      # # ROG Key | Change dGPU mode
+      # ROG Key | Change dGPU mode
+      # Does not work via actkbd either. Handling via WM.
       # {
-      #   keys = [ ];
-      #   events = [ ];
-      #   command = "";
+      #   keys = [ 148 ];
+      #   events = [ "key" ];
+      #   command = "/run/current-system/sw/bin/switch-gfx-mode";
       # }
       # # F1 | Mute
       # {
@@ -45,45 +46,45 @@
         events = [ "key" ];
         command = "/run/current-system/sw/bin/asusctl -n";
       }
-      # # F4 | AURA Key | Change keyboard backlight mode
-      #       {
-      #   keys = [ ];
-      #   events = [ ];
-      #   command = "";
+      # F4 | AURA Key | Change keyboard backlight mode
+      {
+        keys = [ 202 ];
+        events = [ "key" ];
+        command = "/run/current-system/sw/bin/asusctl led-mode -n";
+      }
+      # F5 | Fan Control
+      {
+        keys = [ 203 ];
+        events = [ "key" ];
+        command = "/run/current-system/sw/bin/asusctl profile -n";
+      }
+      # F6 | Screenshot
+      # Handling via WM
+      # F7 | Screen brightness down
+      {
+        keys = [ 224 ];
+        events = [ "key" ];
+        command = "/run/current-system/sw/bin/brightnessctl set 26-";
+      }
+      # F8 | Screen brightness up
+      {
+        keys = [ 225 ];
+        events = [ "key" ];
+        command = "/run/current-system/sw/bin/brightnessctl set 26+";
+      }
+      # F9 | Display Control 
+      # Currently unused.
+      # F10 | Touchpad Enable/Disable
+      # Does not currently work with actkbd. Handling via WM.
+      # {
+      #   keys = [ 191 ];
+      #   events = [ "key" ];
+      #   command = "/run/current-system/sw/bin/touchpad-toggle";
       # }
-      # # F5 | Fan Control
-      #       {
-      #   keys = [ ];
-      #   events = [ ];
-      #   command = "";
-      # }
-      # # F6 | ??? (Unused)
-      # # F7 | Screen brightness down
-      #       {
-      #   keys = [ ];
-      #   events = [ ];
-      #   command = "";
-      # }
-      # # F8 | Screen brightness up
-      #       {
-      #   keys = [ ];
-      #   events = [ ];
-      #   command = "";
-      # }
-      # # F9 | Display Control (Unused)
-      # # F10 | Touchpad Enable/Disable
-      #       {
-      #   keys = [ ];
-      #   events = [ ];
-      #   command = "";
-      # }
-      # # F11 | Suspend
-      #       {
-      #   keys = [ ];
-      #   events = [ ];
-      #   command = "";
-      # }
-      # # F12 | Airplane Mode (Works out of the box)
+      # F11 | Suspend
+      # Works out of the box.
+      # F12 | Airplane Mode 
+      # Works out of the box.
     ];
   };
 }

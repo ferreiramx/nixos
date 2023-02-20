@@ -1,4 +1,8 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+    touchpad-toggle
+  ];
   services.xserver = {
     libinput = {
       enable = true;

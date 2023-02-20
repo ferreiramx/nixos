@@ -259,8 +259,9 @@ vars:
           widget.Spacer(length=theme["widgets"]["margin"]["x"]),
 ''
 +
-(if (vars.class == "laptop")
-then
+(
+    if (vars.class == "laptop")
+    then
         ''
         # Battery Indicator
           widget.TextBox(
@@ -279,8 +280,7 @@ then
             #fontsize=theme["fonts"]["icons2"]["size"],
             format=' {percent:2.0%}',
         ),''
-else
-        ""
+    else ""
 )
   +
 ''
