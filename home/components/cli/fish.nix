@@ -17,7 +17,7 @@ in
       gu = "git pull";
       ghr = "git remote set origin https://(cat /run/secrets/github)@github.com/";
 
-      sps = ''nix-shell -p sops --run "sops ~/.nixos/hosts/common/global/secrets.yml"'';
+      sops = ''nix-shell -p sops --run "sops ~/.nixos/hosts/common/global/secrets.yml"'';
 
       ec2 = "ssh -i /etc/ssh/data-engineering.pem ubuntu@";
     };

@@ -3,6 +3,10 @@
     owner = "aferreira";
     path = "/etc/ssh/data-engineering.pem";
   };
+  sops.secrets.devops-pem = {
+    owner = "aferreira";
+    path = "/etc/ssh/devops.pem";
+  };
   networking.hosts = {
     "172.30.7.116" = [ "airbyte" ];
     "172.30.7.29" = [ "prefect" ];
