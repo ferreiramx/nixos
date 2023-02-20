@@ -154,7 +154,5 @@ mouse = [
         [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
     ),
     Click([mod], "Button2", lazy.window.bring_to_front()),
-    Click([mod], "Button9", lazy.spawn(f"{home}/.config/qtile/eww_vol.sh up")),
-    Click([mod], "Button8", lazy.spawn(f"{home}/.config/qtile/eww_vol.sh down")),
 ]
 ''
