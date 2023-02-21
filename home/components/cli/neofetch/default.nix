@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [ neofetch ];
   xdg.configFile."neofetch/config.conf".text = import ./config.nix;
 }

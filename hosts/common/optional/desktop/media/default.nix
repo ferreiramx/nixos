@@ -1,5 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
-  imports = [ ];
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     spotify
     spicetify-cli

@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
   imports = [
     ./vivaldi.nix
     ./firefox.nix

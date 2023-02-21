@@ -1,34 +1,32 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
+# TODO: Set proper AMD graphics config
 { inputs, pkgs, ... }: {
   imports =
     [
-      inputs.nixos-hardware.nixosModules.asus-zephyrus-ga401
+      # Hardware
       ./hardware-configuration.nix
 
+      # Global Settings
       ../common/global
 
+      # Optional settings enabled on this machine
       ../common/optional/audio
       ../common/optional/bluetooth
       ../common/optional/desktop
       ../common/optional/desktop/office
       ../common/optional/desktop/media
       ../common/optional/desktop/web
-      ../common/optional/desktop/dm/gdm
+      ../common/optional/desktop/dm/lightdm
       ../common/optional/desktop/wm/qtile
       ../common/optional/filesystem
-      ../common/optional/games/runelite.nix
-      ../common/optional/graphics/nvidia
+      ../common/optional/games
+      ../common/optional/graphics/amd
       ../common/optional/hardware/logitech
       ../common/optional/hardware/monitoring
-      ../common/optional/hardware/touchpad
-
       # ../common/optional/network
       ../common/optional/virt
       ../common/optional/work
 
+      # Users for this machine
       ../common/users/aferreira
 
     ];
@@ -37,13 +35,17 @@
   time.timeZone = "America/Mexico_City";
   i18n.defaultLocale = "en_US.utf8";
 
-  services.xserver.layout = "us";
-  services.xserver.xkbVariant = "";
+  services.xserver = {
+    layout = "us";
+    xkbVariant = "";
+    displayManager.defaultSession = "none+qtile";
+  };
 
   services.getty.autologinUser = "aferreira";
 
   home-manager.extraSpecialArgs = {
     vars = {
+      hostName = "mugendramon";
       class = "desktop";
       screen = {
         name = "DP-1";

@@ -1,10 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     polkit_gnome
   ];
   environment.variables = {
     "PYTHONDONTWRITEBYTECODE" = "1";
-  }; 
+  };
   programs.dconf.enable = true;
   security.polkit.enable = true;
   security.sudo.wheelNeedsPassword = false;
@@ -19,7 +19,7 @@
     });
   '';
 
-   systemd = {
+  systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       description = "polkit-gnome-authentication-agent-1";
       wants = [ "graphical-session.target" ];

@@ -1,5 +1,5 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     ntfs3g
-  ];  
+  ];
 }

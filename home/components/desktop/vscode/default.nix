@@ -70,14 +70,14 @@ in
         ]
       ++ [
         (pkgs.vscode-utils.buildVscodeExtension
-        {
-          name = vscode-nix-colors.name;
-          vscodeExtName = vscode-nix-colors.name;
-          src = "${vscode-nix-colors}/${vscode-nix-colors.name}.zip";
-          vscodeExtUniqueId = "aferreira.vscode-nix-colors";
-          vscodeExtPublisher = "aferreira";
-          version = "1.0.0";
-        }) 
+          {
+            name = vscode-nix-colors.name;
+            vscodeExtName = vscode-nix-colors.name;
+            src = "${vscode-nix-colors}/${vscode-nix-colors.name}.zip";
+            vscodeExtUniqueId = "aferreira.vscode-nix-colors";
+            vscodeExtPublisher = "aferreira";
+            version = "1.0.0";
+          })
       ];
   };
 }

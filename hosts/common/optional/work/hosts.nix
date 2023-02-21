@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
   sops.secrets.data-engineering-pem = {
     owner = "aferreira";
     path = "/etc/ssh/data-engineering.pem";

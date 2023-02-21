@@ -59,9 +59,9 @@
         refresh = 120;
       };
       fonts = {
-        dunst = 14;
         sans = 18;
         mono = 18;
+        dunst = 14;
         small-icon = 20;
         large-icon = 29;
         os-icon = 25;

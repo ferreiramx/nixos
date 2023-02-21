@@ -1,5 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
-  imports = [];
+{ config, ... }: {
   programs.rofi.enable = true;
   xdg.configFile."rofi" = {
     source = ./scripts;
@@ -7,6 +6,6 @@
     executable = true;
   };
   xdg.configFile."rofi/theme.rasi" = {
-    text = import ./colorscheme.nix {inherit config;};
+    text = import ./colorscheme.nix { inherit config; };
   };
 }

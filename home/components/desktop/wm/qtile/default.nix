@@ -13,7 +13,7 @@
     "qtile/modules/keys.py".text = import ./modules/keys.nix vars;
     "qtile/modules/layouts.py".text = import ./modules/layouts.nix vars;
     "qtile/modules/screens.py".text = import ./modules/screens.nix;
-    "qtile/modules/theme.py".text = (import ./modules/theme.nix {inherit config vars;});
+    "qtile/modules/theme.py".text = (import ./modules/theme.nix { inherit config vars; });
     "qtile/modules/utils.py".text = import ./modules/utils.nix;
   };
 }

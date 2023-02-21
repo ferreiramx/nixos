@@ -1,5 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
-  imports = [];
+{
   services.picom = {
     enable = true;
     activeOpacity = 1.0;
