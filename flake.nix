@@ -47,6 +47,11 @@
           specialArgs = { inherit inputs outputs; };
           modules = [./hosts/kiryu ];
         };
+        # Main Desktop
+        mugendramon = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [./hosts/mugendramon ];
+        };
       };
 
       homeConfigurations = {
@@ -55,6 +60,12 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/kiryu.nix ];
+        };
+        # Main Desktop
+        "aferreira@mugendramon" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/mugendramon.nix ];
         };
       };
     };
