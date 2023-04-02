@@ -28,6 +28,7 @@ in
         ms-toolsai.jupyter
         ms-toolsai.jupyter-renderers
         jnoortheen.nix-ide
+        ms-vscode-remote.remote-ssh
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace
         [
@@ -66,6 +67,12 @@ in
             publisher = "vberlier";
             version = "1.3.0";
             sha256 = "FGKDEPKSbyYZ5wef5Iip7oOuQFhPD/kNMtuKNefuz+8=";
+          }
+          {
+            name = "vscode-yaml";
+            publisher = "redhat";
+            version = "1.12.2";
+            sha256 = "EjHQvWiEEfLxM+c/SWAJ2H9ltGEgzMSC84Zyl5u+eqQ=";
           }
         ]
       ++ [

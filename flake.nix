@@ -24,6 +24,9 @@
     # Devenv
     devenv.url = "github:cachix/devenv/latest";
 
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
+
   };
 
   outputs = { self, nixpkgs, home-manager, devenv, sops-nix, ... }@inputs:
@@ -47,6 +50,13 @@
           specialArgs = { inherit inputs outputs; };
           modules = [./hosts/kiryu ];
         };
+
+        # Work Laptop Hyprland Test
+        hypr-kiryu = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [./hosts/hypr-kiryu ];
+        };
+
         # Main Desktop
         mugendramon = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
@@ -59,8 +69,16 @@
         "aferreira@kiryu" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/hypr-kiryu.nix ];
+        };
+
+        # Work Laptop Hyprland Test
+        "aferreira@hypr-kiryu" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/kiryu.nix ];
         };
+
         # Main Desktop
         "aferreira@mugendramon" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;

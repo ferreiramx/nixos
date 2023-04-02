@@ -11,6 +11,7 @@
     "172.30.7.116" = [ "airbyte" ];
     "172.30.7.29" = [ "prefect" ];
     "172.30.0.13" = [ "streamlit" ];
+    "172.30.7.108" = [ "cube" ];
     # "172.0.0.0" = [ "baserow" ];
   };
   programs.ssh.knownHosts = {
