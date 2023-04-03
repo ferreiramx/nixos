@@ -10,7 +10,7 @@
     extraPortals = with pkgs; [];
   };
   programs.xwayland.enable = true;
-
+  security.pam.services.swaylock = {};
   environment.sessionVariables = {
     MOZ_ENABLE_WAYLAND="1";
     # GDK_BACKEND="wayland";
@@ -24,5 +24,9 @@
   environment.systemPackages = with pkgs; [
     qt5ct
     libva
+    hyprpaper
+    swaylock
+    grim
+    slurp
   ];
 }

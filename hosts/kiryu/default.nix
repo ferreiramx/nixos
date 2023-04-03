@@ -17,8 +17,10 @@
       ../common/optional/desktop/office
       ../common/optional/desktop/media
       ../common/optional/desktop/web
-      ../common/optional/desktop/dm/lightdm
+      # ../common/optional/desktop/dm/lightdm
       ../common/optional/desktop/wm/qtile
+      ../common/optional/desktop/dm/gdm
+      ../common/optional/desktop/wm/hyprland
       ../common/optional/filesystem
       ../common/optional/games/runelite.nix
       ../common/optional/graphics/nvidia
@@ -32,6 +34,8 @@
       # Users for this machine
       ../common/users/aferreira
 
+      inputs.hyprland.nixosModules.default
+
     ];
 
   networking.hostName = "kiryu";
@@ -41,7 +45,7 @@
   services.xserver = {
     layout = "us";
     xkbVariant = "";
-    displayManager.defaultSession = "none+qtile";
+    displayManager.defaultSession = "hyprland";
   };
 
   services.tlp.enable = false;
@@ -53,7 +57,7 @@
       hostName = "kiryu";
       class = "laptop";
       screen = {
-        name = "eDP";
+        name = "eDP-1";
         width = 2560;
         height = 1440;
         refresh = 120;

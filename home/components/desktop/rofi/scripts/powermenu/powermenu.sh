@@ -2,7 +2,7 @@
 
 rofi_command="rofi -theme ~/.config/rofi/powermenu/theme.rasi"
 
-uptime=$(uptime | sed -e 's/up.*//g')
+uptime=$(uptime | sed -e 's/.*up //g' | sed -e 's/,.*//g')
 
 # Options
 shutdown=""

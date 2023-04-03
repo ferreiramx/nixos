@@ -9,7 +9,7 @@ theme = {
         "width": ${toString vars.screen.width},
         "height": ${toString vars.screen.height},
         "wallpaper": {
-            "file": "/home/aferreira/.wp",
+            "file": "/home/aferreira/.wp.png",
             "mode": "stretch",
         },
     },
