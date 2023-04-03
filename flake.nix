@@ -67,7 +67,7 @@
         # Home Server
         gigadramon = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [./hosts/minimal ];
+          modules = [./hosts/gigadramon ];
         };
       };
 
@@ -90,7 +90,7 @@
         "aferreira@gigadramon" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/minimal.nix ];
+          modules = [ ./home/gigadramon.nix ];
         };
       };
     };
