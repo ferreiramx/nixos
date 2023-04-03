@@ -24,7 +24,7 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        ~/.config/i3/lock.sh
+        swaylock
         ;;
     $suspend)
         playerctl -p spotify pause
@@ -32,6 +32,6 @@ case $chosen in
         systemctl suspend
         ;;
     $logout)
-        qtile cmd-obj -o cmd -f shutdown
+        hyprctl dispatch exit
         ;;
 esac

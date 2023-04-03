@@ -175,4 +175,49 @@
     line-color = "acacac";
     show-failed-attempts = true;
   };
+
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+    style = ''
+      * {
+        border: none;
+        border-radius: 12;
+        font-family: Source Code Pro;
+      }
+      window#waybar {
+        background: #121212;
+        color: #ACACAC;
+        padding: 0 5px;
+      }
+    '';
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        spacing = 5;
+        modules-left = [
+          "custom/osicon"
+          "wlr/workspaces"
+          "hyprland/window"
+        ];
+        modules-center = [ ];
+        modules-right = [ "systray" ];
+        "custom/osicon" = {
+          format = "<span font_weight='bold'>X</span>";
+        };
+        "wlr/workspaces" = {
+          format = "{icon}";
+          on-scroll-up = "hyprctl disparch workspace m+1";
+          on-scroll-down = "hyprctl disparch workspace m-1";
+          on-click = "activate";
+          format-icons = {
+            "1" = "1";
+            "2" = "2";
+            "3" = "T";
+          };
+        };
+      };
+    };
+  };
 }

@@ -2,14 +2,12 @@
   programs.hyprland = {
     enable = true;
     nvidiaPatches = true;
+    xwayland = {
+      enable = true;
+      hidpi = true;
+    };
   };
   services.dbus.enable = true;
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = with pkgs; [];
-  };
-  programs.xwayland.enable = true;
   security.pam.services.swaylock = {};
   environment.sessionVariables = {
     MOZ_ENABLE_WAYLAND="1";

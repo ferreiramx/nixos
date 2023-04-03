@@ -56,6 +56,12 @@
           specialArgs = { inherit inputs outputs; };
           modules = [./hosts/mugendramon ];
         };
+
+        # Home Server
+        gigadramon = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [./hosts/gigadramon ];
+        };
       };
 
       homeConfigurations = {
@@ -63,7 +69,7 @@
         "aferreira@kiryu" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/hypr-kiryu.nix ];
+          modules = [ ./home/kiryu.nix ];
         };
 
         # Main Desktop
@@ -71,6 +77,13 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/mugendramon.nix ];
+        };
+
+        # Home Server
+        "aferreira@gigadramon" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/minimal.nix ];
         };
       };
     };
