@@ -27,6 +27,13 @@
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
 
+    # eww-hyprland
+    eww = {
+      url = "github:elkowar/eww";
+      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.rust-overlay.follows = "rust-overlay";
+    };
+
   };
 
   outputs = { self, nixpkgs, home-manager, devenv, sops-nix, ... }@inputs:

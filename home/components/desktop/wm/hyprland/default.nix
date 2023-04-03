@@ -3,6 +3,7 @@
     ../../rofi
     ../../dunst
     inputs.hyprland.homeManagerModules.default
+    # inputs.eww.homeManagerModules.eww-hyprland
   ];
 
   xdg.configFile."hypr/hyprpaper.conf".text = ''
@@ -176,19 +177,41 @@
     show-failed-attempts = true;
   };
 
+  # programs.eww-hyprland = {
+  #   enable = true;
+  #   package = pkgs.eww-wayland;
+  #   # colors = TODO: add colors
+  #   autoReload = true;
+  # };
+
   programs.waybar = {
-    enable = true;
-    systemd.enable = true;
+    enable = false;
+    systemd.enable = false;
     style = ''
-      * {
-        border: none;
-        border-radius: 12;
-        font-family: Source Code Pro;
-      }
       window#waybar {
         background: #121212;
         color: #ACACAC;
         padding: 0 5px;
+        border: none;
+        border-radius: 12;
+      }
+      #custom-osicon {
+        font-family: SauceCodePro Nerd Font;
+        font-size: ${builtins.toString vars.fonts.os-icon};
+      }
+      #workspaces {
+        font-family: Material Design Icons;
+        font-size: ${builtins.toString vars.fonts.small-icon};
+        margin: 0;
+        padding: 0;
+      }
+      #window {
+        font-family: Source Sans Pro;
+        font-size: ${builtins.toString vars.fonts.sans};
+      }
+      #clock {
+        font-family: Source Sans Pro;
+        font-size: ${builtins.toString vars.fonts.sans};
       }
     '';
     settings = {
@@ -201,22 +224,49 @@
           "wlr/workspaces"
           "hyprland/window"
         ];
-        modules-center = [ ];
-        modules-right = [ "systray" ];
+        modules-center = [ "clock" ];
+        modules-right = [
+          "cpu"
+          "memory"
+          "network"
+          "temperature"
+          "battery"
+          "tray"
+          ];
+
         "custom/osicon" = {
-          format = "<span font_weight='bold'>X</span>";
+          format = "<span font_weight='bold'></span>";
         };
+
+        "tray" = {
+          icon-size = vars.fonts.small-icon;
+          spacing = 6;
+        };
+
+        "clock" = {
+          timezone = "America/Mexico_City";
+          locale = "en_US.utf8";
+          format = "{:%a, %b %d %R}";
+        };
+        
         "wlr/workspaces" = {
           format = "{icon}";
-          on-scroll-up = "hyprctl disparch workspace m+1";
-          on-scroll-down = "hyprctl disparch workspace m-1";
+          on-scroll-up = "hyprctl disparch workspace e+1";
+          on-scroll-down = "hyprctl disparch workspace e-1";
           on-click = "activate";
           format-icons = {
-            "1" = "1";
-            "2" = "2";
-            "3" = "T";
+            "1" = "󰎤";
+            "2" = "󰎧";
+            "3" = "󰎪";
+            "4" = "󰎭";
+            "5" = "󰎱";
+            "6" = "󰎳";
+            "7" = "󰎶";
+            "8" = "󰎹";
+            "9" = "󰎼";
           };
         };
+
       };
     };
   };

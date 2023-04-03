@@ -67,7 +67,7 @@
         mono = 18;
         dunst = 14;
         small-icon = 20;
-        large-icon = 29;
+        large-icon = 28;
         os-icon = 25;
       };
     };

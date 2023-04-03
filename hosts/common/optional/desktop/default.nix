@@ -21,5 +21,6 @@
     (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
     font-awesome
     material-design-icons
+    jost
   ];
 }
