@@ -1,21 +1,20 @@
-{ config, pkgs, ... }:
+{ config, pkgs, vars, ... }:
 let
   vscode-nix-colors = pkgs.callPackage ./vscode-nix-colors.nix { inherit config pkgs; };
 in
 {
-  # VSCode 
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
     userSettings = {
-      "window.zoomLevel" = 1;
-      "editor.fontSize" = 18;
+      "window.zoomLevel" = if (vars.screen.hidpi) then 1 else 0;
+      "editor.fontSize" = vars.fonts.mono;
       "editor.fontFamily" = "SauceCodePro Nerd Font";
       "editor.fontWeight" = "Semibold";
       "workbench.colorTheme" = "nix-colors";
-      "workbench.fontSize" = 18;
+      "workbench.fontSize" = vars.fonts.sans;
       "workbench.fontFamily" = "Source Sans Pro";
-      "terminal.integrated.fontSize" = 18;
+      "terminal.integrated.fontSize" = vars.fonts.mono;
       "terminal.integrated.fontFamily" = "SauceCodePro Nerd Font";
       "terminal.integrated.fontWeight" = "Semibold";
       "editor.minimap.enabled" = false;

@@ -2,5 +2,8 @@
   imports = [
     ./bar
     ./music
+    ./calendar
+    ./osd
+    ./system-menu
   ];
 }

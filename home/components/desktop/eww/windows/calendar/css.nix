@@ -1,0 +1,35 @@
+{ inputs, vars, ... }: {
+  xdg.configFile."eww/css/calendar.scss".text = ''
+    .calendar-win {
+      @include window;
+      background-color: $bg;
+      color: $fg;
+      padding: .2em;
+    }
+
+    calendar {
+      padding: 5px;
+
+      :selected {
+        color: $mauve;
+      }
+
+      .header {
+        color: $subtext1;
+      }
+
+      .highlight {
+        color: $maroon;
+        font-weight: bold;
+      }
+
+      .button {
+        color: $sapphire;
+      }
+
+      :indeterminate {
+        color: $overlay0;
+      }
+    }
+  '';
+}

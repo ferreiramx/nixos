@@ -65,6 +65,7 @@
       class = "laptop";
       screen = {
         name = "eDP-1";
+        hidpi = true;
         width = 2560;
         height = 1440;
         refresh = 120;

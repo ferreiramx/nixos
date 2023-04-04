@@ -69,5 +69,11 @@
     }
 
     .workspaces { margin-left: 10px; }
+
+    .vol-icon { color: $green; }
+    .volbar highlight {
+      background-image: linear-gradient(to right, $teal, $sky);
+      border-radius: 10px;
+    }
   '';
 }
