@@ -27,6 +27,10 @@
     grim
     slurp
     eww-wayland
+    jaq
+    gojq
+    ripgrep
+    socat
   ];
 
   systemd.user.services.eww = {

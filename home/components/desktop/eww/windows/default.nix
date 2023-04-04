@@ -1,0 +1,5 @@
+{ inputs, vars, ... }: {
+  imports = [
+    ./bar
+  ];
+}
