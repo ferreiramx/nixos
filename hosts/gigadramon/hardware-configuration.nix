@@ -16,10 +16,6 @@ in
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  networking.interfaces."giga_wifi".mac = macAddress;
-  services.udev.extraRules = ''
-    SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="${macAddress}", NAME="giga_wifi"
-  '';
 
   fileSystems."/" =
     {
