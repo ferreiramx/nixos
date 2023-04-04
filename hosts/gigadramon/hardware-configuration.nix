@@ -16,17 +16,9 @@ in
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  systemd.services."static-interface.rules".text = ''
-    [Unit]
-    Description=Assign a persistent name to wireless interface
-
-    [Install]
-    WantedBy=multi-user.target
-
-    [Service]
-    Type=oneshot
-    RemainAfterExit=yes
-    ExecStart=/usr/bin/sh -c "echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="${macAddress}", NAME="giga_wifi"' > /etc/udev/rules.d/70-persistent-net.rules"
+  networking.interfaces."giga_wifi".mac = macAddress;
+  services.udev.extraRules = ''
+    SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="${macAddress}", NAME="giga_wifi"
   '';
 
   fileSystems."/" =
