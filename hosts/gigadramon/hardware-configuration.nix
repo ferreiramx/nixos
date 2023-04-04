@@ -2,9 +2,6 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
-let
-  macAddress = "f4:26:79:5f:d2:dc";
-in
 {
   imports =
     [
