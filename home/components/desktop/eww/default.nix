@@ -8,7 +8,7 @@
   xdg.configFile."eww/eww.yuck".text = ''
     (include "./windows/bar.yuck")
     ; (include "./windows/calendar.yuck")
-    ; (include "./windows/music.yuck")
+    (include "./windows/music.yuck")
     ; (include "./windows/osd.yuck")
     ; (include "./windows/system-menu.yuck")
   '';
@@ -16,7 +16,7 @@
     @import 'css/colors';
     @import 'css/bar';
     // @import 'css/calendar';
-    // @import 'css/music';
+    @import 'css/music';
     // @import 'css/osd';
     // @import 'css/sidebar';
     // @import 'css/system';

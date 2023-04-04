@@ -11,14 +11,14 @@
 
       (defpoll time :interval "5s" `date +'{"date": "%d/%m", "hour": "%H", "minute": "%M", "day": "%A"}'`)
 
-      ;(deflisten airplane "scripts/airplane")
-      ;(deflisten battery "scripts/battery")
-      ;(deflisten bluetooth "scripts/bluetooth")
-      ;(deflisten brightness "scripts/brightness")
-      ;(deflisten memory "scripts/memory")
-      ;(deflisten music "scripts/music")
-      ;(deflisten net "scripts/net")
-      ;(deflisten volume "scripts/volume")
+      (deflisten airplane "scripts/airplane")
+      (deflisten battery "scripts/battery")
+      (deflisten bluetooth "scripts/bluetooth")
+      (deflisten brightness "scripts/brightness")
+      (deflisten memory "scripts/memory")
+      (deflisten music "scripts/music")
+      (deflisten net "scripts/net")
+      (deflisten volume "scripts/volume")
       (deflisten workspace "scripts/workspaces")
     '';
 }

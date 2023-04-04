@@ -21,6 +21,8 @@
     (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
     font-awesome
     material-design-icons
+    material-symbols
+    roboto
     jost
   ];
 }

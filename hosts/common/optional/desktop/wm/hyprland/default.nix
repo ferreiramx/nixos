@@ -25,6 +25,10 @@
     gojq
     ripgrep
     socat
+    bc
+    light
+    wget
+    imagemagick
   ];
 
   systemd.user.services.eww = {

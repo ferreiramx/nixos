@@ -5,20 +5,21 @@
   ];
 
   xdg.configFile."eww/windows/bar.yuck".text = ''
-    ; (include "./modules/bluetooth.yuck")
-    ; (include "./modules/bright.yuck")
+    (include "./modules/bluetooth.yuck")
+    (include "./modules/bright.yuck")
     (include "./modules/clock.yuck")
-    ; (include "./modules/music.yuck")
-    ; (include "./modules/net.yuck")
-    ; (include "./modules/sys.yuck")
+    (include "./modules/music.yuck")
+    (include "./modules/net.yuck")
+    (include "./modules/sys.yuck")
     (include "./modules/variables.yuck")
-    ; (include "./modules/volume.yuck")
+    (include "./modules/volume.yuck")
     (include "./modules/workspaces.yuck")
     (defwidget left []
           (box
             :space-evenly false
             :halign "start"
             (workspaces)
+            (volume-module)
             ))
 
     (defwidget center []
@@ -32,12 +33,22 @@
       (box
         :space-evenly false
         :halign "end"
-        ; (music-module)
-        ; (bright)
-        ; (volume-module)
-        ; (bluetooth)
-        ; (net)
-        ; (sys)
+        (music-module)
+''
++
+(
+    # Add backlight indicator if this is a laptop
+    if (vars.class == "laptop")
+    then ''
+    (bright)
+    ''
+    else ""
+)
++
+''        
+        (bluetooth)
+        (net)
+        (sys)
         ))
 
     (defwidget bar-box []
