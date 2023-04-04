@@ -16,12 +16,18 @@ in
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.udevRules = [
-    # Add the udev rule to assign a persistent name to the wireless interface
-    "${pkgs.writeText "persistent-net.rules" ''
-      ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="${macAddress}", NAME="giga_wifi"
-    ''}"
-  ];
+  systemd.services."static-interface.rules".text = ''
+    [Unit]
+    Description=Assign a persistent name to wireless interface
+
+    [Install]
+    WantedBy=multi-user.target
+
+    [Service]
+    Type=oneshot
+    RemainAfterExit=yes
+    ExecStart=/usr/bin/sh -c "echo 'ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="${macAddress}", NAME="giga_wifi"' > /etc/udev/rules.d/70-persistent-net.rules"
+  '';
 
   fileSystems."/" =
     {
