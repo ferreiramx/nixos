@@ -2,7 +2,9 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
-
+let
+  macAddress = "f4:26:79:5f:d2:dc";
+in
 {
   imports =
     [
@@ -14,6 +16,12 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.udevRules = [
+    # Add the udev rule to assign a persistent name to the wireless interface
+    "${pkgs.writeText "persistent-net.rules" ''
+      ACTION=="add", SUBSYSTEM=="net", ATTR{address}=="${macAddress}", NAME="giga_wifi"
+    ''}"
+  ];
 
   fileSystems."/" =
     {
