@@ -10,6 +10,6 @@
           (label
             :class "vol-icon"
             :tooltip "volume ''${volume.percent}%"
-            :text {volume.icon}))))
+            :text "''${volume.icon} ''${volume.percent}%"))))
   '';
 }

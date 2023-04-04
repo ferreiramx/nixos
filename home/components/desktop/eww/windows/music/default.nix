@@ -58,7 +58,7 @@
         :y "0%"
         :width "0%"
         :height "0%"
-        :anchor "top center")
+        :anchor "top right")
       (music))
   '';
 }

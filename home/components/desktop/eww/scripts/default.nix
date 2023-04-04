@@ -4,7 +4,6 @@
     ./battery.nix
     ./bluetooth.nix
     ./brightness.nix
-    ./default.nix
     ./memory.nix
     ./music.nix
     ./net.nix

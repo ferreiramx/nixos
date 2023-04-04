@@ -7,5 +7,6 @@
     pamixer
     pavucontrol
     playerctl
+    pulseaudio
   ];
 }
