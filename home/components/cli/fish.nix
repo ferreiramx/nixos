@@ -5,6 +5,9 @@ in
 {
   programs.fish = {
     enable = true;
+    shellAliases = {
+      ls = "ls -l -h -A --color";
+    };
     shellAbbrs = {
       nxs = "sudo nixos-rebuild switch --flake ~/.nixos/";
       nxb = "sudo nixos-rebuild build --flake ~/.nixos/";
@@ -78,8 +81,7 @@ in
       set -U fish_pager_color_selected_description
       set -U fish_pager_color_selected_prefix
     '';
-  # Generate Tide variables by configuring manually and running
-  # grep "SETUVAR tide" ~/.config/fish/fish_variables | sed 's/SETUVAR/set -U/g' | sed 's/:/ /g' 
+
   xdg.configFile."fish/conf.d/nix_tide.fish".text =
     ''
       set -U tide_aws_bg_color yellow

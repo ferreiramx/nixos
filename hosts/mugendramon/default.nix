@@ -57,7 +57,7 @@
       fonts = {
         sans = 13;
         mono = 13;
-        dunst = 15;
+        dunst = 12;
         small-icon = 15;
         large-icon = 20;
         os-icon = 25;

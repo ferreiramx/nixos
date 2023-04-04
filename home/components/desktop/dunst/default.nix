@@ -27,7 +27,7 @@ in
         font = "Source Sans Pro Semibold ${toString vars.fonts.dunst}";
         line_height = 0;
         markup = "full";
-        format = "<b>%s</b>\n%b";
+        format = "<b>%s</b>\\n%b";
         alignment = "left";
         show_age_threshold = -1;
         word_wrap = "yes";

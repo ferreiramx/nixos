@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, vars, ... }:
 let
   colors = config.colorScheme.colors;
 in
@@ -7,7 +7,7 @@ in
     enable = true;
     font = {
       name = "SauceCodeProNerdFontComplete-Semibold";
-      size = 18;
+      size = vars.fonts.mono;
     };
     environment = {
       "TERM" = "xterm-kitty";
