@@ -52,6 +52,13 @@
 
   services.getty.autologinUser = "aferreira";
 
+  programs.hyprland.nvidiaPatches = true;
+  programs.hyprland.xwayland.hidpi = true;
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+  };
+
   home-manager.extraSpecialArgs = {
     vars = {
       hostName = "kiryu";

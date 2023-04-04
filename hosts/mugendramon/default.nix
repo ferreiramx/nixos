@@ -15,8 +15,9 @@
       ../common/optional/desktop/office
       ../common/optional/desktop/media
       ../common/optional/desktop/web
-      ../common/optional/desktop/dm/lightdm
-      ../common/optional/desktop/wm/qtile
+      ../common/optional/desktop/dm/gdm
+      ../common/optional/desktop/wm/hyprland
+      inputs.hyprland.nixosModules.default
       ../common/optional/filesystem
       ../common/optional/games
       ../common/optional/graphics/amd
@@ -28,7 +29,6 @@
 
       # Users for this machine
       ../common/users/aferreira
-
     ];
 
   networking.hostName = "mugendramon";
@@ -38,7 +38,7 @@
   services.xserver = {
     layout = "us";
     xkbVariant = "";
-    displayManager.defaultSession = "none+qtile";
+    displayManager.defaultSession = "hyprland";
   };
 
   services.getty.autologinUser = "aferreira";
