@@ -1,6 +1,6 @@
 keys:
   - &aferreira age1e5rwmtnqgn2w6pvjjjdplegcymsl94emxye66z93t9ddy56qmq0q6jdp5s
-  - &mugendramon age1pye4qp6eyymad5h43l4lxksexn040zd75s5mrtpuffu976z6zghq0a63cx
+  - &mugendramon age12s6a4dnw537zesfs0z0vmgqw2h90qsseernvpx984exga8q4pupseckq0n
   - &kiryu age1pye4qp6eyymad5h43l4lxksexn040zd75s5mrtpuffu976z6zghq0a63cx
   - &gigadramon age1dcneyt24dn9lhm7hfpwzxhh70vmrycqn77sreqn4yza4fj3xxpwsakungf
 creation_rules:
@@ -8,6 +8,16 @@ creation_rules:
     key_groups:
     - age:
       - *kiryu
+      - *aferreira
+  - path_regex: hosts/mugendramon/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *mugendramon
+      - *aferreira
+  - path_regex: hosts/gigadramon/secrets.ya?ml$
+    key_groups:
+    - age:
+      - *gigadramon
       - *aferreira
   - path_regex: hosts/common/global/secrets.ya?ml$
     key_groups:
