@@ -50,7 +50,7 @@
 
     .music-bar scale {
       highlight {
-        background-image: linear-gradient(to right, $highlight1, $highlight2);
+        background-image: linear-gradient(to right, $highlight1, $highlight1);
         border-radius: 24px;
       }
 

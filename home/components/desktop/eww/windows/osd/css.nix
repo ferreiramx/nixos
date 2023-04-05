@@ -30,11 +30,11 @@
     }
 
     .osd-volume highlight {
-      background-image: linear-gradient(to top, $highlight1, $highlight2);
+      background-image: linear-gradient(to top, $highlight1, $highlight1);
     }
 
     .osd-brightness highlight {
-      background-image: linear-gradient(to top, $highlight1, $highlight2);
+      background-image: linear-gradient(to top, $highlight1, $highlight1);
     }
   '';
 }

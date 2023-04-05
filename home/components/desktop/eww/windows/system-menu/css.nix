@@ -171,7 +171,7 @@
     }
 
     .volume-icon {
-      color: $highlight2;
+      color: $highlight1;
     }
 
     .volume-slider-box,
@@ -181,12 +181,12 @@
 
     .volume-bar highlight {
       @include rounding;
-      background-image: linear-gradient(to right, $highlight2, $highlight1);
+      background-image: linear-gradient(to right, $highlight1, $highlight1);
     }
 
     .brightness-slider-box scale highlight {
       @include rounding;
-      background-image: linear-gradient(to right, $highlight2, $highlight1);
+      background-image: linear-gradient(to right, $highlight1, $highlight1);
     }
 
     .bottom-row {
