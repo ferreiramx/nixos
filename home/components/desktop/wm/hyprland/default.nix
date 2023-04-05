@@ -1,6 +1,13 @@
 { config, inputs, pkgs, vars, ... }: 
 let
   colors = config.colorScheme.colors;
+  nix-colors-lib = inputs.nix-colors.lib-contrib { inherit pkgs; };
+  wallpaper = nix-colors-lib.nixWallpaperFromScheme {
+    scheme = config.colorScheme;
+    width = vars.screen.width;
+    height = vars.screen.height;
+    logoScale = 5.0;
+  };
 in
 {
   imports = [
@@ -11,15 +18,15 @@ in
   ];
 
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload = /home/aferreira/.wp.png
-    wallpaper = ${vars.screen.name},/home/aferreira/.wp.png
+    preload = ${wallpaper}
+    wallpaper = ${vars.screen.name},${wallpaper}
   '';
 
   wayland.windowManager.hyprland = {
     enable = true;
     systemdIntegration = true;
     extraConfig = ''
-      exec-once = hyprpaper
+      exec = hyprpaper
       exec-once = eww open bar
       monitor =,preferred,auto,1
       input {

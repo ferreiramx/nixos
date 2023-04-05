@@ -4,6 +4,7 @@
     viewnior
     gotop
     scrot
+    lxappearance
   ];
   programs.file-roller.enable = true;
   programs.thunar = {

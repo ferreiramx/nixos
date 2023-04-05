@@ -16,6 +16,7 @@ in
     ./components/desktop/spotify
 
   ];
+  
   colorScheme = inputs.nix-colors.colorschemes.black-metal-immortal;
   # colorScheme = inputs.nix-colors.colorschemes.gigavolt;
   # colorScheme = inputs.nix-colors.colorschemes.harmonic16-dark;

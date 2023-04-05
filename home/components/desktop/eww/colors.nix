@@ -28,12 +28,12 @@ xdg.configFile."eww/css/_colors.scss".text = ''
     $surface1:    #${colors.base0B};
     $surface0:    #${colors.base0A};
 
-    $base:        #${colors.base01};
+    $base:        #${colors.base00};
     $mantle:      #${colors.base03};
-    $crust:       #${colors.base00};
+    $crust:       #${colors.base01};
 
     $fg:          $text;
-    $bg:          rgba(${(conversions.hexToRGBString "," colors.base01)}, 0.95);
+    $bg:          rgba(${(conversions.hexToRGBString "," colors.base00)}, 0.95);
     $bg1:         rgba(${(conversions.hexToRGBString "," colors.base02)}, 0.95);
     $border:      #${colors.base01};
     $shadow:      $crust;
