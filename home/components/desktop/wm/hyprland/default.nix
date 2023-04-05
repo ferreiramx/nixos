@@ -115,7 +115,7 @@ in
         no_gaps_when_only = true
         orientation = center
         inherit_fullscreen = true
-        always_center_master = ${builtins.toString vars.screen.ultrawide}
+        always_center_master = ${(if vars.screen.ultrawide then "true" else "false")}
       }
       
       bindm = SUPER,mouse:272,movewindow
