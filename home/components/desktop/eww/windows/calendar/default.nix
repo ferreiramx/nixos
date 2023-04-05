@@ -15,7 +15,7 @@
       :geometry (geometry
         :x "0%"
         :y "0%"
-      	:anchor "top center"
+      	:anchor "top right"
         :width "0px"
         :height "0px")
       (calendar-win))

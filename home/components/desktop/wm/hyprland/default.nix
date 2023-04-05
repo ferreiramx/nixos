@@ -1,4 +1,8 @@
-{ inputs, pkgs, vars, ... }: {
+{ config, inputs, pkgs, vars, ... }: 
+let
+  colors = config.colorScheme.colors;
+in
+{
   imports = [
     ../../rofi
     ../../dunst
@@ -16,6 +20,7 @@
     systemdIntegration = true;
     extraConfig = ''
       exec-once = hyprpaper
+      exec-once = eww open bar
       monitor =,preferred,auto,1
       input {
         follow_mouse = 1
@@ -110,7 +115,7 @@
         no_gaps_when_only = true
         orientation = center
         inherit_fullscreen = true
-        always_center_master = false
+        always_center_master = ${builtins.toString vars.screen.ultrawide}
       }
       
       bindm = SUPER,mouse:272,movewindow
@@ -169,98 +174,18 @@
   };
 
   programs.swaylock.settings = {
-    color = "121212";
+    color = "${colors.base01}";
     font-size = 24;
     indicator-idle-visible = false;
     indicator-radius = 100;
-    line-color = "acacac";
+    inside-color = "${colors.base01}";
+    line-color = "${colors.base00}";
+    ring-color = "${colors.base08}";
+    key-hl-color = "${colors.base0B}";
+    inside-ver-color = "${colors.base0A}";
+    ring-ver-color = "${colors.base0A}";
+    inside-clear-color = "${colors.base0C}";
+    ring-clear-color = "${colors.base0C}";
     show-failed-attempts = true;
   };
-
-  # programs.waybar = {
-  #   enable = false;
-  #   systemd.enable = false;
-  #   style = ''
-  #     window#waybar {
-  #       background: #121212;
-  #       color: #ACACAC;
-  #       padding: 0 5px;
-  #       border: none;
-  #       border-radius: 12;
-  #     }
-  #     #custom-osicon {
-  #       font-family: SauceCodePro Nerd Font;
-  #       font-size: ${builtins.toString vars.fonts.os-icon};
-  #     }
-  #     #workspaces {
-  #       font-family: Material Design Icons;
-  #       font-size: ${builtins.toString vars.fonts.small-icon};
-  #       margin: 0;
-  #       padding: 0;
-  #     }
-  #     #window {
-  #       font-family: Source Sans Pro;
-  #       font-size: ${builtins.toString vars.fonts.sans};
-  #     }
-  #     #clock {
-  #       font-family: Source Sans Pro;
-  #       font-size: ${builtins.toString vars.fonts.sans};
-  #     }
-  #   '';
-  #   settings = {
-  #     mainBar = {
-  #       layer = "top";
-  #       position = "top";
-  #       spacing = 5;
-  #       modules-left = [
-  #         "custom/osicon"
-  #         "wlr/workspaces"
-  #         "hyprland/window"
-  #       ];
-  #       modules-center = [ "clock" ];
-  #       modules-right = [
-  #         "cpu"
-  #         "memory"
-  #         "network"
-  #         "temperature"
-  #         "battery"
-  #         "tray"
-  #         ];
-
-  #       "custom/osicon" = {
-  #         format = "<span font_weight='bold'></span>";
-  #       };
-
-  #       "tray" = {
-  #         icon-size = vars.fonts.small-icon;
-  #         spacing = 6;
-  #       };
-
-  #       "clock" = {
-  #         timezone = "America/Mexico_City";
-  #         locale = "en_US.utf8";
-  #         format = "{:%a, %b %d %R}";
-  #       };
-
-  #       "wlr/workspaces" = {
-  #         format = "{icon}";
-  #         on-scroll-up = "hyprctl disparch workspace e+1";
-  #         on-scroll-down = "hyprctl disparch workspace e-1";
-  #         on-click = "activate";
-  #         format-icons = {
-  #           "1" = "󰎤";
-  #           "2" = "󰎧";
-  #           "3" = "󰎪";
-  #           "4" = "󰎭";
-  #           "5" = "󰎱";
-  #           "6" = "󰎳";
-  #           "7" = "󰎶";
-  #           "8" = "󰎹";
-  #           "9" = "󰎼";
-  #         };
-  #       };
-
-  #     };
-  #   };
-  # };
 }

@@ -1,6 +1,8 @@
 { config, pkgs, vars, ... }:
 let
   colors = config.colorScheme.colors;
+  max_width = 300;
+  max_height = 220;
 in
 {
   services.dunst = {
@@ -9,16 +11,16 @@ in
       global = {
         monitor = 0;
         follow = "keyboard";
-        width = builtins.ceil (vars.screen.width * 0.16);
-        height = builtins.ceil (vars.screen.height * 0.2);
+        width = (if builtins.ceil (vars.screen.width * 0.16) < max_width then builtins.ceil (vars.screen.width * 0.16) else max_width);
+        height = (if builtins.ceil (vars.screen.height * 0.2) < max_height then builtins.ceil (vars.screen.height * 0.16) else max_height);
         notification_limit = 3;
         origin = "top-center";
         indicate_hidden = "yes";
         shrink = "no";
         transparency = 25;
         separator_height = 2;
-        padding = 10;
-        horizontal_padding = 10;
+        padding = 5;
+        horizontal_padding = 5;
         frame_width = 3;
         frame_color = "#${colors.base02}";
         separator_color = "frame";

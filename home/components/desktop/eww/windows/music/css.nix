@@ -19,7 +19,7 @@
     .music-cover-art {
       background-position: center;
       background-size: cover;
-      border-radius: 8px;
+      
       margin: 1em;
       min-height: 170px;
       min-width: 170px;
@@ -50,12 +50,12 @@
 
     .music-bar scale {
       highlight {
-        background-image: linear-gradient(to right, $teal, $sky);
+        background-image: linear-gradient(to right, $highlight1, $highlight2);
         border-radius: 24px;
       }
 
       trough {
-        background-color: $bg1;
+        background-color: $accent4;
         border-radius: 24px;
         margin-top: 0;
         min-height: 10px;

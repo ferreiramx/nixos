@@ -13,7 +13,7 @@ in
       "editor.fontWeight" = "Semibold";
       "workbench.colorTheme" = "nix-colors";
       "workbench.fontSize" = vars.fonts.sans;
-      "workbench.fontFamily" = "Source Sans Pro";
+      "workbench.fontFamily" = "SauceCodePro Nerd Font";
       "terminal.integrated.fontSize" = vars.fonts.mono;
       "terminal.integrated.fontFamily" = "SauceCodePro Nerd Font";
       "terminal.integrated.fontWeight" = "Semibold";

@@ -5,13 +5,13 @@
     }
 
     @mixin window {
-      margin: 5px 5px 10px;
+      margin: 5px 5px 5px;
       @include rounding;
     }
 
     * {
       all: unset;
-      font-family: "Jost *", Roboto, sans-serif;
+      font-family: "Source Sans Pro Semibold", "Jost *", Roboto, sans-serif;
       transition: 200ms ease;
     }
 
@@ -22,6 +22,7 @@
       label {
         font-size: 1.2rem;
       }
+      @include rounding;
     }
 
     tooltip {
@@ -35,33 +36,38 @@
     }
 
     .icon,
-    .icon label { font-family: Material Symbols Outlined; }
+    .icon label { 
+      font-family: Material Symbols Outlined; 
+      font-weight: bold;
+    }
 
     .module { margin: 0 5px; }
 
     .hour {
       font-weight: bold;
-      padding-left: 5px;
+      padding-left: 10px;
     }
 
     .minute {
-      padding-right: .7rem;
+      font-weight: bold;
+      padding-right: 10px;
     }
 
     .date {
       background: $bg;
-      color: $flamingo;
+      color: $accent1;
 
       label {
+        font-weight: bold;
         font-size: 1.2rem;
       }
     }
 
-    .bright-icon { color: $yellow; }
+    .bright-icon { color: $highlight1; }
     .module-bt { font-size: 1.2rem; }
 
     scale trough {
-      background-color: $bg1;
+      background-color: $accent4;
       border-radius: 24px;
       margin: 0 1rem;
       min-height: 10px;
@@ -69,11 +75,5 @@
     }
 
     .workspaces { margin-left: 10px; }
-
-    .vol-icon { color: $green; }
-    .volbar highlight {
-      background-image: linear-gradient(to right, $teal, $sky);
-      border-radius: 10px;
-    }
   '';
 }

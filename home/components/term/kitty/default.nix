@@ -6,7 +6,7 @@ in
   programs.kitty = {
     enable = true;
     font = {
-      name = "SauceCodeProNerdFontComplete-Semibold";
+      name = "SauceCodePro Nerd Font Semibold";
       size = vars.fonts.mono;
     };
     environment = {

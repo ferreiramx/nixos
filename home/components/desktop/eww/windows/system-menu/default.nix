@@ -129,7 +129,7 @@
   +
   ''
     )
-
+    ; CPU & Memory Usage
     (box
       :class "system-info-box"
 
@@ -149,7 +149,7 @@
           :orientation "v"
           :vexpand false
           (label
-            :text "cpu"
+            :text "CPU"
             :halign "start"
             :class "sys-text-cpu")
           (label
@@ -176,13 +176,70 @@
         (box
           :orientation "v"
           (label
-            :text "memory"
+            :text "Memory"
             :halign "start"
             :class "sys-text-mem")
+          (label
+            :text "''${memory.percent}%"
+            :halign "start"
+            :class "sys-text-sub")
           (label
             :text "''${memory.used} | ''${memory.total}"
             :halign "start"
             :class "sys-text-sub"))))
+
+    ; CPU & GPU Temps
+    (box
+      :class "system-info-box"
+
+      ; CPU
+      (box
+        :class "sys-box"
+        :space-evenly false
+        :halign "start"
+        (circular-progress
+          :value "''${EWW_TEMPS.K10TEMP_TCTL}"
+          :class "sys-cpu-temp"
+          :thickness 3
+          (label
+            :text ""
+            :class "sys-icon-cpu-temp icon"))
+        (box
+          :orientation "v"
+          :vexpand false
+          (label
+            :text "CPU Temp"
+            :halign "start"
+            :class "sys-text-cpu-temp")
+          (label
+            :text "''${EWW_TEMPS.K10TEMP_TCTL}°C"
+            :halign "start"
+            :class "sys-text-sub")
+          ))
+
+      ; GPU
+      (box
+        :class "sys-box"
+        :space-evenly false
+        :halign "end"
+        (circular-progress
+          :value "''${EWW_TEMPS.AMDGPU_EDGE}"
+          :class "sys-gpu-temp"
+          :thickness 3
+          (label
+            :text ""
+            :class "sys-icon-gpu-temp icon"))
+        (box
+          :orientation "v"
+          (label
+            :text "GPU Temp"
+            :halign "start"
+            :class "sys-text-gpu-temp")
+          (label
+            :text "''${EWW_TEMPS.AMDGPU_EDGE}°C"
+            :halign "start"
+            :class "sys-text-sub")
+          )))
     
   ''
   +

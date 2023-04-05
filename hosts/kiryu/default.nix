@@ -17,7 +17,6 @@
       ../common/optional/desktop/office
       ../common/optional/desktop/media
       ../common/optional/desktop/web
-      # ../common/optional/desktop/dm/lightdm
       ../common/optional/desktop/wm/qtile
       ../common/optional/desktop/dm/gdm
       ../common/optional/desktop/wm/hyprland
@@ -65,6 +64,7 @@
       class = "laptop";
       screen = {
         name = "eDP-1";
+        ultrawide = false;
         hidpi = true;
         width = 2560;
         height = 1440;

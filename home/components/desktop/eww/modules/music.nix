@@ -12,7 +12,7 @@
             :style "background-image: url(\"''${music.cover}\");")
           (button
             :class "module"
-            :onclick "''${EWW_CMD} open --toggle music"
+            :onclick "''${EWW_CMD} open --toggle music && ''${EWW_CMD} open --toggle music-closer"
             "''${music.title} - ''${music.artist}")
           (revealer
             :transition "slideright"

@@ -13,12 +13,13 @@
       }
 
       toggle() {
+        STATUS="$(rfkill list | sed -n 2p | awk '{print $3}')"
         if [ "$STATUS" = "no" ]; then
           rfkill block all
-          notify-send --urgency=normal -i airplane-mode-symbolic "Airplane Mode" "Airplane mode has been turned on!"
+          dunstify --urgency=normal -i airplane-mode-symbolic "Airplane Mode" "Airplane mode has been turned on!"
         else
           rfkill unblock all
-          notify-send --urgency=normal -i airplane-mode-disabled-symbolic "Airplane Mode" "Airplane mode has been turned off!"
+          dunstify --urgency=normal -i airplane-mode-disabled-symbolic "Airplane Mode" "Airplane mode has been turned off!"
         fi
       }
 

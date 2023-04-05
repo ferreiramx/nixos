@@ -4,7 +4,7 @@
     text = ''
       #!/usr/bin/env bash
 
-      volicons=("" "" "")
+      volicons=("" "" "")
       if [ ! "$XDG_CACHE_HOME" ]; then
         XDG_CACHE_HOME="/home/aferreira/.local/cache"
       fi

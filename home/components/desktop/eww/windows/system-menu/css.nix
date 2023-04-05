@@ -1,15 +1,15 @@
 { inputs, vars, ... }: {
   xdg.configFile."eww/css/system.scss".text = ''
         .membar {
-          color: $peach;
+          color: $highlight1;
         }
 
         .cpubar {
-          color: $blue;
+          color: $highlight2;
         }
 
         .batbar {
-          color: $green;
+          color: $highlight3;
         }
 
         .membar,
@@ -19,11 +19,11 @@
         }
 
         .iconmem {
-          color: $peach;
+          color: $highlight1;
         }
 
         .iconcpu {
-          color: $blue;
+          color: $highlight2;
         }
 
         .icon-text {
@@ -36,13 +36,17 @@
         }
 
         .sys-text-mem,
-        .sys-text-cpu {
+        .sys-text-cpu,
+        .sys-text-cpu-temp,
+        .sys-text-gpu-temp {
           font-size: 1rem;
           font-weight: bold;
         }
 
         .sys-icon-mem,
-        .sys-icon-cpu {
+        .sys-icon-cpu,
+        .sys-icon-cpu-temp,
+        .sys-icon-gpu-temp {
           font-size: 1.5rem;
           margin: 1.5rem;
         }
@@ -55,54 +59,67 @@
         }
 
         .sys-mem,
-        .sys-cpu {
+        .sys-cpu,
+        .sys-cpu-temp,
+        .sys-gpu-temp, {
           background-color: $bg;
-        }
-
-        .sys-icon-mem,
-        .sys-text-mem,
-        .sys-mem {
-          color: $peach;
         }
 
         .sys-icon-cpu,
         .sys-text-cpu,
         .sys-cpu {
-          color: $blue;
+          color: $highlight1;
+        }
+
+        .sys-icon-mem,
+        .sys-text-mem,
+        .sys-mem {
+          color: $highlight2;
+        }
+
+        .sys-icon-cpu-temp,
+        .sys-text-cpu-temp,
+        .sys-cpu-temp {
+          color: $highlight4;
+        }
+
+        .sys-icon-gpu-temp,
+        .sys-text-gpu-temp,
+        .sys-gpu-temp {
+          color: $highlight5;
         }
 
         .sys-box {
           margin: .3em;
-
           box { margin-left: 1rem; }
         }
         .system-menu-box {
-      @include window;
-      background-color: $bg;
-      color: $text;
-    }
+          @include window;
+          background-color: $bg;
+          color: $text;
+        }
 
-    .separator {
-      font-size: 1rem;
-    }
+      .separator {
+        font-size: 1rem;
+      }
 
-    .top-row {
-      margin: 1rem 1.5rem 0;
+      .top-row {
+        margin: 1rem 1.5rem 0;
 
-      .time { font-size: 2rem; }
+        .time { font-size: 2rem; }
 
-      .date-box {
-        margin: 0 1rem;
+        .date-box {
+          margin: 0 1rem;
 
-        label { font-size: 1.1rem; }
+          label { font-size: 1.1rem; }
 
-        .date {
-          background: unset;
-          margin: 0 .5rem 0 0;
-          padding: 0;
+          .date {
+            background: unset;
+            margin: 0 .5rem 0 0;
+            padding: 0;
+          }
         }
       }
-    }
 
     .system-row {
       margin: .5rem .7rem;
@@ -153,26 +170,30 @@
       label { font-size: 1.2rem; }
     }
 
+    .volume-icon {
+      color: $highlight2;
+    }
+
     .volume-slider-box,
     .brightness-slider-box {
-      trough { background-color: $base; }
+      trough { background-color: $accent4; }
     }
 
     .volume-bar highlight {
       @include rounding;
-      background-image: linear-gradient(to right, $teal, $sky);
+      background-image: linear-gradient(to right, $highlight2, $highlight1);
     }
 
     .brightness-slider-box scale highlight {
       @include rounding;
-      background-image: linear-gradient(to right, $yellow, $peach);
+      background-image: linear-gradient(to right, $highlight2, $highlight1);
     }
 
     .bottom-row {
       margin: .5rem 1rem;
 
       .battery-icon { font-size: 2rem; }
-      .battery-wattage { color: $mauve; }
+      .battery-wattage { color: $highlight3; }
 
       .battery-status {
         color: $subtext0;
@@ -191,14 +212,14 @@
     }
 
     .bt-connected {
-      background-color: $blue;
+      background-color: $highlight1;
       color: $crust;
 
       button:hover { background-color: rgba(0, 0, 0, .1); }
     }
 
     .wifi-connected {
-      background-color: $mauve;
+      background-color: $highlight2;
       color: $crust;
 
       button:hover { background-color: rgba(0, 0, 0, .1); }

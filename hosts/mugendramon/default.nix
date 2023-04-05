@@ -49,6 +49,7 @@
       class = "desktop";
       screen = {
         name = "DP-1";
+        ultrawide = true;
         hidpi = false;
         width = 3840;
         height = 1080;

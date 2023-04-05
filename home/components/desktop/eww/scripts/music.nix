@@ -1,4 +1,8 @@
-{ inputs, vars, ... }: {
+{ config, inputs, vars, ... }: 
+let
+  colors = config.colorScheme.colors;
+in
+{
   xdg.configFile."eww/scripts/music" = {
     executable = true;
     text = ''
@@ -94,11 +98,11 @@
           if [ "$COVER" != "" ]; then
             cols=$(convert "$COVER" -colors 2 -format "%c" histogram:info: | awk '{print $3}')
             color1=$(echo "$cols" | head -1)
-            color1=$(printf "rgba(%d, %d, %d, 0.6)" ${color1:1:2} ${color1:3:2} ${color1:5:2})
+            color1=$(printf "rgba(%d, %d, %d, 0.95)" ${color1:1:2} ${color1:3:2} ${color1:5:2})
             color2=$(echo "$cols" | tail -1)
           else
-            color1="#1e1e2e"
-            color2="#28283d"
+            color1="#${colors.base01}"
+            color2="#${colors.base00}"
           fi
         fi
 

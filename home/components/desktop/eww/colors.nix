@@ -1,39 +1,41 @@
-{ inputs, vars, ... }: {
+{ config, inputs, vars, ... }: 
+let
+  colors = config.colorScheme.colors;
+  conversions = inputs.nix-colors.lib-core.conversions;
+in
+{
 xdg.configFile."eww/css/_colors.scss".text = ''
-    $rosewater:   #f5e0dc;
-    $flamingo:    #f2cdcd;
-    $pink:        #f5c2e7;
-    $mauve:       #cba6f7;
-    $red:         #f38ba8;
-    $maroon:      #eba0ac;
-    $peach:       #fab387;
-    $yellow:      #f9e2af;
-    $green:       #a6e3a1;
-    $teal:        #94e2d5;
-    $sky:         #89dceb;
-    $sapphire:    #74c7ec;
-    $blue:        #89b4fa;
-    $lavender:    #b4befe;
+    
+    $accent1:     #${colors.base0C};
+    $accent2:     #${colors.base0D};
+    $accent3:     #${colors.base0E};
+    $accent4:     #${colors.base0F};
+    $highlight1:  #${colors.base08};
+    $highlight2:  #${colors.base0B};
+    $highlight3:  #${colors.base0A};
+    $highlight4:  #${colors.base08};
+    $highlight5:  #${colors.base0B};
 
-    $text:        #cdd6f4;
-    $subtext1:    #bac2de;
-    $subtext0:    #a6adc8;
-    $overlay2:    #9399b2;
-    $overlay1:    #7f849c;
-    $overlay0:    #6c7086;
 
-    $surface2:    #585b70;
-    $surface1:    #45475a;
-    $surface0:    #313244;
+    $text:        #${colors.base05};
+    $subtext1:    #${colors.base06};
+    $subtext0:    #${colors.base07};
+    $overlay2:    #${colors.base0D};
+    $overlay1:    #${colors.base0E};
+    $overlay0:    #${colors.base0F};
 
-    $base:        #1e1e2e;
-    $mantle:      #181825;
-    $crust:       #11111b;
+    $surface2:    #${colors.base08};
+    $surface1:    #${colors.base0B};
+    $surface0:    #${colors.base0A};
 
-    $fg: $text;
-    $bg: rgba(30, 30, 46, 0.6);
-    $bg1: rgba(49, 50, 68, 0.6);
-    $border: #28283d;
-    $shadow: $crust;
+    $base:        #${colors.base01};
+    $mantle:      #${colors.base03};
+    $crust:       #${colors.base00};
+
+    $fg:          $text;
+    $bg:          rgba(${(conversions.hexToRGBString "," colors.base01)}, 0.95);
+    $bg1:         rgba(${(conversions.hexToRGBString "," colors.base02)}, 0.95);
+    $border:      #${colors.base01};
+    $shadow:      $crust;
   '';
 }

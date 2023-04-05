@@ -12,6 +12,6 @@
     					:class "ws icon"
     					:style "color: ''${ws.color};"
     					; :tooltip {ws.tooltip}
-    					"●")))))
+    					"")))))
   '';
 }

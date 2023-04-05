@@ -1,4 +1,8 @@
-{ inputs, vars, ... }: {
+{ config, inputs, vars, ... }: 
+let
+  colors = config.colorScheme.colors;
+in
+{
   xdg.configFile."eww/scripts/net" = {
     executable = true;
     text = ''
@@ -27,7 +31,7 @@
 
           if [ "$status" = "disconnected" ]; then
             icon=""
-            color="#988ba2"
+            color="#${colors.base0C}"
             class=""
           else
             level=$(awk -v n="$signal" 'BEGIN{print int((n-1)/20)}')
@@ -36,7 +40,7 @@
             fi
 
             icon=''${icons[$level]}
-            color="#cba6f7"
+            color="#${colors.base08}"
             class="wifi-connected"
           fi
 

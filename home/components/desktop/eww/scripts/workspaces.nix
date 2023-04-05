@@ -1,15 +1,16 @@
-{ inputs, vars, ... }: {
+{ config, inputs, vars, ... }: 
+let
+  colors = config.colorScheme.colors;
+in
+{
   xdg.configFile."eww/scripts/workspaces" = {
     executable = true;
     text = ''
       #!/usr/bin/env bash
-
-      # define colors
-      #        red       peach     green     blue
-      colors=("#f38ba8" "#fab387" "#a6e3a1" "#89b4fa")
-      #        pink      yellow    teal      lavender
-      dimmed=("#f5c2e7" "#f9e2af" "#94e2d5" "#b4befe")
-      empty="#313244"
+      
+      colors=("#${colors.base08}" "#${colors.base0B}" "#${colors.base0A}" "#${colors.base08}")
+      dimmed=("#${colors.base0C}" "#${colors.base0D}" "#${colors.base0E}" "#${colors.base0F}")
+      empty="#${colors.base03}"
 
       # get initial focused workspace
       focusedws=$(hyprctl -j monitors | jaq -r '.[] | select(.focused == true) | .activeWorkspace.id')

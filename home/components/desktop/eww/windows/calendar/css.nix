@@ -11,20 +11,20 @@
       padding: 5px;
 
       :selected {
-        color: $mauve;
+        color: $highlight1;
       }
 
       .header {
-        color: $subtext1;
+        color: $highlight1;
       }
 
       .highlight {
-        color: $maroon;
+        color: $highlight2;
         font-weight: bold;
       }
 
       .button {
-        color: $sapphire;
+        color: $accent1;
       }
 
       :indeterminate {

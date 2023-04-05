@@ -5,6 +5,16 @@
   ];
 
   xdg.configFile."eww/windows/music.yuck".text = ''
+    (defwidget closer [window]
+      (eventbox :onclick "eww close ''${window} && eww close ''${window}-closer"))
+    
+    (defwindow music-closer
+      :monitor 0
+      :geometry (geometry :width "100%" :height "100%")
+      :stacking "fg"
+      :focusable false
+      (closer :window "music"))
+      
     (defwidget music []
       (box
         :class "music-window"
@@ -44,8 +54,6 @@
             (box
               :class "music-bar"
               (scale
-                ; doesn't work, looking for other ways
-                ; :style "background: linear-gradient(to right, ''${music.color1}, ''${music.color2});"
                 :onchange "playerctl position `bc <<< \"{} * $(playerctl metadata mpris:length) / 1000000 / 100\"`"
                 :value {music.position}))))))
 
@@ -58,7 +66,7 @@
         :y "0%"
         :width "0%"
         :height "0%"
-        :anchor "top right")
+        :anchor "top center")
       (music))
   '';
 }

@@ -26,14 +26,13 @@
           (box
             :space-evenly false
             :halign "center"
-            (clock_module)
+            (music-module)
             ))
 
     (defwidget right []
       (box
         :space-evenly false
         :halign "end"
-        (music-module)
 ''
 +
 (
@@ -49,6 +48,7 @@
         (bluetooth)
         (net)
         (sys)
+        (clock_module)
         ))
 
     (defwidget bar-box []
