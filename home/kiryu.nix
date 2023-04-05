@@ -14,12 +14,11 @@
 
   ];
   
-  colorScheme = inputs.nix-colors.colorschemes.black-metal-immortal;
-  # colorScheme = inputs.nix-colors.colorschemes.gigavolt;
+  # colorScheme = inputs.nix-colors.colorschemes.black-metal-immortal;
   # colorScheme = inputs.nix-colors.colorschemes.harmonic16-dark;
   # colorScheme = inputs.nix-colors.colorschemes.kanagawa;
   # colorScheme = inputs.nix-colors.colorschemes.nebula;
-  # colorScheme = inputs.nix-colors.colorschemes.nord;
+  colorScheme = inputs.nix-colors.colorschemes.nord;
   # colorScheme = inputs.nix-colors.colorschemes.nova;
   # colorScheme = inputs.nix-colors.colorschemes.sandcastle;
   # colorScheme = inputs.nix-colors.colorschemes.vulcan;

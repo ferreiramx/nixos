@@ -4,20 +4,20 @@ let
 in
 ''
 * {
-    background: #${colors.base01};
+    background: #${colors.base00};
     foreground: #${colors.base05};
     background-color: @background;
-    border-color: #${colors.base02};
+    border-color: #${colors.base01};
     border: @border-color;
     border-alt: @border-color;
-    selected-foreground: #${colors.base03};
-    urgent: #${colors.base0A};
+    selected-foreground: #${colors.base05};
+    urgent: #${colors.base08};
 
-    active-background: #${colors.base02};
+    active-background: #${colors.base01};
     active-foreground: @foreground;
     normal-background: #${colors.base01};
     normal-foreground: @foreground;
-    urgent-background: #${colors.base02};
+    urgent-background: #${colors.base07};
     urgent-foreground: @foreground;
 
     alternate-active-background: @active-background;
@@ -27,11 +27,11 @@ in
     alternate-urgent-background: @urgent-background;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: #${colors.base03};
+    selected-active-background: #${colors.base02};
     selected-active-foreground: @foreground;
     selected-normal-background: #${colors.base02};
     selected-normal-foreground: @foreground;
-    selected-urgent-background: #${colors.base0A};
+    selected-urgent-background: #${colors.base07};
     selected-urgent-foreground: @foreground; 
 }
 ''

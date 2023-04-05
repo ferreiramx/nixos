@@ -6,8 +6,6 @@ in
   gtk = {
     enable = true;
     theme = {
-      # package = (pkgs.graphite-gtk-theme.override { tweaks = [ "black" ]; });
-      # name = "Graphite-Dark";
       package = nix-colors-lib.gtkThemeFromScheme {
         scheme = config.colorScheme;
       };

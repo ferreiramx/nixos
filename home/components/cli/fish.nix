@@ -18,7 +18,7 @@ in
       gb = "git branch -m";
       gp = "git push";
       gu = "git pull";
-      ghr = "git remote set origin https://(cat /run/secrets/github)@github.com/";
+      ghr = "git remote set-url origin https://(cat /run/secrets/github)@github.com/";
 
       sops = ''nix-shell -p sops --run "sops ~/.nixos/hosts/common/global/secrets.yml"'';
 
@@ -42,27 +42,27 @@ in
     '';
   xdg.configFile."fish/conf.d/nix_theme.fish".text =
     ''
-      set -U fish_color_autosuggestion ${colors.base0E}
+      set -U fish_color_autosuggestion ${colors.base04}
       set -U fish_color_cancel -r
-      set -U fish_color_command ${colors.base0A}
-      set -U fish_color_comment ${colors.base09}
+      set -U fish_color_command ${colors.base08}
+      set -U fish_color_comment ${colors.base03}
       set -U fish_color_cwd normal
-      set -U fish_color_cwd_root red
+      set -U fish_color_cwd_root ${colors.base0E}
       set -U fish_color_end ${colors.base04}
       set -U fish_color_error 974B46
-      set -U fish_color_escape ${colors.base0A}
+      set -U fish_color_escape ${colors.base0C}
       set -U fish_color_history_current --bold
       set -U fish_color_host normal
       set -U fish_color_host_remote
-      set -U fish_color_keyword ${colors.base0A}
+      set -U fish_color_keyword ${colors.base0E}
       set -U fish_color_match --background=brblue
       set -U fish_color_normal normal
-      set -U fish_color_operator ${colors.base0A}
-      set -U fish_color_option ${colors.base08}
-      set -U fish_color_param ${colors.base08}
-      set -U fish_color_quote ${colors.base03}
+      set -U fish_color_operator ${colors.base05}
+      set -U fish_color_option ${colors.base0D}
+      set -U fish_color_param ${colors.base0C}
+      set -U fish_color_quote ${colors.base0B}
       set -U fish_color_redirection FAFAFA
-      set -U fish_color_search_match '${colors.base08}'  '--background=brblack'
+      set -U fish_color_search_match '${colors.base0C}'  '--background=${colors.base02}'
       set -U fish_color_selection 'white'  '--bold'  '--background=brblack'
       set -U fish_color_status red
       set -U fish_color_user normal
@@ -102,10 +102,10 @@ in
       set -U tide_cmd_duration_icon \uf252
       set -U tide_cmd_duration_threshold 3000
       set -U tide_context_always_display true
-      set -U tide_context_bg_color "${colors.base03}"
+      set -U tide_context_bg_color "${colors.base02}"
       set -U tide_context_color_default "${colors.base05}"
-      set -U tide_context_color_root red
-      set -U tide_context_color_ssh yellow
+      set -U tide_context_color_root "${colors.base05}"
+      set -U tide_context_color_ssh "${colors.base05}"
       set -U tide_context_hostname_parts 1
       set -U tide_crystal_bg_color brwhite
       set -U tide_crystal_color black
@@ -114,17 +114,17 @@ in
       set -U tide_docker_color black
       set -U tide_docker_default_contexts default\x1ecolima
       set -U tide_docker_icon \uf308
-      set -U tide_git_bg_color "${colors.base08}"
-      set -U tide_git_bg_color_unstable "${colors.base0F}"
+      set -U tide_git_bg_color "${colors.base0B}"
+      set -U tide_git_bg_color_unstable "${colors.base0A}"
       set -U tide_git_bg_color_urgent 6d3636
-      set -U tide_git_color_branch black
-      set -U tide_git_color_conflicted black
-      set -U tide_git_color_dirty black
-      set -U tide_git_color_operation black
-      set -U tide_git_color_staged black
-      set -U tide_git_color_stash black
-      set -U tide_git_color_untracked black
-      set -U tide_git_color_upstream black
+      set -U tide_git_color_branch "${colors.base05}"
+      set -U tide_git_color_conflicted "${colors.base05}"
+      set -U tide_git_color_dirty "${colors.base05}"
+      set -U tide_git_color_operation "${colors.base05}"
+      set -U tide_git_color_staged "${colors.base05}"
+      set -U tide_git_color_stash "${colors.base05}"
+      set -U tide_git_color_untracked "${colors.base05}"
+      set -U tide_git_color_upstream "${colors.base05}"
       set -U tide_git_icon \uf418
       set -U tide_git_truncation_length 24
       set -U tide_go_bg_color brcyan
@@ -146,13 +146,13 @@ in
       set -U tide_left_prompt_separator_diff_color \ue0b0
       set -U tide_left_prompt_separator_same_color \ue0b1
       set -U tide_left_prompt_suffix \ue0b0
-      set -U tide_nix_shell_bg_color "${colors.base0B}"
-      set -U tide_nix_shell_color "${colors.base05}"
+      set -U tide_nix_shell_bg_color "${colors.base0D}"
+      set -U tide_nix_shell_color "${colors.base04}"
       set -U tide_nix_shell_icon \uf313
       set -U tide_node_bg_color green
       set -U tide_node_color black
       set -U tide_node_icon \u2b22
-      set -U tide_os_bg_color "${colors.base0A}"
+      set -U tide_os_bg_color "${colors.base01}"
       set -U tide_os_color "${colors.base05}"
       set -U tide_os_icon \uf313
       set -U tide_php_bg_color blue
@@ -167,7 +167,7 @@ in
       set -U tide_prompt_icon_connection \x20
       set -U tide_prompt_min_cols 34
       set -U tide_prompt_pad_items true
-      set -U tide_pwd_bg_color "${colors.base08}"
+      set -U tide_pwd_bg_color "${colors.base03}"
       set -U tide_pwd_color_anchors "${colors.base05}"
       set -U tide_pwd_color_dirs "${colors.base05}"
       set -U tide_pwd_color_truncated_dirs "${colors.base05}"
@@ -215,8 +215,8 @@ in
       set -U tide_vi_mode_icon_insert I
       set -U tide_vi_mode_icon_replace R
       set -U tide_vi_mode_icon_visual V
-      set -U tide_virtual_env_bg_color "${colors.base0A}"
-      set -U tide_virtual_env_color "${colors.base01}"
+      set -U tide_virtual_env_bg_color "${colors.base0E}"
+      set -U tide_virtual_env_color "${colors.base05}"
       set -U tide_virtual_env_icon \ue73c
     '';
 }

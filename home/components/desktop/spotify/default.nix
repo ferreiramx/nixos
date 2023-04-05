@@ -25,25 +25,25 @@ in
       };
       colorScheme = "custom";
       customColorScheme = {
-        button = "${colors.base0A}";
-        notification = "${colors.base09}";
-        playback-bar = "${colors.base09}";
-        button-disabled = "${colors.base09}";
-        shadow = "${colors.base02}";
-        selected-row = "${colors.base03}";
-        sub-button = "${colors.base01}";
-        main = "${colors.base01}";
-        notification-error = "${colors.base09}";
-        subtext = "${colors.base05}";
-        card = "${colors.base01}";
-        sidebar = "${colors.base01}";
-        button-active = "${colors.base0B}";
-        tab-active = "${colors.base0B}";
-        subbutton-text = "${colors.base03}";
-        text = "${colors.base0A}";
-        misc = "${colors.base0F}";
-        player = "${colors.base01}";
+        text = "${colors.base05}";
+        subtext = "${colors.base04}";
+        main = "${colors.base00}";
+        player = "${colors.base00}";
+        button = "${colors.base04}";
         button-text = "${colors.base05}";
+        sub-button = "${colors.base04}";
+        subbutton-text = "${colors.base05}";
+        button-active = "${colors.base07}";
+        button-disabled = "${colors.base03}";
+        notification = "${colors.base05}";
+        playback-bar = "${colors.base06}";
+        shadow = "${colors.base00}";
+        selected-row = "${colors.base03}";
+        notification-error = "${colors.base08}";
+        card = "${colors.base01}";
+        sidebar = "${colors.base00}";
+        tab-active = "${colors.base02}";
+        misc = "${colors.base0E}";
       };
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay

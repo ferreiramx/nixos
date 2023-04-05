@@ -22,7 +22,7 @@ in
         padding = 5;
         horizontal_padding = 5;
         frame_width = 3;
-        frame_color = "#${colors.base02}";
+        frame_color = "#${colors.base01}";
         separator_color = "frame";
         sort = "yes";
         idle_threshold = 45;
@@ -55,21 +55,21 @@ in
         per_monitor_dpi = false;
       };
       urgency_low = {
-        background = "#${colors.base01}";
+        background = "#${colors.base00}";
         foreground = "#${colors.base05}";
-        frame_color = "#${colors.base02}";
+        frame_color = "#${colors.base01}";
         timeout = 10;
       };
       urgency_normal = {
-        background = "#${colors.base01}";
+        background = "#${colors.base00}";
         foreground = "#${colors.base05}";
-        frame_color = "#${colors.base02}";
+        frame_color = "#${colors.base01}";
         timeout = 10;
       };
       urgency_critical = {
-        background = "#${colors.base0A}";
-        foreground = "#${colors.base09}";
-        frame_color = "#${colors.base02}";
+        background = "#${colors.base08}";
+        foreground = "#${colors.base05}";
+        frame_color = "#${colors.base01}";
         timeout = 0;
       };
     };
