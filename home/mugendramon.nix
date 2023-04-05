@@ -1,4 +1,8 @@
-{ inputs, ... }: {
+{ inputs, config, pkgs, vars, ... }: 
+let
+  nix-colors-lib = inputs.nix-colors.lib-contrib { inherit pkgs; };
+in
+{
   imports = [
     ./common
 
@@ -23,5 +27,12 @@
   # colorScheme = inputs.nix-colors.colorschemes.vulcan;
 
   home.file.".face".source = ./common/assets/img/face.png;
-  home.file.".wp.png".source = ./common/assets/wp/black-uw.png;
+  # home.file.".wp.png".source = ./common/assets/wp/black-uw.png;
+  home.file.".wp.png".source = nix-colors-lib.nixWallpaperFromScheme {
+    scheme = config.colorScheme;
+    width = vars.screen.width;
+    height = vars.screen.height;
+    logoScale = 5.0;
+  };
+
 }
