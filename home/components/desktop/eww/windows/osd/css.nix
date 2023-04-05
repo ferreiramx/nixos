@@ -17,7 +17,7 @@
 
       trough {
         @include rounding;
-        background-color: $accent4;
+        background-color: $bg3;
         margin: 1rem 0 .5rem;
         min-height: 10rem;
         min-width: .7rem;
@@ -30,11 +30,11 @@
     }
 
     .osd-volume highlight {
-      background-image: linear-gradient(to top, $highlight1, $highlight1);
+      background-image: linear-gradient(to top, $fg4, $fg4);
     }
 
     .osd-brightness highlight {
-      background-image: linear-gradient(to top, $highlight1, $highlight1);
+      background-image: linear-gradient(to top, $fg4, $fg4);
     }
   '';
 }

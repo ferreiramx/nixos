@@ -181,16 +181,16 @@ in
   };
 
   programs.swaylock.settings = {
-    color = "${colors.base01}";
-    font-size = 24;
+    color = "${colors.base00}";
+    font-size = vars.fonts.sans;
     indicator-idle-visible = false;
     indicator-radius = 100;
     inside-color = "${colors.base01}";
-    line-color = "${colors.base00}";
-    ring-color = "${colors.base08}";
-    key-hl-color = "${colors.base0B}";
-    inside-ver-color = "${colors.base0A}";
-    ring-ver-color = "${colors.base0A}";
+    line-color = "${colors.base01}";
+    ring-color = "${colors.base01}";
+    key-hl-color = "${colors.base02}";
+    inside-ver-color = "${colors.base08}";
+    ring-ver-color = "${colors.base08}";
     inside-clear-color = "${colors.base0C}";
     ring-clear-color = "${colors.base0C}";
     show-failed-attempts = true;

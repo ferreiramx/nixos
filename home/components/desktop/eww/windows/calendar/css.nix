@@ -11,24 +11,24 @@
       padding: 5px;
 
       :selected {
-        color: $highlight1;
+        color: $fg4;
       }
 
       .header {
-        color: $highlight1;
+        color: $fg4;
       }
 
       .highlight {
-        color: $highlight2;
+        color: $fg3;
         font-weight: bold;
       }
 
       .button {
-        color: $accent1;
+        color: $fg1;
       }
 
       :indeterminate {
-        color: $overlay0;
+        color: $bg3;
       }
     }
   '';

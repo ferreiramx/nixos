@@ -101,8 +101,8 @@ in
             color1=$(printf "rgba(%d, %d, %d, 0.95)" ${color1:1:2} ${color1:3:2} ${color1:5:2})
             color2=$(echo "$cols" | tail -1)
           else
-            color1="#${colors.base01}"
-            color2="#${colors.base00}"
+            color1="#${colors.base00}"
+            color2="#${colors.base01}"
           fi
         fi
 

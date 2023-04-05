@@ -8,8 +8,8 @@ in
     text = ''
       #!/usr/bin/env bash
       
-      colors=("#${colors.base08}" "#${colors.base0B}" "#${colors.base0A}" "#${colors.base08}")
-      dimmed=("#${colors.base0C}" "#${colors.base0D}" "#${colors.base0E}" "#${colors.base0F}")
+      colors=("#${colors.base07}" "#${colors.base05}" "#${colors.base08}" "#${colors.base0A}")
+      dimmed=("#${colors.base05}" "#${colors.base06}" "#${colors.base09}" "#${colors.base0B}")
       empty="#${colors.base03}"
 
       # get initial focused workspace

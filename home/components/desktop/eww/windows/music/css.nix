@@ -35,27 +35,27 @@
     }
 
     .music-artist {
-      color: $subtext1;
+      color: $fg1;
     }
 
     .music-button label {
-      color: $subtext1;
+      color: $fg1;
       font-size: 2rem;
     }
 
     .music-time {
-      color: $subtext1;
+      color: $fg1;
       margin: 0 1rem;
     }
 
     .music-bar scale {
       highlight {
-        background-image: linear-gradient(to right, $highlight1, $highlight1);
+        background-image: linear-gradient(to right, $fg4, $fg4);
         border-radius: 24px;
       }
 
       trough {
-        background-color: $accent4;
+        background-color: $bg3;
         border-radius: 24px;
         margin-top: 0;
         min-height: 10px;

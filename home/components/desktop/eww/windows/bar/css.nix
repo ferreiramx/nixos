@@ -55,7 +55,7 @@
 
     .date {
       background: $bg;
-      color: $accent1;
+      color: $fg;
 
       label {
         font-weight: bold;
@@ -63,11 +63,11 @@
       }
     }
 
-    .bright-icon { color: $highlight1; }
+    .bright-icon { color: $fg1; }
     .module-bt { font-size: 1.2rem; }
 
     scale trough {
-      background-color: $accent4;
+      background-color: $bg3;
       border-radius: 24px;
       margin: 0 1rem;
       min-height: 10px;

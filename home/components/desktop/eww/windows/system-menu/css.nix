@@ -1,29 +1,29 @@
 { inputs, vars, ... }: {
   xdg.configFile."eww/css/system.scss".text = ''
-        .membar {
-          color: $highlight1;
+        .cpubar {
+          color: $accent5;
         }
 
-        .cpubar {
-          color: $highlight2;
+        .membar {
+          color: $accent6;
         }
 
         .batbar {
-          color: $highlight3;
+          color: $accent8;
         }
 
         .membar,
         .cpubar,
         .batbar {
-          background-color: $bg1;
-        }
-
-        .iconmem {
-          color: $highlight1;
+          background-color: $bg2;
         }
 
         .iconcpu {
-          color: $highlight2;
+          color: $accent5;
+        }
+
+        .iconmem {
+          color: $accent6;
         }
 
         .icon-text {
@@ -53,7 +53,7 @@
 
         .system-info-box {
           @include rounding;
-          background-color: $bg1;
+          background-color: $bg2;
           margin: .5rem 1rem;
           padding: .5rem;
         }
@@ -62,31 +62,31 @@
         .sys-cpu,
         .sys-cpu-temp,
         .sys-gpu-temp, {
-          background-color: $bg;
+          background-color: $bg2;
         }
 
         .sys-icon-cpu,
         .sys-text-cpu,
         .sys-cpu {
-          color: $highlight1;
+          color: $accent5;
         }
 
         .sys-icon-mem,
         .sys-text-mem,
         .sys-mem {
-          color: $highlight2;
+          color: $accent6;
         }
 
         .sys-icon-cpu-temp,
         .sys-text-cpu-temp,
         .sys-cpu-temp {
-          color: $highlight4;
+          color: $accent5;
         }
 
         .sys-icon-gpu-temp,
         .sys-text-gpu-temp,
         .sys-gpu-temp {
-          color: $highlight5;
+          color: $accent7;
         }
 
         .sys-box {
@@ -136,7 +136,7 @@
 
     .element {
       @include rounding;
-      background-color: $bg1;
+      background-color: $bg2;
       margin: .3rem;
 
       button {
@@ -155,7 +155,7 @@
 
     .sliders {
       @include rounding;
-      background-color: $bg1;
+      background-color: $bg2;
       margin: .5rem 1rem;
       padding: .6rem 1rem;
 
@@ -171,32 +171,32 @@
     }
 
     .volume-icon {
-      color: $highlight1;
+      color: $fg1;
     }
 
     .volume-slider-box,
     .brightness-slider-box {
-      trough { background-color: $accent4; }
+      trough { background-color: $bg3; }
     }
 
     .volume-bar highlight {
       @include rounding;
-      background-image: linear-gradient(to right, $highlight1, $highlight1);
+      background-image: linear-gradient(to right, $fg4, $fg4);
     }
 
     .brightness-slider-box scale highlight {
       @include rounding;
-      background-image: linear-gradient(to right, $highlight1, $highlight1);
+      background-image: linear-gradient(to right, $fg4, $fg4);
     }
 
     .bottom-row {
       margin: .5rem 1rem;
 
-      .battery-icon { font-size: 2rem; }
-      .battery-wattage { color: $highlight3; }
+      .battery-icon { font-size: 2rem; color: $accent8; }
+      .battery-wattage { color: $accent8; }
 
       .battery-status {
-        color: $subtext0;
+        color: $fg1;
         margin: 0 .5rem;
       }
 
@@ -212,15 +212,15 @@
     }
 
     .bt-connected {
-      background-color: $highlight1;
-      color: $crust;
+      background-color: $bg4;
+      color: $fg;
 
       button:hover { background-color: rgba(0, 0, 0, .1); }
     }
 
     .wifi-connected {
-      background-color: $highlight2;
-      color: $crust;
+      background-color: $bg4;
+      color: $fg;
 
       button:hover { background-color: rgba(0, 0, 0, .1); }
     }

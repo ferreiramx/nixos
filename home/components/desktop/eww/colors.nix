@@ -5,37 +5,27 @@ let
 in
 {
 xdg.configFile."eww/css/_colors.scss".text = ''
-    
-    $accent1:     #${colors.base0C};
-    $accent2:     #${colors.base0D};
-    $accent3:     #${colors.base0E};
-    $accent4:     #${colors.base0F};
-    $highlight1:  #${colors.base08};
-    $highlight2:  #${colors.base0B};
-    $highlight3:  #${colors.base0A};
-    $highlight4:  #${colors.base08};
-    $highlight5:  #${colors.base0B};
+    $bg1:       #${colors.base00};
+    $bg2:       #${colors.base01};
+    $bg3:       #${colors.base02};
+    $bg4:       #${colors.base03};
+    $fg1:       #${colors.base04};
+    $fg2:       #${colors.base05};
+    $fg3:       #${colors.base06};
+    $fg4:       #${colors.base07};
+    $accent1:   #${colors.base08};
+    $accent2:   #${colors.base09};
+    $accent3:   #${colors.base0A};
+    $accent4:   #${colors.base0B};
+    $accent5:   #${colors.base0C};
+    $accent6:   #${colors.base0D};
+    $accent7:   #${colors.base0E};
+    $accent8:   #${colors.base0F};
 
-
-    $text:        #${colors.base05};
-    $subtext1:    #${colors.base06};
-    $subtext0:    #${colors.base07};
-    $overlay2:    #${colors.base0D};
-    $overlay1:    #${colors.base0E};
-    $overlay0:    #${colors.base0F};
-
-    $surface2:    #${colors.base08};
-    $surface1:    #${colors.base0B};
-    $surface0:    #${colors.base0A};
-
-    $base:        #${colors.base00};
-    $mantle:      #${colors.base03};
-    $crust:       #${colors.base01};
-
-    $fg:          $text;
-    $bg:          rgba(${(conversions.hexToRGBString "," colors.base00)}, 0.95);
-    $bg1:         rgba(${(conversions.hexToRGBString "," colors.base02)}, 0.95);
-    $border:      #${colors.base01};
-    $shadow:      $crust;
+    $text:      $fg2;
+    $fg:        $fg2;
+    $bg:        $bg1;
+    $border:    $bg2;
+    $shadow:    rgba(18, 18, 18, 0.8);
   '';
 }
