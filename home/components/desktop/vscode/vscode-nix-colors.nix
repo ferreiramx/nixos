@@ -1,3 +1,5 @@
+# TODO: Rename output theme to coloscheme slug
+# TODO: Split script into build phase and install phase
 { config, pkgs, lib, stdenv }:
 let
   theme = import ./theme.nix { inherit config; };

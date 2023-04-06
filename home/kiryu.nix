@@ -11,6 +11,7 @@
     ./components/desktop/wm/hyprland
     ./components/desktop/vscode
     ./components/desktop/spotify
+    ./components/desktop/browser
 
   ];
 

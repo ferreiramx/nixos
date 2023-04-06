@@ -136,10 +136,10 @@ in
       "gitDecoration.conflictingResourceForeground":"#e4676b",
       "gitDecoration.deletedResourceForeground":"#c74e39",
       "gitDecoration.ignoredResourceForeground":"#${colors.base03}",
-      "gitDecoration.modifiedResourceForeground":"#${colors.base0A}",
+      "gitDecoration.modifiedResourceForeground":"#${colors.base09}",
       "gitDecoration.renamedResourceForeground":"#${colors.base0C}",
       "gitDecoration.stageDeletedResourceForeground":"#c74e39",
-      "gitDecoration.stageModifiedResourceForeground":"#${colors.base00}",
+      "gitDecoration.stageModifiedResourceForeground":"#${colors.base0A}",
       "gitDecoration.submoduleResourceForeground":"#8db9e2",
       "gitDecoration.untrackedResourceForeground":"#${colors.base0E}"
    },
