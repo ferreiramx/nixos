@@ -69,15 +69,9 @@
       memory_display="off"
       battery_display="off"
       disk_display="off"
-      image_backend="kitty"
-      image_source="/home/aferreira/.nixos/home/common/assets/img/mugen_face.png"
       ascii_distro="auto"
-      ascii_colors=(5 4 3 4 5 6)
+      ascii_colors=(13 12)
       ascii_bold="on"
-      image_loop="off"
-      crop_mode="fit"
-      crop_offset="center"
-      image_size="auto"
       gap=1
       yoffset=0
       xoffset=0
