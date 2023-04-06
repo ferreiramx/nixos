@@ -31,14 +31,14 @@
     imagemagick
   ];
 
-  systemd.user.services.eww = {
-    description = "eww daemon";
-    partOf = [ "graphical-session.target" ];
-    serviceConfig = {
-      Environment = "PATH=/run/wrappers/bin";
-      ExecStart = "${pkgs.eww-wayland}/bin/eww daemon --no-daemonize";
-      Restart = "on-failure";
-    };
-    wantedBy = [ "graphical-session.target" ];
-  };
+  # systemd.user.services.eww = {
+  #   description = "eww daemon";
+  #   partOf = [ "graphical-session.target" ];
+  #   serviceConfig = {
+  #     Environment = "PATH=/run/wrappers/bin";
+  #     ExecStart = "${pkgs.eww-wayland}/bin/eww daemon --no-daemonize";
+  #     Restart = "on-failure";
+  #   };
+  #   wantedBy = [ "graphical-session.target" ];
+  # };
 }

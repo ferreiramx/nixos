@@ -60,7 +60,7 @@ in
         rounding = 12
         multisample_edges = true
         active_opacity = 1.0
-        inactive_opacity = 0.95
+        inactive_opacity = 1.0
         fullscreen_opacity = 1.0
         blur = true
         blur_size = 8

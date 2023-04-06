@@ -19,9 +19,12 @@ in
       "terminal.integrated.fontWeight" = "Semibold";
       "editor.minimap.enabled" = false;
       "editor.bracketPairColorization.enabled" = false;
+      "sqltools.highlightQuery" = false;
+      "git.openRepositoryInParentFolders" = "never";
     };
     extensions = with pkgs.vscode-extensions;
       [
+        bbenoist.nix
         ms-python.python
         arcticicestudio.nord-visual-studio-code
         ms-toolsai.jupyter

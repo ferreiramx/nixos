@@ -94,16 +94,8 @@ in
       playerctl -F metadata -f '{{title}}\{{artist}}\{{status}}\{{position}}\{{mpris:length}}\{{mpris:artUrl}}' 2>/dev/null | while IFS="$(printf '\')" read -r title artist status position len cover; do
         if [[ "$cover" != "$prevCover" ]]; then
           COVER=$(get_cover "$cover")
-
-          if [ "$COVER" != "" ]; then
-            cols=$(convert "$COVER" -colors 2 -format "%c" histogram:info: | awk '{print $3}')
-            color1=$(echo "$cols" | head -1)
-            color1=$(printf "rgba(%d, %d, %d, 0.95)" ${color1:1:2} ${color1:3:2} ${color1:5:2})
-            color2=$(echo "$cols" | tail -1)
-          else
-            color1="#${colors.base00}"
-            color2="#${colors.base01}"
-          fi
+          color1="#${colors.base01}"
+          color2="#${colors.base00}"
         fi
 
         jaq --null-input -r -c \

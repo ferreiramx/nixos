@@ -4,17 +4,7 @@
     ../../modules
   ];
 
-  xdg.configFile."eww/windows/music.yuck".text = ''
-    (defwidget closer [window]
-      (eventbox :onclick "eww close ''${window} && eww close ''${window}-closer"))
-    
-    (defwindow music-closer
-      :monitor 0
-      :geometry (geometry :width "100%" :height "100%")
-      :stacking "fg"
-      :focusable false
-      (closer :window "music"))
-      
+  xdg.configFile."eww/windows/music.yuck".text = ''    
     (defwidget music []
       (box
         :class "music-window"

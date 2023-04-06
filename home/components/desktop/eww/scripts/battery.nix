@@ -1,4 +1,8 @@
-{ inputs, vars, ... }: {
+{ config, inputs, vars, ... }: 
+let
+  colors = config.colorScheme.colors;
+in
+{
   xdg.configFile."eww/scripts/battery" = {
     executable = true;
     text = ''
@@ -33,9 +37,9 @@
 
       color() {
         if [ "$CAPACITY" -le 20 ]; then
-          echo '#f38ba8'
+          echo '#${colors.base08}'
         else
-          echo '#a6e3a1'
+          echo '#${colors.base0E}'
         fi
       }
 
