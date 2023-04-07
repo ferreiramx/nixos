@@ -117,10 +117,12 @@
             :class "brightness-slider-icon icon"
             {brightness.icon})
           (scale
-            :class "brightness-slider" 
+            :class "brightness-slider"
+            :min 0
+            :max 255
             :value {brightness.percent} 
             :marks true 
-            :onchange "light -S {}"
+            :onchange "brightnessctl set {}"
           )          
         )
       ''

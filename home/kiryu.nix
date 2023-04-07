@@ -30,7 +30,7 @@
     colors = {
       base00 = "#161819";
       base01 = "#262829";
-      base02 = "#363839";
+      base02 = "#292B2B";
       base03 = "#464849";
       base04 = "#A6A8A9";
       base05 = "#B8BBB9";
@@ -42,7 +42,7 @@
       base0B = "#4F684E";
       base0C = "#45585B";
       base0D = "#3C495A";
-      base0E = "#486764";
+      base0E = "#5C5467";
       base0F = "#70413C";
     };
   };

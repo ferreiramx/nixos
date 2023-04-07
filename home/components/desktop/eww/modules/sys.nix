@@ -31,7 +31,6 @@
     (circular-progress
           :value "''${EWW_BATTERY["BAT0"].capacity}"
           :class "batbar"
-          :style "color: ''${battery.color};"
           :thickness 3
           (button
             :tooltip "battery on ''${EWW_BATTERY["BAT0"].capacity}%"

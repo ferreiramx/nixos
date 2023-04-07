@@ -1,15 +1,15 @@
 { inputs, vars, ... }: {
   xdg.configFile."eww/css/system.scss".text = ''
         .cpubar {
-          color: $accent5;
+          color: $accent4;
         }
 
         .membar {
-          color: $accent6;
+          color: $accent7;
         }
 
         .batbar {
-          color: $accent8;
+          color: $accent1;
         }
 
         .membar,
@@ -19,7 +19,7 @@
         }
 
         .iconcpu {
-          color: $accent5;
+          color: $accent4;
         }
 
         .iconmem {
@@ -68,25 +68,25 @@
         .sys-icon-cpu,
         .sys-text-cpu,
         .sys-cpu {
-          color: $accent5;
+          color: $accent4;
         }
 
         .sys-icon-mem,
         .sys-text-mem,
         .sys-mem {
-          color: $accent6;
+          color: $accent7;
         }
 
         .sys-icon-cpu-temp,
         .sys-text-cpu-temp,
         .sys-cpu-temp {
-          color: $accent5;
+          color: $accent8;
         }
 
         .sys-icon-gpu-temp,
         .sys-text-gpu-temp,
         .sys-gpu-temp {
-          color: $accent7;
+          color: $accent2;
         }
 
         .sys-box {
@@ -192,11 +192,11 @@
     .bottom-row {
       margin: .5rem 1rem;
 
-      .battery-icon { font-size: 2rem; color: $accent8; }
-      .battery-wattage { color: $accent8; }
+      .battery-icon { font-size: 2rem; color: $accent1; }
+      .battery-wattage { color: $fg4; }
 
       .battery-status {
-        color: $fg1;
+        color: $fg2;
         margin: 0 .5rem;
       }
 
@@ -212,14 +212,14 @@
     }
 
     .bt-connected {
-      background-color: $bg4;
+      background-color: $accent5;
       color: $fg;
 
       button:hover { background-color: rgba(0, 0, 0, .1); }
     }
 
     .wifi-connected {
-      background-color: $bg4;
+      background-color: $accent6;
       color: $fg;
 
       button:hover { background-color: rgba(0, 0, 0, .1); }

@@ -9,6 +9,7 @@ in
       ls = "ls -l -h -A --color";
     };
     shellAbbrs = {
+      nf = "neofetch";
       nxs = "sudo nixos-rebuild switch --flake ~/.nixos/";
       nxb = "sudo nixos-rebuild build --flake ~/.nixos/";
       nxu = "nix flake lock ~/.nixos/ --update-input";
