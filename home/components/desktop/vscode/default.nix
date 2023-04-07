@@ -1,6 +1,6 @@
 { config, pkgs, vars, ... }:
 let
-  vscode-nix-colors = pkgs.callPackage ./vscode-nix-colors.nix { inherit config pkgs; };
+  vscodeThemeFromScheme = import ./vscode-theme.nix { inherit pkgs; };
 in
 {
   programs.vscode = {
@@ -11,7 +11,6 @@ in
       "editor.fontSize" = vars.fonts.mono;
       "editor.fontFamily" = "SauceCodePro Nerd Font";
       "editor.fontWeight" = "Semibold";
-      "workbench.colorTheme" = "nix-colors";
       "workbench.fontSize" = vars.fonts.sans;
       "workbench.fontFamily" = "SauceCodePro Nerd Font";
       "terminal.integrated.fontSize" = vars.fonts.mono;
@@ -21,9 +20,11 @@ in
       "editor.bracketPairColorization.enabled" = false;
       "sqltools.highlightQuery" = false;
       "git.openRepositoryInParentFolders" = "never";
+      "workbench.colorTheme" = "nix-colors-${config.colorScheme.slug}";
     };
     extensions = with pkgs.vscode-extensions;
       [
+        (vscodeThemeFromScheme { scheme = config.colorScheme; })
         bbenoist.nix
         ms-python.python
         arcticicestudio.nord-visual-studio-code
@@ -76,17 +77,6 @@ in
             version = "1.12.2";
             sha256 = "EjHQvWiEEfLxM+c/SWAJ2H9ltGEgzMSC84Zyl5u+eqQ=";
           }
-        ]
-      ++ [
-        (pkgs.vscode-utils.buildVscodeExtension
-          {
-            name = vscode-nix-colors.name;
-            vscodeExtName = vscode-nix-colors.name;
-            src = "${vscode-nix-colors}/${vscode-nix-colors.name}.zip";
-            vscodeExtUniqueId = "aferreira.vscode-nix-colors";
-            vscodeExtPublisher = "aferreira";
-            version = "1.0.0";
-          })
-      ];
+        ];
   };
 }
