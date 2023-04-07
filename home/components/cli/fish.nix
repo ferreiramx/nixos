@@ -19,7 +19,8 @@ in
       gc = "git commit -m";
       gb = "git branch -m";
       gp = "git push";
-      gu = "git pull";
+      gl = "git pull";
+      gs = "git status";
       ghr = "git remote set-url origin https://(cat /run/secrets/github)@github.com/";
 
       sops = ''nix-shell -p sops --run "sops ~/.nixos/hosts/common/global/secrets.yml"'';

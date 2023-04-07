@@ -68,6 +68,7 @@ in
     "foreground" = "#${colors.base05}";
     "icon.foreground" = "#${colors.base05}";
     "input.background" = "#${colors.base00}";
+    "input.border" = "#${colors.base03}";
     "list.activeSelectionBackground" = "#${colors.base03}";
     "list.dropBackground" = "#${colors.base01}";
     "list.focusBackground" = "#${colors.base03}";
