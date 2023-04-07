@@ -7,6 +7,7 @@ in
     enable = true;
     shellAliases = {
       ls = "ls -l -h -A --color";
+      deepchannel = "deepchannel --no-sandbox";
     };
     shellAbbrs = {
       nf = "neofetch";

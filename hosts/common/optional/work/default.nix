@@ -6,6 +6,7 @@
     insomnia
     slack
     zoom-us
+    deepchannel
   ];
 
   sops.secrets = {

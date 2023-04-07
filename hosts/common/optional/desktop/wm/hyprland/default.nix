@@ -7,7 +7,7 @@
   security.pam.services.swaylock = { };
   environment.sessionVariables = {
     MOZ_ENABLE_WAYLAND = "1";
-    # GDK_BACKEND="wayland";
+    GDK_BACKEND="wayland";
     WLR_NO_HARDWARE_CURSORS = "1";
     XDG_SESSION_TYPE = "wayland";
     # GBM_BACKEND="nvidia-drm";
