@@ -1,4 +1,7 @@
 { inputs, config, pkgs, vars, ... }:
+let 
+  customSchemes = import ./common/colorschemes;
+in
 {
   imports = [
     ./common
@@ -23,28 +26,6 @@
   # colorScheme = inputs.nix-colors.colorschemes.nova;
   # colorScheme = inputs.nix-colors.colorschemes.sandcastle;
   # colorScheme = inputs.nix-colors.colorschemes.vulcan;
-  colorScheme = {
-    slug = "power-metal";
-    name = "Power Metal";
-    author = "me";
-    colors = {
-      base00 = "#161819";
-      base01 = "#262829";
-      base02 = "#292B2B";
-      base03 = "#464849";
-      base04 = "#A6A8A9";
-      base05 = "#B8BBB9";
-      base06 = "#E0E0E0";
-      base07 = "#4B636F";
-      base08 = "#586C7D";
-      base09 = "#87664C";
-      base0A = "#98884a";
-      base0B = "#4F684E";
-      base0C = "#45585B";
-      base0D = "#3C495A";
-      base0E = "#5C5467";
-      base0F = "#70413C";
-    };
-  };
+  colorScheme = customSchemes.power-metal-blue;
   home.file.".face".source = ./common/assets/img/face.png;
 }
