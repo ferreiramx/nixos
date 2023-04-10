@@ -7,6 +7,7 @@
     slack
     zoom-us
     deepchannel
+    dbeaver
   ];
 
   sops.secrets = {
