@@ -8,7 +8,7 @@
       ../common/global
 
       # Optional settings enabled on this machine
-
+      ../common/optional/hardware/monitoring
       # Users for this machine
       ../common/users/aferreira
     ];
