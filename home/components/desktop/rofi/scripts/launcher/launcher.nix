@@ -1,9 +1,14 @@
+{ config, vars, ... }:
+let
+    colors = config.colorScheme.colors;
+in
+''
 @import "~/.config/rofi/theme.rasi"
 
 configuration {
-	font:							"Source Sans Pro Regular 24";
+	font:							"Source Sans Pro Regular ${builtins.toString vars.fonts.sans}";
     show-icons:                     true;
-	icon-theme: 					"oomox-mugendramon";
+	icon-theme: 					"${config.gtk.iconTheme.name}";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -50,11 +55,11 @@ prompt {
 	padding: 						0.30% 1% 0% -0.5%;
 	background-color: 				@background;
 	text-color: 					@foreground;
-	font:							"Source Sans Pro Semibold 40";
+	font:							"Source Sans Pro Semibold ${builtins.toString vars.fonts.sans}";
 }
 
 entry {
-    font:							"Source Sans Pro Semibold 30";
+    font:							"Source Sans Pro Semibold ${builtins.toString vars.fonts.sans}";
     background-color:               @background;
     text-color:                     @foreground;
     placeholder-color:              @foreground;
@@ -109,3 +114,4 @@ element selected {
     border-radius:                  12px;
     border-color:                  	@background;
 }
+''

@@ -10,7 +10,7 @@ in
     border-color: #${colors.base01};
     border: @border-color;
     border-alt: @border-color;
-    selected-foreground: #${colors.base05};
+    selected-foreground: #${colors.base07};
     urgent: #${colors.base08};
 
     active-background: #${colors.base01};
