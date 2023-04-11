@@ -27,6 +27,6 @@ in
   # colorScheme = inputs.nix-colors.colorschemes.nova;
   # colorScheme = inputs.nix-colors.colorschemes.sandcastle;
   # colorScheme = inputs.nix-colors.colorschemes.vulcan;
-  colorScheme = customSchemes.power-metal-blue;
+  colorScheme = customSchemes.power-metal-black;
   home.file.".face".source = ./common/assets/img/face.png;
 }

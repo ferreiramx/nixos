@@ -24,8 +24,8 @@
   };
 
   power-metal-blue = {
-    slug = "power-metal-teal";
-    name = "Power Metal (teal)";
+    slug = "power-metal-blue";
+    name = "Power Metal (Blue)";
     author = "me";
     colors = {
       base00 = "#040A0F";
@@ -132,6 +132,29 @@
       base05 = "#B8BBB9";
       base06 = "#E0E0E0";
       base07 = "#47240E";
+      base08 = "#586C7D";
+      base09 = "#87664C";
+      base0A = "#98884a";
+      base0B = "#4F684E";
+      base0C = "#45585B";
+      base0D = "#3C495A";
+      base0E = "#5C5467";
+      base0F = "#70413C";
+    };
+  };
+  power-metal-black = {
+    slug = "power-metal-black";
+    name = "Power Metal Black";
+    author = "me";
+    colors = {
+      base00 = "#090A0F";
+      base01 = "#0C0D12";
+      base02 = "#0F1015";
+      base03 = "#232328";
+      base04 = "#A6A8A9";
+      base05 = "#B8BBB9";
+      base06 = "#E0E0E0";
+      base07 = "#492121";
       base08 = "#586C7D";
       base09 = "#87664C";
       base0A = "#98884a";
