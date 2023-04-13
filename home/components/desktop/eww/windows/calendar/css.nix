@@ -11,11 +11,11 @@
       padding: 5px;
 
       :selected {
-        color: $fg4;
+        color: $accent5;
       }
 
       .header {
-        color: $fg4;
+        color: $accent6;
       }
 
       .highlight {
@@ -28,7 +28,7 @@
       }
 
       :indeterminate {
-        color: $bg3;
+        color: $bg4;
       }
     }
   '';

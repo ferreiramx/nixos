@@ -37,9 +37,9 @@ in
 
       color() {
         if [ "$CAPACITY" -le 20 ]; then
-          echo '#${colors.base08}'
+          echo '#${colors.base0F}'
         else
-          echo '#${colors.base0E}'
+          echo '#${colors.base07}'
         fi
       }
 

@@ -1,6 +1,7 @@
-{ config, pkgs, ... }: 
+{ inputs, config, pkgs, ... }: 
 let
   colors = config.colorScheme.colors;
+  nix-colors-lib = inputs.nix-colors.lib-contrib { inherit pkgs; };
 in
 {
   programs.fish = {
@@ -33,6 +34,7 @@ in
 
     interactiveShellInit = ''
       any-nix-shell fish | source
+      sh ${nix-colors-lib.shellThemeFromScheme { scheme = config.colorScheme; }}
     '';
   };
 

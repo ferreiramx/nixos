@@ -1,15 +1,15 @@
 { inputs, vars, ... }: {
   xdg.configFile."eww/css/system.scss".text = ''
         .cpubar {
-          color: $accent4;
+          color: $accent5;
         }
 
         .membar {
-          color: $accent7;
+          color: $accent6;
         }
 
         .batbar {
-          color: $accent1;
+          color: $fg4;
         }
 
         .membar,
@@ -19,7 +19,7 @@
         }
 
         .iconcpu {
-          color: $accent4;
+          color: $accent5;
         }
 
         .iconmem {
@@ -68,13 +68,13 @@
         .sys-icon-cpu,
         .sys-text-cpu,
         .sys-cpu {
-          color: $accent4;
+          color: $accent5;
         }
 
         .sys-icon-mem,
         .sys-text-mem,
         .sys-mem {
-          color: $accent7;
+          color: $accent6;
         }
 
         .sys-icon-cpu-temp,
@@ -86,7 +86,7 @@
         .sys-icon-gpu-temp,
         .sys-text-gpu-temp,
         .sys-gpu-temp {
-          color: $accent2;
+          color: $accent7;
         }
 
         .sys-box {
@@ -181,18 +181,18 @@
 
     .volume-bar highlight {
       @include rounding;
-      background-image: linear-gradient(to right, $fg4, $fg4);
+      background-image: linear-gradient(to right, $accent5, $accent5);
     }
 
     .brightness-slider-box scale highlight {
       @include rounding;
-      background-image: linear-gradient(to right, $fg4, $fg4);
+      background-image: linear-gradient(to right, $accent5, $accent5);
     }
 
     .bottom-row {
       margin: .5rem 1rem;
 
-      .battery-icon { font-size: 2rem; color: $accent1; }
+      .battery-icon { font-size: 2rem; color: $fg4; }
       .battery-wattage { color: $fg4; }
 
       .battery-status {
@@ -212,7 +212,7 @@
     }
 
     .bt-connected {
-      background-color: $accent5;
+      background-color: $accent6;
       color: $fg;
 
       button:hover { background-color: rgba(0, 0, 0, .1); }

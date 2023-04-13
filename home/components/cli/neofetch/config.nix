@@ -50,11 +50,11 @@
       song_format="%artist% - %album% - %title%"
       song_shorthand="off"
       mpc_args=()
-      colors=(7 3 7 7 3 7)
+      colors=(12 3 13 12 3 13)
       bold="on"
       underline_enabled="on"
       underline_char="─"
-      separator=" ● "  #" ⟫"
+      separator=" ● "
       block_range=(0 15)
       color_blocks="on"
       block_width=3
@@ -72,7 +72,7 @@
       ascii_distro="auto"
       ascii_colors=(13 12)
       ascii_bold="on"
-      gap=1
+      gap=3
       yoffset=0
       xoffset=0
       background_color=
