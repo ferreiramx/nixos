@@ -33,6 +33,7 @@ in
        ms-toolsai.jupyter-renderers
        jnoortheen.nix-ide
        ms-vscode-remote.remote-ssh
+       bungcip.better-toml
       ]
      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace
        [
