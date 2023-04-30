@@ -5,7 +5,7 @@ in
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs.vscode;
     userSettings = {
       "window.zoomLevel" = if (vars.screen.hidpi) then 1 else 0;
       "editor.fontSize" = vars.fonts.mono;
