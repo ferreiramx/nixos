@@ -10,12 +10,10 @@ in
       "window.zoomLevel" = if (vars.screen.hidpi) then 1 else 0;
       "editor.fontSize" = vars.fonts.mono;
       "editor.fontFamily" = "SauceCodePro Nerd Font";
-      # "editor.fontWeight" = "Semibold";
       "workbench.fontSize" = vars.fonts.sans;
       "workbench.fontFamily" = "SauceCodePro Nerd Font";
       "terminal.integrated.fontSize" = vars.fonts.mono;
       "terminal.integrated.fontFamily" = "SauceCodePro Nerd Font";
-     #  "terminal.integrated.fontWeight" = "Semibold";
       "editor.minimap.enabled" = false;
       "editor.bracketPairColorization.enabled" = false;
       "sqltools.highlightQuery" = false;
