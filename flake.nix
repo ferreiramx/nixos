@@ -33,6 +33,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       # inputs.rust-overlay.follows = "rust-overlay";
     };
+  
+    # vscode-server
+    vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
+    };
 
   };
 
@@ -67,7 +72,10 @@
         # Home Server
         gigadramon = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [./hosts/gigadramon ];
+          modules = [
+            ./hosts/gigadramon 
+            inputs.vscode-server.nixosModules.default
+          ];
         };
       };
 

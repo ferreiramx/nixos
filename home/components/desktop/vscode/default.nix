@@ -22,18 +22,19 @@ in
       "git.openRepositoryInParentFolders" = "never";
       "workbench.colorTheme" = "nix-colors-${config.colorScheme.slug}";
       "extensions.autoUpdate" = false;
+      "remote.SSH.useLocalServer" = false;
     };
     extensions = with pkgs.vscode-extensions;
       [
-       (vscodeThemeFromScheme { scheme = config.colorScheme; })
-       bbenoist.nix
-       ms-python.python
-       arcticicestudio.nord-visual-studio-code
-       ms-toolsai.jupyter
-       ms-toolsai.jupyter-renderers
-       jnoortheen.nix-ide
-       ms-vscode-remote.remote-ssh
-       bungcip.better-toml
+      (vscodeThemeFromScheme { scheme = config.colorScheme; })
+      bbenoist.nix
+      ms-python.python
+      arcticicestudio.nord-visual-studio-code
+      ms-toolsai.jupyter
+      ms-toolsai.jupyter-renderers
+      jnoortheen.nix-ide
+      ms-vscode-remote.remote-ssh
+      bungcip.better-toml
       ]
      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace
        [
@@ -43,7 +44,7 @@ in
            version = "1.3.1";
            sha256 = "YDpkL0HQfsyH4TVmaWMwJh6NMiCIRBMBOKKhnLcerno=";
          }
-         {
+        {
            name = "inline-sql-syntax";
            publisher = "qufiwefefwoyn";
            version = "2.15.0";
@@ -51,9 +52,9 @@ in
          }
          {
            name = "sqltools";
-          publisher = "mtxr";
+         publisher = "mtxr";
           version = "0.25.1";
-           sha256 = "qi/OhJi38It8DEcRrYjjjsDJRtZNnJrqU55qwAFqXP0=";
+          sha256 = "qi/OhJi38It8DEcRrYjjjsDJRtZNnJrqU55qwAFqXP0=";
          }
          {
            name = "snowflake-driver-for-sqltools";
@@ -62,7 +63,7 @@ in
            sha256 = "dLKnurvYn3impla9Vlw/RcehYJDC5ylRDnHvRs1rh/I=";
          }
          {
-           name = "snowflake-vscode";
+          name = "snowflake-vscode";
            publisher = "okeeffdp";
            version = "0.0.1";
            sha256 = "W3oWrJ9U/cPSSGU/I+eDIzkylesbnuKTK+6iVXbkW2s=";
