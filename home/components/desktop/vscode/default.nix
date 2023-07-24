@@ -22,6 +22,7 @@ in
       "git.openRepositoryInParentFolders" = "never";
       "workbench.colorTheme" = "nix-colors-${config.colorScheme.slug}";
       "extensions.autoUpdate" = false;
+      "remote.SSH.useLocalServer" = false;
     };
     extensions = with pkgs.vscode-extensions;
       [
