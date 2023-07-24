@@ -72,7 +72,10 @@
         # Home Server
         gigadramon = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [./hosts/gigadramon ];
+          modules = [
+            ./hosts/gigadramon 
+            vscode-server.nixosModules.default
+          ];
         };
       };
 
