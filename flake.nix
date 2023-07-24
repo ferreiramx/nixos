@@ -74,7 +74,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/gigadramon 
-            vscode-server.nixosModules.default
+            inputs.vscode-server.nixosModules.default
           ];
         };
       };
