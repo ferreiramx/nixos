@@ -15,7 +15,7 @@
   };
 
   fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs;[
+  fonts.packages = with pkgs;[
     source-code-pro
     source-sans-pro
     (nerdfonts.override { fonts = [ "SourceCodePro" ]; })

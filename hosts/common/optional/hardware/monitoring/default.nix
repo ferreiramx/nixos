@@ -4,6 +4,7 @@
     hddtemp
     hdparm
     smartmontools
+    usbutils
   ];
   services.udisks2.enable = true;
 }

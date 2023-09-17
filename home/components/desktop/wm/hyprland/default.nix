@@ -62,12 +62,6 @@ in
         active_opacity = 1.0
         inactive_opacity = 1.0
         fullscreen_opacity = 1.0
-        blur = true
-        blur_size = 8
-        blur_passes = 1
-        blur_ignore_opacity = false
-        blur_new_optimizations = true
-        blur_xray = false
         drop_shadow = true
         shadow_range = 4
         shadow_render_power = 3
@@ -165,7 +159,9 @@ in
       bind = SUPER,7,workspace,7
       bind = SUPER,8,workspace,8
       bind = SUPER,9,workspace,9
-      bind = SUPER,0,workspace,0
+
+      bind = SUPER,o,workspace,-1
+      bind = SUPER,p,workspace,+1
 
       bind = SUPER_SHIFT,1,movetoworkspace,1
       bind = SUPER_SHIFT,2,movetoworkspace,2
@@ -176,7 +172,6 @@ in
       bind = SUPER_SHIFT,7,movetoworkspace,7
       bind = SUPER_SHIFT,8,movetoworkspace,8
       bind = SUPER_SHIFT,9,movetoworkspace,9
-      bind = SUPER_SHIFT,0,movetoworkspace,0
 
       bind = SUPER,RETURN,exec,kitty
       bind = SUPER,D,exec,sh ~/.config/rofi/launcher/launcher.sh
