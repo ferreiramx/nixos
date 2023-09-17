@@ -15,7 +15,7 @@ in
       # get initial focused workspace
       focusedws=$(hyprctl -j monitors | jaq -r '.[] | select(.focused == true) | .activeWorkspace.id')
 
-      declare -A o=([1]=0 [2]=0 [3]=0 [4]=0 [5]=0 [6]=0 [7]=0 [8]=0 [9]=0 [10]=0)
+      declare -A o=([1]=0 [2]=0 [3]=0 [4]=0 [5]=0 [6]=0 [7]=0 [8]=0 [9]=0)
       declare -A monitormap
       declare -A workspaces
 
@@ -56,7 +56,7 @@ in
       generate() {
         echo -n '['
 
-        for i in {1..10}; do
+        for i in {1..9}; do
           echo -n '''"$([ "$i" -eq 1 ] || echo ,)" '{ "number": "'"$i"'", "color": "'"$(status "$i")"'" }' #, "tooltip": "'$(applist "$i")'" }'
         done
 
