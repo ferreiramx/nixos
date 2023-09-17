@@ -9,6 +9,10 @@
 
       # Optional settings enabled on this machine
       ../common/optional/hardware/monitoring
+
+      # Hpme Assistant
+      ../common/optional/homeassistant
+      
       # Users for this machine
       ../common/users/aferreira
     ];
