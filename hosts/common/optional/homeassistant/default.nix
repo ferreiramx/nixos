@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
     imports = [
         ../bluetooth
@@ -17,6 +18,23 @@
       "samsungtv"
       "roomba"
       "spotify"
+    ];
+    extraPackages = python3Packages: with python3Packages; [
+      (
+        buildPythonPackage rec {
+          pname = "cowayaio";
+          version = "0.1.8";
+          src = fetchPypi {
+            inherit pname version;
+            sha256 = "39a2b0bd6cbad0619572ffc41785b4a5464c815081b682c882c3515cc1380462";
+          };
+          doCheck = false;
+          propagatedBuildInputs = with pkgs; [
+            python311Packages.aiohttp
+            python311Packages.beautifulsoup4
+          ];
+        }
+      )
     ];
     config = {
       default_config = {};
@@ -47,4 +65,9 @@
       };
     };
   };
+
+  system.activationScripts.coway.text = ''
+    mkdir -p "/var/lib/hass/custom_components"
+    ln -sfn "${(pkgs.callPackage ../../../../pkgs/home-assistant/coway {})}" "/var/lib/hass/custom_components/coway"
+  '';  
 }
