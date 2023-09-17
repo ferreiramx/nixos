@@ -18,6 +18,7 @@ in
       "docker"
       "git"
       "libvirtd"
+      "kvm"
     ];
     packages = [ pkgs.home-manager ];
     hashedPasswordFile = config.sops.secrets.aferreira.path;
