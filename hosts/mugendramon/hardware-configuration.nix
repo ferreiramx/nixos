@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
@@ -14,22 +15,26 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/7724aca4-6b54-454f-a897-1bf8a9379bcc";
+    {
+      device = "/dev/disk/by-uuid/7724aca4-6b54-454f-a897-1bf8a9379bcc";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F263-33DA";
+    {
+      device = "/dev/disk/by-uuid/F263-33DA";
       fsType = "vfat";
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/5b68b485-2f0b-4312-b878-c601bbaa2445";
+    {
+      device = "/dev/disk/by-uuid/5b68b485-2f0b-4312-b878-c601bbaa2445";
       fsType = "ext4";
     };
 
   fileSystems."/home/aferreira/.coldstorage" =
-    { device = "/dev/disk/by-uuid/63f1a807-104f-4a65-8cba-0a04c368e683";
+    {
+      device = "/dev/disk/by-uuid/63f1a807-104f-4a65-8cba-0a04c368e683";
       fsType = "ext4";
     };
 

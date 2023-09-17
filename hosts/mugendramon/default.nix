@@ -22,6 +22,7 @@
       ../common/optional/games
       ../common/optional/graphics/amd
       ../common/optional/hardware/logitech
+      ../common/optional/hardware/corsair
       ../common/optional/hardware/monitoring
       ../common/optional/network/hosts.nix
       ../common/optional/virt

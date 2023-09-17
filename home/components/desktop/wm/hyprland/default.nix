@@ -62,12 +62,6 @@ in
         active_opacity = 1.0
         inactive_opacity = 1.0
         fullscreen_opacity = 1.0
-        blur = true
-        blur_size = 8
-        blur_passes = 1
-        blur_ignore_opacity = false
-        blur_new_optimizations = true
-        blur_xray = false
         drop_shadow = true
         shadow_range = 4
         shadow_render_power = 3
