@@ -22,6 +22,7 @@
       ../common/optional/desktop/wm/hyprland
       ../common/optional/filesystem
       ../common/optional/games/runelite.nix
+      ../common/optional/games/lutris.nix
       ../common/optional/graphics/nvidia
       ../common/optional/hardware/logitech
       ../common/optional/hardware/monitoring
