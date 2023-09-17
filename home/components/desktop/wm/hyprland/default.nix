@@ -123,6 +123,7 @@ in
         orientation = center
         inherit_fullscreen = true
         always_center_master = ${(if vars.screen.ultrawide then "true" else "false")}
+        allow_small_split = true
       }
       
       bindm = SUPER,mouse:272,movewindow
@@ -133,6 +134,9 @@ in
       bind = SUPER,M,layoutmsg,focusmaster auto
       bind = SUPER,TAB,layoutmsg,orientationnext
       bind = SUPER_SHIFT,TAB,layoutmsg,orientationprev
+
+      bind = SUPER_SHIFT,SPACE,layoutmsg,removemaster
+      bind = SUPER,SPACE,layoutmsg,addmaster
 
       bind = SUPER,H,movefocus,l
       bind = SUPER,L,movefocus,r

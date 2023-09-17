@@ -23,7 +23,7 @@
       ../common/optional/graphics/amd
       ../common/optional/hardware/logitech
       ../common/optional/hardware/monitoring
-      # ../common/optional/network
+      ../common/optional/network/hosts.nix
       ../common/optional/virt
       ../common/optional/work
 
