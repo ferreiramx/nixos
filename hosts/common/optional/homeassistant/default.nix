@@ -20,6 +20,7 @@
       "spotify"
     ];
     extraPackages = python3Packages: with python3Packages; [
+      # cowayaio
       (
         buildPythonPackage rec {
           pname = "cowayaio";
@@ -32,6 +33,22 @@
           propagatedBuildInputs = with pkgs; [
             python311Packages.aiohttp
             python311Packages.beautifulsoup4
+          ];
+        }
+      )
+    # libdyson
+      (
+        buildPythonPackage rec {
+          pname = "libdyson";
+          version = "0.8.11";
+          src = fetchPypi {
+            inherit pname version;
+            sha256 = "caf1f313a41ce3abe29d1755e577e0f80d008560a1fb258eb43cab43fc42d97b";
+          };
+          doCheck = false;
+          propagatedBuildInputs = with pkgs; [
+            # python311Packages.aiohttp
+            # python311Packages.beautifulsoup4
           ];
         }
       )
@@ -70,4 +87,14 @@
     mkdir -p "/var/lib/hass/custom_components"
     ln -sfn "${(pkgs.callPackage ../../../../pkgs/home-assistant/coway {})}" "/var/lib/hass/custom_components/coway"
   '';  
+
+  system.activationScripts.dyson.text = ''
+    mkdir -p "/var/lib/hass/custom_components"
+    ln -sfn "${(pkgs.callPackage ../../../../pkgs/home-assistant/dyson/local {})}" "/var/lib/hass/custom_components/dyson_local"
+  '';  
+
+  system.activationScripts.dyson_cloud.text = ''
+    mkdir -p "/var/lib/hass/custom_components"
+    ln -sfn "${(pkgs.callPackage ../../../../pkgs/home-assistant/dyson/cloud {})}" "/var/lib/hass/custom_components/dyson_cloud"
+  ''; 
 }
