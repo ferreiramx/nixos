@@ -17,7 +17,7 @@
       ../common/optional/desktop/office
       ../common/optional/desktop/media
       ../common/optional/desktop/web
-      ../common/optional/desktop/wm/qtile
+      # ../common/optional/desktop/wm/qtile
       ../common/optional/desktop/dm/gdm
       ../common/optional/desktop/wm/hyprland
       ../common/optional/filesystem
@@ -52,8 +52,7 @@
 
   services.getty.autologinUser = "aferreira";
 
-  programs.hyprland.nvidiaPatches = true;
-  programs.hyprland.xwayland.hidpi = true;
+  programs.hyprland.enableNvidiaPatches = true;
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "nvidia";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
