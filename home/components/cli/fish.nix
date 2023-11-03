@@ -181,7 +181,7 @@ in
       set -U tide_pwd_icon_unwritable \uf023
       set -U tide_pwd_markers \x2ebzr\x1e\x2ecitc\x1e\x2egit\x1e\x2ehg\x1e\x2enode\x2dversion\x1e\x2epython\x2dversion\x1e\x2eruby\x2dversion\x1e\x2eshorten_folder_marker\x1e\x2esvn\x1e\x2eterraform\x1eCargo\x2etoml\x1ecomposer\x2ejson\x1eCVS\x1ego\x2emod\x1epackage\x2ejson
       set -U tide_right_prompt_frame_enabled false
-      set -U tide_right_prompt_items git\x1enix_shell\x1evirtual_env\x1eprivate_mode
+      set -U tide_right_prompt_items git\x1enix_shell\x1eprivate_mode
       set -U tide_right_prompt_prefix \ue0b2
       set -U tide_right_prompt_separator_diff_color \ue0b2
       set -U tide_right_prompt_separator_same_color \ue0b3
@@ -220,9 +220,6 @@ in
       set -U tide_vi_mode_icon_insert I
       set -U tide_vi_mode_icon_replace R
       set -U tide_vi_mode_icon_visual V
-      set -U tide_virtual_env_bg_color "${colors.base0E}"
-      set -U tide_virtual_env_color "${colors.base05}"
-      set -U tide_virtual_env_icon \ue73c
     '';
 }
  
