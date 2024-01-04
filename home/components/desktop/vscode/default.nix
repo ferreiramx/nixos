@@ -29,6 +29,9 @@ in
         "cube" = "linux";
         "cube-dev" = "linux";
       };
+      "[sql]" = {
+      "editor.defaultFormatter" = "innoverio.vscode-dbt-power-user";
+      };
     };
     extensions = with pkgs.vscode-extensions;
       [
@@ -40,7 +43,7 @@ in
         ms-toolsai.jupyter-renderers
         jnoortheen.nix-ide
         ms-vscode-remote.remote-ssh
-        bungcip.better-toml
+        tamasfe.even-better-toml
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace
         [
@@ -53,14 +56,14 @@ in
           {
             name = "inline-sql-syntax";
             publisher = "qufiwefefwoyn";
-            version = "2.15.0";
-            sha256 = "LtEM9MrEzBErPtPD4InKempHeexO1MtwdeyQ6ufyFkE=";
+            version = "2.16.0";
+            sha256 = "QAbYWwA6xlRfyqA/JBEUlxVt9q7RGbm0bLBkb4szYcA=";
           }
           {
             name = "sqltools";
             publisher = "mtxr";
-            version = "0.25.1";
-            sha256 = "qi/OhJi38It8DEcRrYjjjsDJRtZNnJrqU55qwAFqXP0=";
+            version = "0.28.1";
+            sha256 = "PzDbH9pYeIzmMFOkPMsbo5pNGXI6qusaAlwM6sk9s10=";
           }
           {
             name = "snowflake-driver-for-sqltools";
@@ -73,6 +76,30 @@ in
             publisher = "okeeffdp";
             version = "0.0.1";
             sha256 = "W3oWrJ9U/cPSSGU/I+eDIzkylesbnuKTK+6iVXbkW2s=";
+          }
+          {
+            name = "vscode-dbt-power-user";
+            publisher = "innoverio";
+            version = "0.28.4";
+            sha256 = "oZ2lCzu6rfIJeDeoOEn4lFNarfJRK9HEaDR6mfZcpx4=";
+          }
+          {
+            name = "jinjahtml";
+            publisher = "samuelcolvin";
+            version = "0.20.0";
+            sha256 = "wADL3AkLfT2N9io8h6XYgceKyltJCz5ZHZhB14ipqpM=";
+          }
+          {
+            name = "vscode-dbt-formatter";
+            publisher = "henriblancke";
+            version = "1.0.1";
+            sha256 = "1twAeJkkJkPoWx/0KnKm//YcYgbuNVLVxQKH8HwwmHE=";
+          }
+          {
+            name = "vscode-dbt";
+            publisher = "bastienboutonnet";
+            version = "0.5.1";
+            sha256 = "tXl9n6zRtHybUkpuPBnkko6S4tO2oT0SYomqCS3ODAE=";
           }
         ];
   };
