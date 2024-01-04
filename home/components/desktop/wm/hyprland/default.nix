@@ -111,7 +111,7 @@ in
         new_is_master = false
         new_on_top = false
         special_scale_factor = 0.8
-        mfact = 0.5
+        mfact = 0.4
         no_gaps_when_only = true
         orientation = center
         inherit_fullscreen = true
