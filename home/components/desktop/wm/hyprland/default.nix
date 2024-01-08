@@ -24,7 +24,7 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemdIntegration = true;
+    systemd.enable = true;
     extraConfig = ''
       exec = hyprpaper
       exec-once = eww open bar
