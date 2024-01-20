@@ -52,7 +52,6 @@
 
   services.getty.autologinUser = "aferreira";
 
-  programs.hyprland.enableNvidiaPatches = true;
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "nvidia";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
