@@ -1,6 +1,6 @@
 { config, inputs, vars, ... }: 
 let
-  colors = config.colorScheme.colors;
+  colors = config.colorScheme.palette;
 in
 {
   xdg.configFile."eww/scripts/battery" = {

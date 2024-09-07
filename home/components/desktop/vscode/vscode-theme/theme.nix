@@ -1,6 +1,6 @@
 { scheme }:
 let
-  colors = scheme.colors;
+  colors = scheme.palette;
 in
 {
   "$schema" = "vscode://schemas/color-theme";

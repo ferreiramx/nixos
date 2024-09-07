@@ -20,7 +20,7 @@
     swaylock
     grim
     slurp
-    eww-wayland
+    eww
     jaq
     gojq
     ripgrep

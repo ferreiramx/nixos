@@ -1,7 +1,7 @@
 # TODO: Get rid of this file and inject vars directly in the other files
 { config, vars, ... }:
 let
-  colors = config.colorScheme.colors;
+  colors = config.colorScheme.palette;
 in
 ''
 theme = {

@@ -10,11 +10,11 @@ let
     backgroundImage = "";
     backgroundPosition = "stretch";
     blur = 0;
-    colorAccentBg = scheme.colors.base01;
-    colorBg = scheme.colors.base00;
-    colorFg = scheme.colors.base05;
-    colorHighlightBg = scheme.colors.base04;
-    colorWindowBg = scheme.colors.base00;
+    colorAccentBg = scheme.palette.base01;
+    colorBg = scheme.palette.base00;
+    colorFg = scheme.palette.base05;
+    colorHighlightBg = scheme.palette.base04;
+    colorWindowBg = scheme.palette.base00;
     contrast = -5;
     dimBlurred = false;
     engineVersion = 1;
