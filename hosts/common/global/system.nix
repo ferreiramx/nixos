@@ -7,6 +7,10 @@
   };
   programs.dconf.enable = true;
   security.polkit.enable = true;
+  # security.acme = {
+  #   defaults.email = "baphomet@proyectosatan.org";
+  #   acceptTerms = true;
+  # };
   security.sudo.wheelNeedsPassword = false;
   security.polkit.extraConfig = ''
     /* Allow members of the wheel group to execute any actions
@@ -34,6 +38,7 @@
       };
     };
   };
+  virtualisation.oci-containers.backend = "docker";
   virtualisation.docker.enable = true;
   # virtualisation.docker.rootless = {
   #   enable = true;

@@ -12,6 +12,9 @@
 
       # Hpme Assistant
       ../common/optional/homeassistant
+
+      # Self-Hosted Services
+      ../common/optional/server/actualbudget
       
       # Users for this machine
       ../common/users/aferreira
@@ -29,6 +32,7 @@
   };
 
   services.vscode-server.enable = true;
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

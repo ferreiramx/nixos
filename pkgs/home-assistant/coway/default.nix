@@ -5,8 +5,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "RobertD502";
     repo = "home-assistant-iocare";
-    rev = "89c2c0d19aff6042b92a908cc9e4f123645afbf5";
-    sha256 = "VkfBsdnU+ywn8Nqv7H09BFSN88KHrDScYJ/v6j3X09E=";
+    rev = "13b6e1c9df82853603303753687e1db2f4988595";
+    sha256 = "fO+i5bpgMd2t2IJkt5DwexYD5Vm2T0sKmTakI4+6wKQ=";
   };
 
   
