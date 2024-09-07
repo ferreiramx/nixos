@@ -3,7 +3,7 @@
 {
   imports = [
     inputs.nix-colors.homeManagerModule
-    inputs.spicetify-nix.homeManagerModule
+    inputs.spicetify-nix.homeManagerModules.default
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   programs.home-manager.enable = true;
@@ -26,7 +26,7 @@
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+      experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
     };
   };

@@ -3,7 +3,7 @@
     slug = "power-metal-blue";
     name = "Power Metal (Blue)";
     author = "me";
-    colors = {
+    palette = {
       base00 = "#040A0F";
       base01 = "#070D12";
       base02 = "#0A1015";
@@ -27,7 +27,7 @@
     slug = "test";
     name = "test";
     author = "me";
-    colors = {
+    palette = {
       base00 = "#06040F";
       base01 = "#090712";
       base02 = "#0B0A14";
@@ -51,7 +51,7 @@
     slug = "test";
     name = "test";
     author = "me";
-    colors = {
+    palette = {
       base00 = "#040E0F";
       base01 = "#071112";
       base02 = "#0A1314";
@@ -75,7 +75,7 @@
     slug = "test";
     name = "test";
     author = "me";
-    colors = {
+    palette = {
       base00 = "#140303";
       base01 = "#170606";
       base02 = "#1A0909";
@@ -99,7 +99,7 @@
     slug = "test";
     name = "test";
     author = "me";
-    colors = {
+    palette = {
       base00 = "#231207";
       base01 = "#26150A";
       base02 = "#29180D";
@@ -123,7 +123,7 @@
     slug = "power-metal";
     name = "Power Metal";
     author = "me";
-    colors = {
+    palette = {
       base00 = "#090A0F";
       base01 = "#0C0D12";
       base02 = "#0F1015";

@@ -1,6 +1,6 @@
 { config, inputs, vars, ... }: 
 let
-  colors = config.colorScheme.colors;
+  colors = config.colorScheme.palette;
   conversions = inputs.nix-colors.lib-core.conversions;
 in
 {

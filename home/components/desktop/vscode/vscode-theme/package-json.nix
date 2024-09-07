@@ -1,6 +1,7 @@
 { scheme }:
 {
     name = "nix-colors-${scheme.slug}";
+    publisher = "aferreira";
     displayName = "${scheme.name} Nix Colors Theme";
     description = "Dynamic color theme using nix-colors";
     version = "1.0.0";

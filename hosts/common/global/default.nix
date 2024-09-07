@@ -19,7 +19,6 @@
     killall
     rsync
     nixpkgs-fmt
-    bitwarden-cli
     (inputs.devenv.packages.x86_64-linux.devenv)
   ];
 

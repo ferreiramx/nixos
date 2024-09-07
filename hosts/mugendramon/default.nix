@@ -17,13 +17,13 @@
       ../common/optional/desktop/web
       ../common/optional/desktop/dm/gdm
       ../common/optional/desktop/wm/hyprland
-      inputs.hyprland.nixosModules.default
       ../common/optional/filesystem
       ../common/optional/games
       ../common/optional/graphics/amd
       ../common/optional/hardware/logitech
       ../common/optional/hardware/corsair
       ../common/optional/hardware/monitoring
+      ../common/optional/hardware/printer
       ../common/optional/network/hosts.nix
       ../common/optional/virt
       ../common/optional/work
@@ -35,21 +35,22 @@
   networking.hostName = "mugendramon";
   time.timeZone = "America/Mexico_City";
   i18n.defaultLocale = "en_US.utf8";
-
+  services.displayManager.defaultSession = "hyprland";
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-    displayManager.defaultSession = "hyprland";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
   };
 
-  services.getty.autologinUser = "aferreira";
+  # services.getty.autologinUser = "aferreira";
 
   home-manager.extraSpecialArgs = {
     vars = {
       hostName = "mugendramon";
       class = "desktop";
       screen = {
-        name = "DP-1";
+        name = "DP-2";
         ultrawide = true;
         hidpi = false;
         width = 3840;
