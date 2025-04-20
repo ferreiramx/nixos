@@ -3,19 +3,24 @@
     ../../desktop/x11
   ];
   hardware = {
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
       extraPackages = with pkgs; [
-        # nvidia-vaapi-driver
+        nvidia-vaapi-driver
       ];
     };
     nvidia = {
+      open = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
-      modesetting.enable = true;
+      powerManagement = {
+        enable = true;
+        finegrained = true;
+      };
       prime = {
-        offload.enable = true;
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
       };
     };
   };

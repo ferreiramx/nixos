@@ -3,12 +3,10 @@
     brightnessctl
     touchpad-toggle
   ];
-  services.xserver = {
-    libinput = {
+  services.libinput = {
       enable = true;
       touchpad = {
         accelProfile = "adaptive";
       };
     };
-  };
 }
