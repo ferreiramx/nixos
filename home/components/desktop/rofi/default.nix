@@ -1,5 +1,8 @@
-{ config, vars, ... }: {
-  programs.rofi.enable = true;
+{ config, vars, pkgs, ... }: {
+  programs.rofi = {
+    enable = true;
+    package = pkgs.rofi-wayland;
+  };
   xdg.configFile."rofi" = {
     source = ./scripts;
     recursive = true;

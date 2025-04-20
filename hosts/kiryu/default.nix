@@ -17,7 +17,6 @@
       ../common/optional/desktop/office
       ../common/optional/desktop/media
       ../common/optional/desktop/web
-      # ../common/optional/desktop/wm/qtile
       ../common/optional/desktop/dm/gdm
       ../common/optional/desktop/wm/hyprland
       ../common/optional/filesystem
@@ -34,8 +33,6 @@
       # Users for this machine
       ../common/users/aferreira
 
-      inputs.hyprland.nixosModules.default
-
     ];
 
   networking.hostName = "kiryu";
@@ -43,8 +40,10 @@
   i18n.defaultLocale = "en_US.utf8";
 
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
     displayManager.defaultSession = "hyprland";
   };
 

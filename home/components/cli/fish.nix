@@ -1,6 +1,6 @@
 { inputs, config, pkgs, ... }: 
 let
-  colors = config.colorScheme.colors;
+  colors = config.colorScheme.palette;
   nix-colors-lib = inputs.nix-colors.lib-contrib { inherit pkgs; };
 in
 {

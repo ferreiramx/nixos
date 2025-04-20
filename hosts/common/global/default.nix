@@ -12,14 +12,17 @@
     inputs.home-manager.nixosModules.home-manager
   ] ++ (builtins.attrValues outputs.nixosModules);
 
-  programs.vim.defaultEditor = true;
+  programs.vim =
+  {
+    enable = true;
+    defaultEditor = true;
+  };
 
   environment.systemPackages = with pkgs; [
     any-nix-shell
     killall
     rsync
     nixpkgs-fmt
-    bitwarden-cli
     (inputs.devenv.packages.x86_64-linux.devenv)
   ];
 

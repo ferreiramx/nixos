@@ -4,6 +4,7 @@ let
   theme = builtins.toJSON (import ./vscode-theme/theme.nix { inherit scheme; });
   package-json = builtins.toJSON (import ./vscode-theme/package-json.nix { inherit scheme; });
   vsix = pkgs.stdenv.mkDerivation rec {
+    pname = "generated-vscode-theme-${scheme.slug}";
     name = "generated-vscode-theme-${scheme.slug}";
     version = "1.0.0";
     src = ./vscode-theme;
@@ -25,6 +26,7 @@ let
   };
 in
 pkgs.vscode-utils.buildVscodeExtension {
+  pname = vsix.pname;
   name = vsix.name;
   vscodeExtName = vsix.name;
   src = "${vsix}/${vsix.name}.zip";

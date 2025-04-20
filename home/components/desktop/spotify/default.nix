@@ -1,7 +1,7 @@
 { inputs, config, pkgs, ... }:
 let
-  spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
-  colors = config.colorScheme.colors;
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  colors = config.colorScheme.palette;
 in
 {
   programs.spicetify =
@@ -13,7 +13,7 @@ in
       };
     in
     {
-      enable = true;
+      enable = false;
       theme = {
         name = "Glaze";
         src = officialThemes;

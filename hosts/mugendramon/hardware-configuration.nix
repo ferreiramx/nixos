@@ -30,6 +30,7 @@
     {
       device = "/dev/disk/by-uuid/5b68b485-2f0b-4312-b878-c601bbaa2445";
       fsType = "ext4";
+      neededForBoot = true;
     };
 
   fileSystems."/home/aferreira/.coldstorage" =

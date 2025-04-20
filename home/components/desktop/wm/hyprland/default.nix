@@ -1,6 +1,6 @@
 { config, inputs, pkgs, vars, ... }: 
 let
-  colors = config.colorScheme.colors;
+  colors = config.colorScheme.palette;
   nix-colors-lib = inputs.nix-colors.lib-contrib { inherit pkgs; };
   wallpaper = nix-colors-lib.nixWallpaperFromScheme {
     scheme = config.colorScheme;
@@ -14,13 +14,23 @@ in
     ../../rofi
     ../../dunst
     ../../eww
-    inputs.hyprland.homeManagerModules.default
   ];
 
-  xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload = ${wallpaper}
-    wallpaper = ${vars.screen.name},${wallpaper}
-  '';
+  # xdg.configFile."hypr/hyprpaper.conf".text = ''
+  #   preload = ${wallpaper}
+  #   wallpaper = ${vars.screen.name},${wallpaper}
+  #   splash = false
+  # '';
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = [
+        "${wallpaper}"
+      ];
+      wallpaper = "${vars.screen.name},${wallpaper}";
+      splash = false;
+    };
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -44,15 +54,14 @@ in
         }
         force_no_accel = false
         scroll_method = 2fg
-        kb_layout = us,latam
+        kb_layout = us
         kb_options = grp:alt_shift_toggle
       }
 
       general {
-        gaps_in = 3
-        gaps_out = 8
+        gaps_in = 2
+        gaps_out = 2
         border_size = 2
-        cursor_inactive_timeout = 30
         layout = master  
       }
 
@@ -61,12 +70,6 @@ in
         active_opacity = 1.0
         inactive_opacity = 1.0
         fullscreen_opacity = 1.0
-        drop_shadow = true
-        shadow_range = 4
-        shadow_render_power = 3
-        shadow_ignore_window = true
-        col.shadow = rgb(000000)
-        shadow_offset = 0 0
         dim_inactive = false
         dim_strength = 0.5
       }
@@ -83,7 +86,6 @@ in
         workspace_swipe_min_speed_to_force = 20
         workspace_swipe_cancel_ratio = 0.5
         workspace_swipe_forever = false
-        workspace_swipe_numbered = true
       }
 
       misc {
@@ -96,7 +98,6 @@ in
         layers_hog_keyboard_focus = true
         enable_swallow = false
         focus_on_activate = false
-        no_direct_scanout = true
         mouse_move_focuses_monitor = true
         render_ahead_of_time = false
         render_ahead_safezone = 2
@@ -108,11 +109,9 @@ in
       }
 
       master {
-        new_is_master = false
         new_on_top = false
         special_scale_factor = 0.8
-        mfact = 0.4
-        no_gaps_when_only = true
+        mfact = 0.36
         orientation = center
         inherit_fullscreen = true
         always_center_master = ${(if vars.screen.ultrawide then "true" else "false")}

@@ -1,6 +1,6 @@
 { config, pkgs, vars, ... }:
 let
-  colors = config.colorScheme.colors;
+  colors = config.colorScheme.palette;
   max_width = 300;
   max_height = 220;
 in
