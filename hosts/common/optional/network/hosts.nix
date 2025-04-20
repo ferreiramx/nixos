@@ -2,6 +2,6 @@
   networking.hosts = {
     "10.0.0.19" = [ "proyectosatan.org" ];
   };
-  # networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
+  # networking.nameservers = [ "172.16.0.24" ];
   services.resolved.enable = true;
 }

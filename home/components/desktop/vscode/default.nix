@@ -32,18 +32,19 @@ in
       "[sql]" = {
       "editor.defaultFormatter" = "innoverio.vscode-dbt-power-user";
       };
+      "diffEditor.codeLens" = true;
     };
     extensions = with pkgs.vscode-extensions;
       [
         (vscodeThemeFromScheme { scheme = config.colorScheme; })
-        bbenoist.nix
-        ms-python.python
-        arcticicestudio.nord-visual-studio-code
-        ms-toolsai.jupyter
-        ms-toolsai.jupyter-renderers
-        jnoortheen.nix-ide
-        ms-vscode-remote.remote-ssh
-        tamasfe.even-better-toml
+         bbenoist.nix
+         ms-python.python
+         arcticicestudio.nord-visual-studio-code
+         ms-toolsai.jupyter
+         ms-toolsai.jupyter-renderers
+         jnoortheen.nix-ide
+         ms-vscode-remote.remote-ssh
+         tamasfe.even-better-toml
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace
         [
@@ -100,6 +101,12 @@ in
             publisher = "bastienboutonnet";
             version = "0.5.1";
             sha256 = "tXl9n6zRtHybUkpuPBnkko6S4tO2oT0SYomqCS3ODAE=";
+          }
+          {
+            name = "geminicodeassist";
+            publisher = "google";
+            version = "2.28.1";
+            sha256 = "2uaYp6mbLG8qdlqxIqcNq78DXb9aLyB6MW5oVNLVqsU=";
           }
         ];
   };

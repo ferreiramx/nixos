@@ -54,7 +54,7 @@ in
         }
         force_no_accel = false
         scroll_method = 2fg
-        kb_layout = us,latam
+        kb_layout = us
         kb_options = grp:alt_shift_toggle
       }
 
@@ -70,12 +70,6 @@ in
         active_opacity = 1.0
         inactive_opacity = 1.0
         fullscreen_opacity = 1.0
-        drop_shadow = true
-        shadow_range = 4
-        shadow_render_power = 3
-        shadow_ignore_window = true
-        col.shadow = rgb(000000)
-        shadow_offset = 0 0
         dim_inactive = false
         dim_strength = 0.5
       }
@@ -118,7 +112,6 @@ in
         new_on_top = false
         special_scale_factor = 0.8
         mfact = 0.36
-        no_gaps_when_only = true
         orientation = center
         inherit_fullscreen = true
         always_center_master = ${(if vars.screen.ultrawide then "true" else "false")}

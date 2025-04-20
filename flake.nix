@@ -3,10 +3,10 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Nixos-hardware
@@ -28,13 +28,12 @@
     devenv.url = "github:cachix/devenv/latest";
 
     # Hyprland
-    # hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     # eww-hyprland
     eww = {
       url = "github:elkowar/eww";
       inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.rust-overlay.follows = "rust-overlay";
     };
   
     # vscode-server

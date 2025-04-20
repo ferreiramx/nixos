@@ -13,7 +13,7 @@ in
       };
     in
     {
-      enable = true;
+      enable = false;
       theme = {
         name = "Glaze";
         src = officialThemes;
