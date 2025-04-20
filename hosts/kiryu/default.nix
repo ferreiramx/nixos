@@ -38,23 +38,15 @@
   networking.hostName = "kiryu";
   time.timeZone = "America/Mexico_City";
   i18n.defaultLocale = "en_US.utf8";
-
+  services.displayManager.defaultSession = "hyprland";
   services.xserver = {
     xkb = {
       layout = "us";
       variant = "";
     };
-    displayManager.defaultSession = "hyprland";
   };
 
   services.tlp.enable = false;
-
-  services.getty.autologinUser = "aferreira";
-
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "nvidia";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-  };
 
   home-manager.extraSpecialArgs = {
     vars = {

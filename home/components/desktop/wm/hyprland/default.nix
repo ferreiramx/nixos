@@ -16,11 +16,6 @@ in
     ../../eww
   ];
 
-  # xdg.configFile."hypr/hyprpaper.conf".text = ''
-  #   preload = ${wallpaper}
-  #   wallpaper = ${vars.screen.name},${wallpaper}
-  #   splash = false
-  # '';
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -174,6 +169,8 @@ in
       bind = SUPER,RETURN,exec,kitty
       bind = SUPER,D,exec,sh ~/.config/rofi/launcher/launcher.sh
       bind = SUPER,ESCAPE,exec,sh ~/.config/rofi/powermenu/powermenu.sh
+
+      env = AQ_DRM_DEVICES,/dev/dri/card1
     '';
   };
 

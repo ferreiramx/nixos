@@ -10,7 +10,6 @@
     GDK_BACKEND="wayland";
     WLR_NO_HARDWARE_CURSORS = "1";
     XDG_SESSION_TYPE = "wayland";
-    # GBM_BACKEND="nvidia-drm";
   };
 
   environment.systemPackages = with pkgs; [
