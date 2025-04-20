@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  programs.hyprland = {
+  programs.hyprland = {                                                                 
     enable = true;
     xwayland.enable = true;
   };
@@ -14,7 +14,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    qt5ct
+    libsForQt5.qt5ct
     libva
     hyprpaper
     swaylock
