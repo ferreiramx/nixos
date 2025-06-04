@@ -18,7 +18,7 @@
   fonts.packages = with pkgs;[
     source-code-pro
     source-sans-pro
-    (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
+    nerd-fonts.sauce-code-pro
     font-awesome
     material-design-icons
     material-symbols

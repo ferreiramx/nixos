@@ -1,5 +1,5 @@
 # TODO: Move bitwarden to own .nix file
-{ inputs, outputs, pkgs, ... }: {
+{ inputs, outputs, pkgs, lib, ... }: {
   imports = [
     ./bootloader.nix
     ./system.nix
