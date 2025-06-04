@@ -144,6 +144,15 @@ in
     "gitDecoration.stageModifiedResourceForeground" = "#${colors.base0A}";
     "gitDecoration.submoduleResourceForeground" = "#8db9e2";
     "gitDecoration.untrackedResourceForeground" = "#${colors.base0E}";
+    "diffEditor.insertedTextBackground" = "#${colors.base0B}22";
+    "diffEditor.insertedTextBorder" = "#${colors.base0B}44";
+    "diffEditor.removedTextBackground" = "#${colors.base08}22";
+    "diffEditor.removedTextBorder" = "#${colors.base08}44";
+    "diffEditor.modifiedTextBackground" = "#${colors.base0A}22";
+    "diffEditor.modifiedTextBorder" = "#${colors.base0A}44";
+    "diffEditor.insertedLineBackground" = "#${colors.base0B}11";
+    "diffEditor.removedLineBackground" = "#${colors.base08}11";
+    "diffEditor.diagonalFill" = "#${colors.base02}";
   };
   tokenColors = [
     {

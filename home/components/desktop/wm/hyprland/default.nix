@@ -109,7 +109,6 @@ in
         mfact = 0.36
         orientation = center
         inherit_fullscreen = true
-        always_center_master = ${(if vars.screen.ultrawide then "true" else "false")}
         allow_small_split = true
       }
       
