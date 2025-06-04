@@ -3,10 +3,13 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    
+    # Nixpkgs Unstable
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Nixos-hardware
@@ -43,17 +46,24 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, devenv, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, devenv, sops-nix, ... }@inputs:
     let
       inherit (self) outputs;
       forEachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
       forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
+      
+      # Overlay to provide unstable packages
+      unstableOverlay = final: prev: {
+        unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+      };
     in
     {
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
       
-      overlays = import ./overlays { inherit inputs outputs; };
+      overlays = {
+        unstable-packages = unstableOverlay;
+      } // import ./overlays { inherit inputs outputs; };
 
       packages = forEachPkgs (pkgs: import ./pkgs { inherit pkgs; });
       devShells = forEachPkgs (pkgs: import ./shell.nix { inherit pkgs; });

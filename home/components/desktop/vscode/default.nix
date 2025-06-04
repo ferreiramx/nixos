@@ -6,7 +6,7 @@ in
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
-    userSettings = {
+    profiles.default.userSettings = {
       "window.zoomLevel" = if (vars.screen.hidpi) then 1 else 0;
       "editor.fontSize" = vars.fonts.mono;
       "editor.fontFamily" = "SauceCodePro Nerd Font";
@@ -34,7 +34,7 @@ in
       };
       "diffEditor.codeLens" = true;
     };
-    extensions = with pkgs.vscode-extensions;
+    profiles.default.extensions = with pkgs.vscode-extensions;
       [
         (vscodeThemeFromScheme { scheme = config.colorScheme; })
          bbenoist.nix
@@ -51,8 +51,8 @@ in
           {
             name = "prettier-sql-vscode";
             publisher = "inferrinizzard";
-            version = "1.3.1";
-            sha256 = "YDpkL0HQfsyH4TVmaWMwJh6NMiCIRBMBOKKhnLcerno=";
+            version = "1.6.0";
+            sha256 = "l6pf/+uv8Bn4uDMX0CbzSjydTStr73uRY550Ad9wm7Q=";
           }
           {
             name = "inline-sql-syntax";
@@ -69,8 +69,8 @@ in
           {
             name = "snowflake-driver-for-sqltools";
             publisher = "koszti";
-            version = "0.4.2";
-            sha256 = "dLKnurvYn3impla9Vlw/RcehYJDC5ylRDnHvRs1rh/I=";
+            version = "0.5.0";
+            sha256 = "kygR4PVQ4WJ5BlG3IWJgQsSWQ7TtVP2KJT2GA5C1zfM=";
           }
           {
             name = "snowflake-vscode";
@@ -102,12 +102,12 @@ in
             version = "0.5.1";
             sha256 = "tXl9n6zRtHybUkpuPBnkko6S4tO2oT0SYomqCS3ODAE=";
           }
-          {
-            name = "geminicodeassist";
-            publisher = "google";
-            version = "2.28.1";
-            sha256 = "2uaYp6mbLG8qdlqxIqcNq78DXb9aLyB6MW5oVNLVqsU=";
-          }
+          # {
+          #   name = "geminicodeassist";
+          #   publisher = "google";
+          #   version = "2.28.1";
+          #   sha256 = "2uaYp6mbLG8qdlqxIqcNq78DXb9aLyB6MW5oVNLVqsU=";
+          # }
         ];
   };
 }

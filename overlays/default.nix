@@ -13,5 +13,11 @@
     # waybar = prev.waybar.overrideAttrs(oldAttrs: {
     #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     # });
+
+    # Use claude-code from unstable
+    claude-code = (import inputs.nixpkgs-unstable {
+      system = prev.system;
+      config.allowUnfree = true;
+    }).claude-code;
   };
 }

@@ -8,6 +8,7 @@
     zoom-us
     deepchannel
     dbeaver-bin
+    claude-code
   ];
 
   sops.secrets = {
